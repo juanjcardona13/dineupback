@@ -55,7 +55,7 @@ DineUp is a project that aims to provide a platform for view the details of a re
   ```bash
     python manage.py runserver
   ```  
-11. Visit http://127.0.0.1:8000/admin in your web browser to view the project or http://127.0.0.1:8000/api-dine-up/ for you to play with the API using the GraphiQL interface.
+11. Visit http://127.0.0.1:8000/admin/ in your web browser to view the project or http://127.0.0.1:8000/api/ for you to play with the API using the GraphiQL interface.
 
 ## License
 

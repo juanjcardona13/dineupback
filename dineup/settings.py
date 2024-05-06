@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'nested_admin',
     'corsheaders',
+    'graphene_django',
     'graphene_django_cruddals_v1'
 ]
 

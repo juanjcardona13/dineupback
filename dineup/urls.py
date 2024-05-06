@@ -27,7 +27,7 @@ from dineup.schema import AuthMutations
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api-dine-up/", csrf_exempt(CRUDDALSView.as_view(graphiql=True, generate_cruddals_files_client=True, enable_test_cruddals=False, extra_mutations=(AuthMutations,), middleware=[JSONWebTokenMiddleware()]))),
+    path("api/", csrf_exempt(CRUDDALSView.as_view(graphiql=True, generate_cruddals_files_client=True, enable_test_cruddals=False, extra_mutations=(AuthMutations,), middleware=[JSONWebTokenMiddleware()]))),
 ]
 
 if settings.DEBUG:
