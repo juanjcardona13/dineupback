@@ -2,7 +2,7 @@ aniso8601==9.0.1
 asgiref==3.6.0
 asttokens==2.2.1
 backcall==0.2.0
-graphene-django-cruddals-v1 @ git+ssh://git@github.com/juanjcardona13/graphene-django-cruddals-v1@main
+graphene-django-cruddals-v1 @ git+https://git@github.com/juanjcardona13/graphene-django-cruddals-v1@main
 decorator==5.1.1
 Django==3.2.18
 django-cors-headers==3.14.0

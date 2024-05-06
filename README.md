@@ -20,33 +20,42 @@ DineUp is a project that aims to provide a platform for view the details of a re
   ```  
 3. Navigate to the project directory:
   ```bash
-    cd project
+    cd dineupback
   ```  
 4. Create a virtual environment:
   ```bash
     python -m venv venv
   ```
-5. Install the required dependencies using pip:
+5. Activate the virtual environment:
+  - On Windows:
+  ```bash
+    venv\Scripts\activate
+  ```
+  - On macOS and Linux:
+  ```bash
+    source venv/bin/activate
+  ```
+6. Install the required dependencies using pip:
   ```bash
     pip install -r requirements.txt
   ```  
-6. Apply migrations:
+7. Apply migrations:
   ```bash
     python manage.py migrate
   ```  
-7. Create a superuser:
+8. Create a superuser:
   ```bash
     python manage.py createsuperuser
   ```
-8. Load the initial data:
+9. Load the initial data:
   ```bash
     python manage.py loaddata db.json
   ```
-9. Start the development server:
+10. Start the development server:
   ```bash
     python manage.py runserver
   ```  
-10. Visit http://127.0.0.1:8000/admin in your web browser to view the project or http://127.0.0.1:8000/api-dine-up/ for you to play with the API using the GraphiQL interface.
+11. Visit http://127.0.0.1:8000/admin in your web browser to view the project or http://127.0.0.1:8000/api-dine-up/ for you to play with the API using the GraphiQL interface.
 
 ## License
 
