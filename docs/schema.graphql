@@ -1,0 +1,5646 @@
+# schema.py
+# import graphene
+# from graphql import GraphQLError
+# from django.contrib.auth.models import User, Group
+# from graphene_django_crud.types import DjangoCRUDObjectType, resolver_hints
+
+# from apps.accounts.models import *
+# from apps.menu.models import *
+# from apps.orders.models import *
+# from apps.restaurant.models import *
+
+
+
+# class UserType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = User
+# class GroupType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = Group
+
+
+# class DineUpUserType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = DineUpUser
+# class RoleType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = Role
+# class EmployeeType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = Employee
+# class JobFunctionType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = JobFunction
+
+
+# class RestaurantType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = Restaurant
+# class BranchType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = Branch
+# class BranchPhoneNumberType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = BranchPhoneNumber
+# class TableType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = Table
+# class SocialMediaPlatformType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = SocialMediaPlatform
+# class SocialMediaType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = SocialMedia
+
+
+# class OrderStatusType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = OrderStatus
+# class OrderType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = Order
+# class OrderItemType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = OrderItem
+# class OrderItemOptionType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = OrderItemOption
+
+
+# class MenuType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = Menu
+# class CategoryType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = Category
+# class MenuItemType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = MenuItem
+# class MenuItemVariantType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = MenuItemVariant
+# class VariantOptionType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = VariantOption
+# class ItemImageType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = ItemImage
+# class OptionGroupType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = OptionGroup
+# class ItemOptionType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = ItemOption
+# class ItemTagType(DjangoCRUDObjectType):
+#     class Meta:
+#         model = ItemTag
+
+
+
+
+
+# class Query(graphene.ObjectType):
+
+#     user = UserType.ReadField()
+#     users = UserType.BatchReadField()
+
+#     group = GroupType.ReadField()
+#     groups = GroupType.BatchReadField()
+
+#     restaurant = RestaurantType.ReadField()
+#     restaurants = RestaurantType.BatchReadField()
+
+
+#     branch = BranchType.ReadField()
+#     branches = BranchType.BatchReadField()
+
+
+#     branch_phone_number = BranchPhoneNumberType.ReadField()
+#     branch_phone_numbers = BranchPhoneNumberType.BatchReadField()
+
+
+#     table = TableType.ReadField()
+#     tables = TableType.BatchReadField()
+
+
+#     social_media_platform = SocialMediaPlatformType.ReadField()
+#     social_media_platforms = SocialMediaPlatformType.BatchReadField()
+
+
+#     social_media = SocialMediaType.ReadField()
+#     social_medias = SocialMediaType.BatchReadField()
+
+
+#     order_status = OrderStatusType.ReadField()
+#     orders_status = OrderStatusType.BatchReadField()
+
+
+#     order = OrderType.ReadField()
+#     orders = OrderType.BatchReadField()
+
+
+#     order_item = OrderItemType.ReadField()
+#     order_items = OrderItemType.BatchReadField()
+
+
+#     order_item_option = OrderItemOptionType.ReadField()
+#     order_item_options = OrderItemOptionType.BatchReadField()
+
+
+#     menu = MenuType.ReadField()
+#     menus = MenuType.BatchReadField()
+
+
+#     category = CategoryType.ReadField()
+#     categories = CategoryType.BatchReadField()
+
+
+#     menu_item = MenuItemType.ReadField()
+#     menu_items = MenuItemType.BatchReadField()
+
+
+#     menu_item_variant = MenuItemVariantType.ReadField()
+#     menu_item_variants = MenuItemVariantType.BatchReadField()
+
+
+#     variant_option = VariantOptionType.ReadField()
+#     variant_options = VariantOptionType.BatchReadField()
+
+
+#     item_image = ItemImageType.ReadField()
+#     item_images = ItemImageType.BatchReadField()
+
+
+#     option_group = OptionGroupType.ReadField()
+#     option_groups = OptionGroupType.BatchReadField()
+
+
+#     item_option = ItemOptionType.ReadField()
+#     item_options = ItemOptionType.BatchReadField()
+
+
+#     item_tag = ItemTagType.ReadField()
+#     item_tags = ItemTagType.BatchReadField()
+
+
+#     dine_up_user = DineUpUserType.ReadField()
+#     dine_up_users = DineUpUserType.BatchReadField()
+
+
+#     role = RoleType.ReadField()
+#     roles = RoleType.BatchReadField()
+
+
+#     employee = EmployeeType.ReadField()
+#     employees = EmployeeType.BatchReadField()
+
+
+#     job_function = JobFunctionType.ReadField()
+#     job_functions = JobFunctionType.BatchReadField()
+# class Mutation(graphene.ObjectType):
+
+#     user_create = UserType.CreateField()
+#     user_update = UserType.UpdateField()
+#     user_delete = UserType.DeleteField()
+
+#     group_create = GroupType.CreateField()
+#     group_update = GroupType.UpdateField()
+#     group_delete = GroupType.DeleteField()
+
+
+#     restaurant_create = RestaurantType.CreateField()
+#     restaurant_update = RestaurantType.UpdateField()
+#     restaurant_delete = RestaurantType.DeleteField()
+
+
+
+#     branch_create = BranchType.CreateField()
+#     branch_update = BranchType.UpdateField()
+#     branch_delete = BranchType.DeleteField()
+
+#     branch_phone_number_create = BranchPhoneNumberType.CreateField()
+#     branch_phone_number_update = BranchPhoneNumberType.UpdateField()
+#     branch_phone_number_delete = BranchPhoneNumberType.DeleteField()
+
+#     table_create = TableType.CreateField()
+#     table_update = TableType.UpdateField()
+#     table_delete = TableType.DeleteField()
+
+#     social_media_platform_create = SocialMediaPlatformType.CreateField()
+#     social_media_platform_update = SocialMediaPlatformType.UpdateField()
+#     social_media_platform_delete = SocialMediaPlatformType.DeleteField()
+
+#     social_media_create = SocialMediaType.CreateField()
+#     social_media_update = SocialMediaType.UpdateField()
+#     social_media_delete = SocialMediaType.DeleteField()
+
+#     order_status_create = OrderStatusType.CreateField()
+#     order_status_update = OrderStatusType.UpdateField()
+#     order_status_delete = OrderStatusType.DeleteField()
+
+#     order_create = OrderType.CreateField()
+#     order_update = OrderType.UpdateField()
+#     order_delete = OrderType.DeleteField()
+
+#     order_item_create = OrderItemType.CreateField()
+#     order_item_update = OrderItemType.UpdateField()
+#     order_item_delete = OrderItemType.DeleteField()
+
+#     order_item_option_create = OrderItemOptionType.CreateField()
+#     order_item_option_update = OrderItemOptionType.UpdateField()
+#     order_item_option_delete = OrderItemOptionType.DeleteField()
+
+#     menu_create = MenuType.CreateField()
+#     menu_update = MenuType.UpdateField()
+#     menu_delete = MenuType.DeleteField()
+
+#     category_create = CategoryType.CreateField()
+#     category_update = CategoryType.UpdateField()
+#     category_delete = CategoryType.DeleteField()
+
+#     menu_item_create = MenuItemType.CreateField()
+#     menu_item_update = MenuItemType.UpdateField()
+#     menu_item_delete = MenuItemType.DeleteField()
+
+#     menu_item_variant_create = MenuItemVariantType.CreateField()
+#     menu_item_variant_update = MenuItemVariantType.UpdateField()
+#     menu_item_variant_delete = MenuItemVariantType.DeleteField()
+
+#     variant_option_create = VariantOptionType.CreateField()
+#     variant_option_update = VariantOptionType.UpdateField()
+#     variant_option_delete = VariantOptionType.DeleteField()
+
+#     item_image_create = ItemImageType.CreateField()
+#     item_image_update = ItemImageType.UpdateField()
+#     item_image_delete = ItemImageType.DeleteField()
+
+#     option_group_create = OptionGroupType.CreateField()
+#     option_group_update = OptionGroupType.UpdateField()
+#     option_group_delete = OptionGroupType.DeleteField()
+
+#     item_option_create = ItemOptionType.CreateField()
+#     item_option_update = ItemOptionType.UpdateField()
+#     item_option_delete = ItemOptionType.DeleteField()
+
+#     item_tag_create = ItemTagType.CreateField()
+#     item_tag_update = ItemTagType.UpdateField()
+#     item_tag_delete = ItemTagType.DeleteField()
+
+#     dine_up_user_create = DineUpUserType.CreateField()
+#     dine_up_user_update = DineUpUserType.UpdateField()
+#     dine_up_user_delete = DineUpUserType.DeleteField()
+
+#     role_create = RoleType.CreateField()
+#     role_update = RoleType.UpdateField()
+#     role_delete = RoleType.DeleteField()
+
+#     employee_create = EmployeeType.CreateField()
+#     employee_update = EmployeeType.UpdateField()
+#     employee_delete = EmployeeType.DeleteField()
+
+#     job_function_create = JobFunctionType.CreateField()
+#     job_function_update = JobFunctionType.UpdateField()
+#     job_function_delete = JobFunctionType.DeleteField()
+
+
+
+# auth_schema = graphene.Schema(query=Query, mutation=Mutation)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+type Query {
+  user(where: UserWhereInput!): UserType
+  users(where: UserWhereInput, orderBy: [UserOrderByInput], limit: Int, offset: Int): UserTypeConnection
+  group(where: GroupWhereInput!): GroupType
+  groups(where: GroupWhereInput, orderBy: [GroupOrderByInput], limit: Int, offset: Int): GroupTypeConnection
+  restaurant(where: RestaurantWhereInput!): RestaurantType
+  restaurants(where: RestaurantWhereInput, orderBy: [RestaurantOrderByInput], limit: Int, offset: Int): RestaurantTypeConnection
+  branch(where: BranchWhereInput!): BranchType
+  branches(where: BranchWhereInput, orderBy: [BranchOrderByInput], limit: Int, offset: Int): BranchTypeConnection
+  branchPhoneNumber(where: BranchPhoneNumberWhereInput!): BranchPhoneNumberType
+  branchPhoneNumbers(where: BranchPhoneNumberWhereInput, orderBy: [BranchPhoneNumberOrderByInput], limit: Int, offset: Int): BranchPhoneNumberTypeConnection
+  table(where: TableWhereInput!): TableType
+  tables(where: TableWhereInput, orderBy: [TableOrderByInput], limit: Int, offset: Int): TableTypeConnection
+  socialMediaPlatform(where: SocialMediaPlatformWhereInput!): SocialMediaPlatformType
+  socialMediaPlatforms(where: SocialMediaPlatformWhereInput, orderBy: [SocialMediaPlatformOrderByInput], limit: Int, offset: Int): SocialMediaPlatformTypeConnection
+  socialMedia(where: SocialMediaWhereInput!): SocialMediaType
+  socialMedias(where: SocialMediaWhereInput, orderBy: [SocialMediaOrderByInput], limit: Int, offset: Int): SocialMediaTypeConnection
+  orderStatus(where: OrderStatusWhereInput!): OrderStatusType
+  ordersStatus(where: OrderStatusWhereInput, orderBy: [OrderStatusOrderByInput], limit: Int, offset: Int): OrderStatusTypeConnection
+  order(where: OrderWhereInput!): OrderType
+  orders(where: OrderWhereInput, orderBy: [OrderOrderByInput], limit: Int, offset: Int): OrderTypeConnection
+  orderItem(where: OrderItemWhereInput!): OrderItemType
+  orderItems(where: OrderItemWhereInput, orderBy: [OrderItemOrderByInput], limit: Int, offset: Int): OrderItemTypeConnection
+  orderItemOption(where: OrderItemOptionWhereInput!): OrderItemOptionType
+  orderItemOptions(where: OrderItemOptionWhereInput, orderBy: [OrderItemOptionOrderByInput], limit: Int, offset: Int): OrderItemOptionTypeConnection
+  menu(where: MenuWhereInput!): MenuType
+  menus(where: MenuWhereInput, orderBy: [MenuOrderByInput], limit: Int, offset: Int): MenuTypeConnection
+  category(where: CategoryWhereInput!): CategoryType
+  categories(where: CategoryWhereInput, orderBy: [CategoryOrderByInput], limit: Int, offset: Int): CategoryTypeConnection
+  menuItem(where: MenuItemWhereInput!): MenuItemType
+  menuItems(where: MenuItemWhereInput, orderBy: [MenuItemOrderByInput], limit: Int, offset: Int): MenuItemTypeConnection
+  menuItemVariant(where: MenuItemVariantWhereInput!): MenuItemVariantType
+  menuItemVariants(where: MenuItemVariantWhereInput, orderBy: [MenuItemVariantOrderByInput], limit: Int, offset: Int): MenuItemVariantTypeConnection
+  variantOption(where: VariantOptionWhereInput!): VariantOptionType
+  variantOptions(where: VariantOptionWhereInput, orderBy: [VariantOptionOrderByInput], limit: Int, offset: Int): VariantOptionTypeConnection
+  itemImage(where: ItemImageWhereInput!): ItemImageType
+  itemImages(where: ItemImageWhereInput, orderBy: [ItemImageOrderByInput], limit: Int, offset: Int): ItemImageTypeConnection
+  optionGroup(where: OptionGroupWhereInput!): OptionGroupType
+  optionGroups(where: OptionGroupWhereInput, orderBy: [OptionGroupOrderByInput], limit: Int, offset: Int): OptionGroupTypeConnection
+  itemOption(where: ItemOptionWhereInput!): ItemOptionType
+  itemOptions(where: ItemOptionWhereInput, orderBy: [ItemOptionOrderByInput], limit: Int, offset: Int): ItemOptionTypeConnection
+  itemTag(where: ItemTagWhereInput!): ItemTagType
+  itemTags(where: ItemTagWhereInput, orderBy: [ItemTagOrderByInput], limit: Int, offset: Int): ItemTagTypeConnection
+  dineUpUser(where: DineUpUserWhereInput!): DineUpUserType
+  dineUpUsers(where: DineUpUserWhereInput, orderBy: [DineUpUserOrderByInput], limit: Int, offset: Int): DineUpUserTypeConnection
+  role(where: RoleWhereInput!): RoleType
+  roles(where: RoleWhereInput, orderBy: [RoleOrderByInput], limit: Int, offset: Int): RoleTypeConnection
+  employee(where: EmployeeWhereInput!): EmployeeType
+  employees(where: EmployeeWhereInput, orderBy: [EmployeeOrderByInput], limit: Int, offset: Int): EmployeeTypeConnection
+  jobFunction(where: JobFunctionWhereInput!): JobFunctionType
+  jobFunctions(where: JobFunctionWhereInput, orderBy: [JobFunctionOrderByInput], limit: Int, offset: Int): JobFunctionTypeConnection
+}
+type Mutation {
+  userCreate(input: UserCreateInput!): UserCreatePayload
+  userUpdate(input: UserUpdateInput!, where: UserWhereInput!): UserUpdatePayload
+  userDelete(where: UserWhereInput!): UserDeletePayload
+  groupCreate(input: GroupCreateInput!): GroupCreatePayload
+  groupUpdate(input: GroupUpdateInput!, where: GroupWhereInput!): GroupUpdatePayload
+  groupDelete(where: GroupWhereInput!): GroupDeletePayload
+  restaurantCreate(input: RestaurantCreateInput!): RestaurantCreatePayload
+  restaurantUpdate(input: RestaurantUpdateInput!, where: RestaurantWhereInput!): RestaurantUpdatePayload
+  restaurantDelete(where: RestaurantWhereInput!): RestaurantDeletePayload
+  branchCreate(input: BranchCreateInput!): BranchCreatePayload
+  branchUpdate(input: BranchUpdateInput!, where: BranchWhereInput!): BranchUpdatePayload
+  branchDelete(where: BranchWhereInput!): BranchDeletePayload
+  branchPhoneNumberCreate(input: BranchPhoneNumberCreateInput!): BranchPhoneNumberCreatePayload
+  branchPhoneNumberUpdate(input: BranchPhoneNumberUpdateInput!, where: BranchPhoneNumberWhereInput!): BranchPhoneNumberUpdatePayload
+  branchPhoneNumberDelete(where: BranchPhoneNumberWhereInput!): BranchPhoneNumberDeletePayload
+  tableCreate(input: TableCreateInput!): TableCreatePayload
+  tableUpdate(input: TableUpdateInput!, where: TableWhereInput!): TableUpdatePayload
+  tableDelete(where: TableWhereInput!): TableDeletePayload
+  socialMediaPlatformCreate(input: SocialMediaPlatformCreateInput!): SocialMediaPlatformCreatePayload
+  socialMediaPlatformUpdate(input: SocialMediaPlatformUpdateInput!, where: SocialMediaPlatformWhereInput!): SocialMediaPlatformUpdatePayload
+  socialMediaPlatformDelete(where: SocialMediaPlatformWhereInput!): SocialMediaPlatformDeletePayload
+  socialMediaCreate(input: SocialMediaCreateInput!): SocialMediaCreatePayload
+  socialMediaUpdate(input: SocialMediaUpdateInput!, where: SocialMediaWhereInput!): SocialMediaUpdatePayload
+  socialMediaDelete(where: SocialMediaWhereInput!): SocialMediaDeletePayload
+  orderStatusCreate(input: OrderStatusCreateInput!): OrderStatusCreatePayload
+  orderStatusUpdate(input: OrderStatusUpdateInput!, where: OrderStatusWhereInput!): OrderStatusUpdatePayload
+  orderStatusDelete(where: OrderStatusWhereInput!): OrderStatusDeletePayload
+  orderCreate(input: OrderCreateInput!): OrderCreatePayload
+  orderUpdate(input: OrderUpdateInput!, where: OrderWhereInput!): OrderUpdatePayload
+  orderDelete(where: OrderWhereInput!): OrderDeletePayload
+  orderItemCreate(input: OrderItemCreateInput!): OrderItemCreatePayload
+  orderItemUpdate(input: OrderItemUpdateInput!, where: OrderItemWhereInput!): OrderItemUpdatePayload
+  orderItemDelete(where: OrderItemWhereInput!): OrderItemDeletePayload
+  orderItemOptionCreate(input: OrderItemOptionCreateInput!): OrderItemOptionCreatePayload
+  orderItemOptionUpdate(input: OrderItemOptionUpdateInput!, where: OrderItemOptionWhereInput!): OrderItemOptionUpdatePayload
+  orderItemOptionDelete(where: OrderItemOptionWhereInput!): OrderItemOptionDeletePayload
+  menuCreate(input: MenuCreateInput!): MenuCreatePayload
+  menuUpdate(input: MenuUpdateInput!, where: MenuWhereInput!): MenuUpdatePayload
+  menuDelete(where: MenuWhereInput!): MenuDeletePayload
+  categoryCreate(input: CategoryCreateInput!): CategoryCreatePayload
+  categoryUpdate(input: CategoryUpdateInput!, where: CategoryWhereInput!): CategoryUpdatePayload
+  categoryDelete(where: CategoryWhereInput!): CategoryDeletePayload
+  menuItemCreate(input: MenuItemCreateInput!): MenuItemCreatePayload
+  menuItemUpdate(input: MenuItemUpdateInput!, where: MenuItemWhereInput!): MenuItemUpdatePayload
+  menuItemDelete(where: MenuItemWhereInput!): MenuItemDeletePayload
+  menuItemVariantCreate(input: MenuItemVariantCreateInput!): MenuItemVariantCreatePayload
+  menuItemVariantUpdate(input: MenuItemVariantUpdateInput!, where: MenuItemVariantWhereInput!): MenuItemVariantUpdatePayload
+  menuItemVariantDelete(where: MenuItemVariantWhereInput!): MenuItemVariantDeletePayload
+  variantOptionCreate(input: VariantOptionCreateInput!): VariantOptionCreatePayload
+  variantOptionUpdate(input: VariantOptionUpdateInput!, where: VariantOptionWhereInput!): VariantOptionUpdatePayload
+  variantOptionDelete(where: VariantOptionWhereInput!): VariantOptionDeletePayload
+  itemImageCreate(input: ItemImageCreateInput!): ItemImageCreatePayload
+  itemImageUpdate(input: ItemImageUpdateInput!, where: ItemImageWhereInput!): ItemImageUpdatePayload
+  itemImageDelete(where: ItemImageWhereInput!): ItemImageDeletePayload
+  optionGroupCreate(input: OptionGroupCreateInput!): OptionGroupCreatePayload
+  optionGroupUpdate(input: OptionGroupUpdateInput!, where: OptionGroupWhereInput!): OptionGroupUpdatePayload
+  optionGroupDelete(where: OptionGroupWhereInput!): OptionGroupDeletePayload
+  itemOptionCreate(input: ItemOptionCreateInput!): ItemOptionCreatePayload
+  itemOptionUpdate(input: ItemOptionUpdateInput!, where: ItemOptionWhereInput!): ItemOptionUpdatePayload
+  itemOptionDelete(where: ItemOptionWhereInput!): ItemOptionDeletePayload
+  itemTagCreate(input: ItemTagCreateInput!): ItemTagCreatePayload
+  itemTagUpdate(input: ItemTagUpdateInput!, where: ItemTagWhereInput!): ItemTagUpdatePayload
+  itemTagDelete(where: ItemTagWhereInput!): ItemTagDeletePayload
+  dineUpUserCreate(input: DineUpUserCreateInput!): DineUpUserCreatePayload
+  dineUpUserUpdate(input: DineUpUserUpdateInput!, where: DineUpUserWhereInput!): DineUpUserUpdatePayload
+  dineUpUserDelete(where: DineUpUserWhereInput!): DineUpUserDeletePayload
+  roleCreate(input: RoleCreateInput!): RoleCreatePayload
+  roleUpdate(input: RoleUpdateInput!, where: RoleWhereInput!): RoleUpdatePayload
+  roleDelete(where: RoleWhereInput!): RoleDeletePayload
+  employeeCreate(input: EmployeeCreateInput!): EmployeeCreatePayload
+  employeeUpdate(input: EmployeeUpdateInput!, where: EmployeeWhereInput!): EmployeeUpdatePayload
+  employeeDelete(where: EmployeeWhereInput!): EmployeeDeletePayload
+  jobFunctionCreate(input: JobFunctionCreateInput!): JobFunctionCreatePayload
+  jobFunctionUpdate(input: JobFunctionUpdateInput!, where: JobFunctionWhereInput!): JobFunctionUpdatePayload
+  jobFunctionDelete(where: JobFunctionWhereInput!): JobFunctionDeletePayload
+}
+scalar DateTime
+scalar Binary
+enum OptionGroupNameTypeEnum {
+  ADDITIONAL
+  OPTION
+}
+enum TableStatusEnum {
+  OCCUPIED
+  AVAILABLE
+  RESERVED
+}
+enum OrderStringEnum {
+  ASC
+  DESC
+  IASC
+  IDESC
+}
+enum OrderEnum {
+  ASC
+  DESC
+}
+
+
+input FileInput {
+  filename: String
+  content: Binary
+}
+
+
+input IDFilter {
+  """Exact match."""
+  exact: ID
+  in: [ID]
+
+  """Is null."""
+  isnull: Boolean
+}
+input StringFilter {
+  """Exact match."""
+  exact: String
+  in: [String]
+
+  """Is null."""
+  isnull: Boolean
+
+  """Containment test."""
+  contains: String
+
+  """Starts-with."""
+  startswith: String
+
+  """Ends-with."""
+  endswith: String
+
+  """regular expression match."""
+  regex: String
+
+  """Case-insensitive exact match."""
+  iexact: String
+
+  """Case-insensitive containment test."""
+  icontains: String
+
+  """Case-insensitive starts-with."""
+  istartswith: String
+
+  """Case-insensitive ends-with."""
+  iendswith: String
+}
+input DateTimeFilter {
+  """Exact match."""
+  exact: DateTime
+  in: [DateTime]
+
+  """Is null."""
+  isnull: Boolean
+
+  """Greater than."""
+  gt: DateTime
+
+  """Greater than or equal to."""
+  gte: DateTime
+
+  """Less than."""
+  lt: DateTime
+
+  """Less than or equal to."""
+  lte: DateTime
+
+  """An exact year match."""
+  year: IntFilter
+
+  """
+  An exact month match. Takes an integer 1 (January) through 12 (December).
+  """
+  month: IntFilter
+
+  """An exact day match."""
+  day: IntFilter
+
+  """
+  A ‘day of the week’ match. Takes an integer value representing the day of week from 1 (Sunday) to 7 (Saturday).
+  """
+  weekDay: IntFilter
+
+  """An exact hour match. Takes an integer between 0 and 23."""
+  hour: IntFilter
+
+  """An exact minute match. Takes an integer between 0 and 59."""
+  minute: IntFilter
+
+  """an exact second match. Takes an integer between 0 and 59."""
+  second: IntFilter
+}
+input IntFilter {
+  """Exact match."""
+  exact: Int
+  in: [Int]
+
+  """Is null."""
+  isnull: Boolean
+
+  """Greater than."""
+  gt: Int
+
+  """Greater than or equal to."""
+  gte: Int
+
+  """Less than."""
+  lt: Int
+
+  """Less than or equal to."""
+  lte: Int
+
+  """Containment test."""
+  contains: Int
+
+  """Starts-with."""
+  startswith: Int
+
+  """Ends-with."""
+  endswith: Int
+
+  """regular expression match."""
+  regex: String
+}
+input BooleanFilter {
+  """Exact match."""
+  exact: Boolean
+  in: [Boolean]
+
+  """Is null."""
+  isnull: Boolean
+}
+input FloatFilter {
+  """Exact match."""
+  exact: Float
+  in: [Float]
+
+  """Is null."""
+  isnull: Boolean
+
+  """Greater than."""
+  gt: Float
+
+  """Greater than or equal to."""
+  gte: Float
+
+  """Less than."""
+  lt: Float
+
+  """Less than or equal to."""
+  lte: Float
+
+  """Containment test."""
+  contains: Float
+
+  """Starts-with."""
+  startswith: Float
+
+  """Ends-with."""
+  endswith: Float
+
+  """regular expression match."""
+  regex: String
+}
+
+
+
+
+
+
+input UserWhereInput {
+  id: IDFilter
+  OR: [UserWhereInput]
+  AND: [UserWhereInput]
+  NOT: UserWhereInput
+  branchCreatedBy: BranchWhereInput
+  branchUpdatedBy: BranchWhereInput
+  branchphonenumberCreatedBy: BranchPhoneNumberWhereInput
+  branchphonenumberUpdatedBy: BranchPhoneNumberWhereInput
+  categoryCreatedBy: CategoryWhereInput
+  categoryUpdatedBy: CategoryWhereInput
+
+  """date joined"""
+  dateJoined: DateTimeFilter
+  dineupuser: DineUpUserWhereInput
+  dineupuserCreatedBy: DineUpUserWhereInput
+  dineupuserUpdatedBy: DineUpUserWhereInput
+
+  """email address"""
+  email: StringFilter
+  employeeCreatedBy: EmployeeWhereInput
+  employeeUpdatedBy: EmployeeWhereInput
+
+  """first name"""
+  firstName: StringFilter
+  groups: GroupWhereInput
+
+  """
+  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
+  """
+  isActive: BooleanFilter
+
+  """Designates whether the user can log into this admin site."""
+  isStaff: BooleanFilter
+
+  """
+  Designates that this user has all permissions without explicitly assigning them.
+  """
+  isSuperuser: BooleanFilter
+  itemimageCreatedBy: ItemImageWhereInput
+  itemimageUpdatedBy: ItemImageWhereInput
+  itemoptionCreatedBy: ItemOptionWhereInput
+  itemoptionUpdatedBy: ItemOptionWhereInput
+  itemtagCreatedBy: ItemTagWhereInput
+  itemtagUpdatedBy: ItemTagWhereInput
+  jobfunctionCreatedBy: JobFunctionWhereInput
+  jobfunctionUpdatedBy: JobFunctionWhereInput
+
+  """last login"""
+  lastLogin: DateTimeFilter
+
+  """last name"""
+  lastName: StringFilter
+  menuCreatedBy: MenuWhereInput
+  menuUpdatedBy: MenuWhereInput
+  menuitemCreatedBy: MenuItemWhereInput
+  menuitemUpdatedBy: MenuItemWhereInput
+  menuitemvariantCreatedBy: MenuItemVariantWhereInput
+  menuitemvariantUpdatedBy: MenuItemVariantWhereInput
+  optiongroupCreatedBy: OptionGroupWhereInput
+  optiongroupUpdatedBy: OptionGroupWhereInput
+  orderCreatedBy: OrderWhereInput
+  orderUpdatedBy: OrderWhereInput
+  orderitemCreatedBy: OrderItemWhereInput
+  orderitemUpdatedBy: OrderItemWhereInput
+  orderitemoptionCreatedBy: OrderItemOptionWhereInput
+  orderitemoptionUpdatedBy: OrderItemOptionWhereInput
+  orderstatusCreatedBy: OrderStatusWhereInput
+  orderstatusUpdatedBy: OrderStatusWhereInput
+
+  """password"""
+  password: StringFilter
+  restaurantCreatedBy: RestaurantWhereInput
+  restaurantUpdatedBy: RestaurantWhereInput
+  roleCreatedBy: RoleWhereInput
+  roleUpdatedBy: RoleWhereInput
+  socialmediaCreatedBy: SocialMediaWhereInput
+  socialmediaUpdatedBy: SocialMediaWhereInput
+  socialmediaplatformCreatedBy: SocialMediaPlatformWhereInput
+  socialmediaplatformUpdatedBy: SocialMediaPlatformWhereInput
+  tableCreatedBy: TableWhereInput
+  tableUpdatedBy: TableWhereInput
+
+  """Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."""
+  username: StringFilter
+  variantoptionCreatedBy: VariantOptionWhereInput
+  variantoptionUpdatedBy: VariantOptionWhereInput
+}
+input UserOrderByInput {
+  """date joined"""
+  dateJoined: OrderEnum
+  dineupuser: DineUpUserOrderByInput
+
+  """email address"""
+  email: OrderStringEnum
+
+  """first name"""
+  firstName: OrderStringEnum
+
+  """ID"""
+  id: OrderEnum
+
+  """
+  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
+  """
+  isActive: OrderEnum
+
+  """Designates whether the user can log into this admin site."""
+  isStaff: OrderEnum
+
+  """
+  Designates that this user has all permissions without explicitly assigning them.
+  """
+  isSuperuser: OrderEnum
+
+  """last login"""
+  lastLogin: OrderEnum
+
+  """last name"""
+  lastName: OrderStringEnum
+
+  """password"""
+  password: OrderStringEnum
+
+  """Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."""
+  username: OrderStringEnum
+}
+input UserCreateInput {
+  
+  dateJoined: DateTime
+  email: String
+  firstName: String
+  isActive: Boolean
+  isStaff: Boolean
+  isSuperuser: Boolean
+  lastLogin: DateTime
+  lastName: String
+  password: String!
+  username: String!
+  
+  
+  dineupuser: DineUpUserCreateNestedInput
+  
+  groups: GroupCreateNestedManyInput
+
+
+
+  branchCreatedBy: BranchCreateNestedManyInput
+  branchphonenumberCreatedBy: BranchPhoneNumberCreateNestedManyInput
+  categoryCreatedBy: CategoryCreateNestedManyInput
+  dineupuserCreatedBy: DineUpUserCreateNestedManyInput
+  employeeCreatedBy: EmployeeCreateNestedManyInput
+  itemimageCreatedBy: ItemImageCreateNestedManyInput
+  itemoptionCreatedBy: ItemOptionCreateNestedManyInput
+  itemtagCreatedBy: ItemTagCreateNestedManyInput
+  jobfunctionCreatedBy: JobFunctionCreateNestedManyInput
+  menuCreatedBy: MenuCreateNestedManyInput
+  menuitemCreatedBy: MenuItemCreateNestedManyInput
+  menuitemvariantCreatedBy: MenuItemVariantCreateNestedManyInput
+  optiongroupCreatedBy: OptionGroupCreateNestedManyInput
+  orderCreatedBy: OrderCreateNestedManyInput
+  orderitemCreatedBy: OrderItemCreateNestedManyInput
+  orderitemoptionCreatedBy: OrderItemOptionCreateNestedManyInput
+  orderstatusCreatedBy: OrderStatusCreateNestedManyInput
+  restaurantCreatedBy: RestaurantCreateNestedManyInput
+  roleCreatedBy: RoleCreateNestedManyInput
+  socialmediaCreatedBy: SocialMediaCreateNestedManyInput
+  socialmediaplatformCreatedBy: SocialMediaPlatformCreateNestedManyInput
+  tableCreatedBy: TableCreateNestedManyInput
+  variantoptionCreatedBy: VariantOptionCreateNestedManyInput
+
+
+  branchUpdatedBy: BranchCreateNestedManyInput
+  branchphonenumberUpdatedBy: BranchPhoneNumberCreateNestedManyInput
+  categoryUpdatedBy: CategoryCreateNestedManyInput
+  dineupuserUpdatedBy: DineUpUserCreateNestedManyInput
+  employeeUpdatedBy: EmployeeCreateNestedManyInput
+  itemimageUpdatedBy: ItemImageCreateNestedManyInput
+  itemoptionUpdatedBy: ItemOptionCreateNestedManyInput
+  itemtagUpdatedBy: ItemTagCreateNestedManyInput
+  jobfunctionUpdatedBy: JobFunctionCreateNestedManyInput
+  menuUpdatedBy: MenuCreateNestedManyInput
+  menuitemUpdatedBy: MenuItemCreateNestedManyInput
+  menuitemvariantUpdatedBy: MenuItemVariantCreateNestedManyInput
+  optiongroupUpdatedBy: OptionGroupCreateNestedManyInput
+  orderUpdatedBy: OrderCreateNestedManyInput
+  orderitemUpdatedBy: OrderItemCreateNestedManyInput
+  orderitemoptionUpdatedBy: OrderItemOptionCreateNestedManyInput
+  orderstatusUpdatedBy: OrderStatusCreateNestedManyInput
+  restaurantUpdatedBy: RestaurantCreateNestedManyInput
+  roleUpdatedBy: RoleCreateNestedManyInput
+  socialmediaUpdatedBy: SocialMediaCreateNestedManyInput
+  socialmediaplatformUpdatedBy: SocialMediaPlatformCreateNestedManyInput
+  tableUpdatedBy: TableCreateNestedManyInput
+  variantoptionUpdatedBy: VariantOptionCreateNestedManyInput
+}
+input UserCreateNestedInput {
+  create: UserCreateInput
+  connect: UserWhereInput
+}
+input UserCreateNestedManyInput {
+  create: [UserCreateInput]
+  connect: [UserWhereInput]
+}
+input UserUpdateInput {
+  dateJoined: DateTime
+  email: String
+  firstName: String
+  isActive: Boolean
+  isStaff: Boolean
+  isSuperuser: Boolean
+  lastLogin: DateTime
+  lastName: String
+  password: String
+  username: String
+
+
+  dineupuser: DineUpUserUpdateNestedInput
+  groups: GroupUpdateNestedManyInput
+
+
+  branchCreatedBy: BranchUpdateNestedManyInput
+  branchphonenumberCreatedBy: BranchPhoneNumberUpdateNestedManyInput
+  categoryCreatedBy: CategoryUpdateNestedManyInput
+  dineupuserCreatedBy: DineUpUserUpdateNestedManyInput
+  employeeCreatedBy: EmployeeUpdateNestedManyInput
+  itemimageCreatedBy: ItemImageUpdateNestedManyInput
+  itemoptionCreatedBy: ItemOptionUpdateNestedManyInput
+  itemtagCreatedBy: ItemTagUpdateNestedManyInput
+  jobfunctionCreatedBy: JobFunctionUpdateNestedManyInput
+  menuCreatedBy: MenuUpdateNestedManyInput
+  menuitemCreatedBy: MenuItemUpdateNestedManyInput
+  menuitemvariantCreatedBy: MenuItemVariantUpdateNestedManyInput
+  optiongroupCreatedBy: OptionGroupUpdateNestedManyInput
+  orderCreatedBy: OrderUpdateNestedManyInput
+  orderitemCreatedBy: OrderItemUpdateNestedManyInput
+  orderitemoptionCreatedBy: OrderItemOptionUpdateNestedManyInput
+  orderstatusCreatedBy: OrderStatusUpdateNestedManyInput
+  restaurantCreatedBy: RestaurantUpdateNestedManyInput
+  roleCreatedBy: RoleUpdateNestedManyInput
+  socialmediaCreatedBy: SocialMediaUpdateNestedManyInput
+  socialmediaplatformCreatedBy: SocialMediaPlatformUpdateNestedManyInput
+  tableCreatedBy: TableUpdateNestedManyInput
+  variantoptionCreatedBy: VariantOptionUpdateNestedManyInput
+
+
+  branchUpdatedBy: BranchUpdateNestedManyInput
+  branchphonenumberUpdatedBy: BranchPhoneNumberUpdateNestedManyInput
+  categoryUpdatedBy: CategoryUpdateNestedManyInput
+  dineupuserUpdatedBy: DineUpUserUpdateNestedManyInput
+  employeeUpdatedBy: EmployeeUpdateNestedManyInput
+  itemimageUpdatedBy: ItemImageUpdateNestedManyInput
+  itemoptionUpdatedBy: ItemOptionUpdateNestedManyInput
+  itemtagUpdatedBy: ItemTagUpdateNestedManyInput
+  jobfunctionUpdatedBy: JobFunctionUpdateNestedManyInput
+  menuUpdatedBy: MenuUpdateNestedManyInput
+  menuitemUpdatedBy: MenuItemUpdateNestedManyInput
+  menuitemvariantUpdatedBy: MenuItemVariantUpdateNestedManyInput
+  optiongroupUpdatedBy: OptionGroupUpdateNestedManyInput
+  orderUpdatedBy: OrderUpdateNestedManyInput
+  orderitemUpdatedBy: OrderItemUpdateNestedManyInput
+  orderitemoptionUpdatedBy: OrderItemOptionUpdateNestedManyInput
+  orderstatusUpdatedBy: OrderStatusUpdateNestedManyInput
+  restaurantUpdatedBy: RestaurantUpdateNestedManyInput
+  roleUpdatedBy: RoleUpdateNestedManyInput
+  socialmediaUpdatedBy: SocialMediaUpdateNestedManyInput
+  socialmediaplatformUpdatedBy: SocialMediaPlatformUpdateNestedManyInput
+  tableUpdatedBy: TableUpdateNestedManyInput
+  variantoptionUpdatedBy: VariantOptionUpdateNestedManyInput
+
+}
+input UserUpdateNestedInput {
+  create: UserCreateInput
+  update: UserUpdateInput
+  delete: Boolean
+  connect: UserWhereInput
+  disconnect: Boolean
+}
+input UserUpdateNestedManyInput {
+  create: [UserCreateInput]
+  update: [UserUpdateWithWhereInput]
+  delete: [UserWhereInput]
+  connect: [UserWhereInput]
+  disconnect: [UserWhereInput]
+}
+input UserUpdateWithWhereInput {
+  where: UserWhereInput
+  input: UserUpdateInput
+}
+
+input GroupWhereInput {
+  id: IDFilter
+  OR: [GroupWhereInput]
+  AND: [GroupWhereInput]
+  NOT: GroupWhereInput
+
+  """name"""
+  name: StringFilter
+  user: UserWhereInput
+}
+input GroupOrderByInput {
+  """ID"""
+  id: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+}
+input GroupCreateNestedManyInput {
+  create: [GroupCreateInput]
+  connect: [GroupWhereInput]
+}
+input GroupCreateInput {
+  """name"""
+  name: String!
+  userSet: UserCreateNestedManyInput
+}
+input GroupUpdateNestedManyInput {
+  create: [GroupCreateInput]
+  update: [GroupUpdateWithWhereInput]
+  delete: [GroupWhereInput]
+  connect: [GroupWhereInput]
+  disconnect: [GroupWhereInput]
+}
+input GroupUpdateWithWhereInput {
+  where: GroupWhereInput
+  input: GroupUpdateInput
+}
+input GroupUpdateInput {
+  """name"""
+  name: String
+  userSet: UserUpdateNestedManyInput
+}
+
+
+
+
+input DineUpUserWhereInput {
+  id: IDFilter
+  OR: [DineUpUserWhereInput]
+  AND: [DineUpUserWhereInput]
+  NOT: DineUpUserWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+  employment: EmployeeWhereInput
+
+  isActive: BooleanFilter
+  managedBranches: BranchWhereInput
+  orders: OrderWhereInput
+
+  phoneNumber: StringFilter
+  restaurants: RestaurantWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+
+  user: UserWhereInput
+}
+input DineUpUserOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+  employment: EmployeeOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  phoneNumber: OrderStringEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+
+  user: UserOrderByInput
+}
+input DineUpUserCreateInput {
+  user: UserCreateNestedInput
+  phoneNumber: String
+  employment: EmployeeCreateNestedInput
+  managedBranches: BranchCreateNestedManyInput
+  orders: OrderCreateNestedManyInput
+  restaurants: RestaurantCreateNestedManyInput
+  createdAt: DateTime
+  createdBy: UserCreateNestedInput
+  updatedAt: DateTime
+  updatedBy: UserCreateNestedInput
+  isActive: Boolean
+}
+input DineUpUserCreateNestedInput {
+  create: DineUpUserCreateInput
+  connect: DineUpUserWhereInput
+}
+input DineUpUserCreateNestedManyInput {
+  create: [DineUpUserCreateInput]
+  connect: [DineUpUserWhereInput]
+}
+input DineUpUserUpdateNestedInput {
+  create: DineUpUserCreateInput
+  update: DineUpUserUpdateInput
+  delete: Boolean
+  connect: DineUpUserWhereInput
+  disconnect: Boolean
+}
+input DineUpUserUpdateInput {
+  user: UserUpdateNestedInput
+  
+  employment: EmployeeUpdateNestedInput
+  isActive: Boolean
+  managedBranches: BranchUpdateNestedManyInput
+  orders: OrderUpdateNestedManyInput
+  phoneNumber: String
+  restaurants: RestaurantUpdateNestedManyInput
+  
+  createdAt: DateTime
+  createdBy: UserUpdateNestedInput
+  updatedAt: DateTime
+  updatedBy: UserUpdateNestedInput
+}
+input DineUpUserUpdateNestedManyInput {
+  create: [DineUpUserCreateInput]
+  update: [DineUpUserUpdateWithWhereInput]
+  delete: [DineUpUserWhereInput]
+  connect: [DineUpUserWhereInput]
+  disconnect: [DineUpUserWhereInput]
+}
+input DineUpUserUpdateWithWhereInput {
+  where: DineUpUserWhereInput
+  input: DineUpUserUpdateInput
+}
+
+input RoleWhereInput {
+  id: IDFilter
+  OR: [RoleWhereInput]
+  AND: [RoleWhereInput]
+  NOT: RoleWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  isActive: BooleanFilter
+
+  """is default"""
+  isDefault: BooleanFilter
+  jobfunction: JobFunctionWhereInput
+
+  """name"""
+  name: StringFilter
+  restaurants: RestaurantWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input RoleOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """is default"""
+  isDefault: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input RoleCreateNestedManyInput {
+  create: [RoleCreateInput]
+  connect: [RoleWhereInput]
+}
+input RoleCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  isActive: Boolean
+
+  isDefault: Boolean
+  jobfunctionSet: JobFunctionCreateNestedManyInput
+
+  """name"""
+  name: String!
+  restaurants: RestaurantCreateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input RoleUpdateNestedManyInput {
+  create: [RoleCreateInput]
+  update: [RoleUpdateWithWhereInput]
+  delete: [RoleWhereInput]
+  connect: [RoleWhereInput]
+  disconnect: [RoleWhereInput]
+}
+input RoleUpdateWithWhereInput {
+  where: RoleWhereInput
+  input: RoleUpdateInput
+}
+input RoleUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  isActive: Boolean
+
+  isDefault: Boolean
+  jobfunctionSet: JobFunctionUpdateNestedManyInput
+
+  """name"""
+  name: String
+  restaurants: RestaurantUpdateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+
+input EmployeeWhereInput {
+  id: IDFilter
+  OR: [EmployeeWhereInput]
+  AND: [EmployeeWhereInput]
+  NOT: EmployeeWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """dine up user"""
+  dineUpUser: DineUpUserWhereInput
+
+  isActive: BooleanFilter
+  jobFunctions: JobFunctionWhereInput
+
+  """leader"""
+  leader: EmployeeWhereInput
+  orders: OrderWhereInput
+  restaurants: RestaurantWhereInput
+  teamMembers: EmployeeWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input EmployeeOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  """dine up user"""
+  dineUpUser: DineUpUserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """leader"""
+  leader: EmployeeOrderByInput
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input EmployeeCreateNestedInput {
+  create: EmployeeCreateInput
+  connect: EmployeeWhereInput
+}
+input EmployeeCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  """dine up user"""
+  dineUpUser: DineUpUserCreateNestedInput
+
+  isActive: Boolean
+  jobFunctions: JobFunctionCreateNestedManyInput
+
+  """leader"""
+  leader: EmployeeCreateNestedInput
+  orders: OrderCreateNestedManyInput
+  restaurants: RestaurantCreateNestedManyInput
+  teamMembers: EmployeeCreateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input EmployeeCreateNestedManyInput {
+  create: [EmployeeCreateInput]
+  connect: [EmployeeWhereInput]
+}
+input EmployeeUpdateNestedInput {
+  create: EmployeeCreateInput
+  update: EmployeeUpdateInput
+  delete: Boolean
+  connect: EmployeeWhereInput
+  disconnect: Boolean
+}
+input EmployeeUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """dine up user"""
+  dineUpUser: DineUpUserUpdateNestedInput
+
+  isActive: Boolean
+  jobFunctions: JobFunctionUpdateNestedManyInput
+
+  """leader"""
+  leader: EmployeeUpdateNestedInput
+  orders: OrderUpdateNestedManyInput
+  restaurants: RestaurantUpdateNestedManyInput
+  teamMembers: EmployeeUpdateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+input EmployeeUpdateNestedManyInput {
+  create: [EmployeeCreateInput]
+  update: [EmployeeUpdateWithWhereInput]
+  delete: [EmployeeWhereInput]
+  connect: [EmployeeWhereInput]
+  disconnect: [EmployeeWhereInput]
+}
+input EmployeeUpdateWithWhereInput {
+  where: EmployeeWhereInput
+  input: EmployeeUpdateInput
+}
+
+input JobFunctionWhereInput {
+  id: IDFilter
+  OR: [JobFunctionWhereInput]
+  AND: [JobFunctionWhereInput]
+  NOT: JobFunctionWhereInput
+
+  """branch"""
+  branch: BranchWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """employee"""
+  employee: EmployeeWhereInput
+
+  isActive: BooleanFilter
+  roles: RoleWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input JobFunctionOrderByInput {
+  """branch"""
+  branch: BranchOrderByInput
+
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  """employee"""
+  employee: EmployeeOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input JobFunctionCreateNestedManyInput {
+  create: [JobFunctionCreateInput]
+  connect: [JobFunctionWhereInput]
+}
+input JobFunctionCreateInput {
+  """branch"""
+  branch: BranchCreateNestedInput
+
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  """employee"""
+  employee: EmployeeCreateNestedInput
+
+  isActive: Boolean
+  roles: RoleCreateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input JobFunctionUpdateNestedManyInput {
+  create: [JobFunctionCreateInput]
+  update: [JobFunctionUpdateWithWhereInput]
+  delete: [JobFunctionWhereInput]
+  connect: [JobFunctionWhereInput]
+  disconnect: [JobFunctionWhereInput]
+}
+input JobFunctionUpdateWithWhereInput {
+  where: JobFunctionWhereInput
+  input: JobFunctionUpdateInput
+}
+input JobFunctionUpdateInput {
+  """branch"""
+  branch: BranchUpdateNestedInput
+
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """employee"""
+  employee: EmployeeUpdateNestedInput
+
+  isActive: Boolean
+  roles: RoleUpdateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+
+
+
+
+input RestaurantWhereInput {
+  id: IDFilter
+  OR: [RestaurantWhereInput]
+  AND: [RestaurantWhereInput]
+  NOT: RestaurantWhereInput
+  branches: BranchWhereInput
+  categories: CategoryWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """email"""
+  email: StringFilter
+  employees: EmployeeWhereInput
+
+  isActive: BooleanFilter
+
+  """is main"""
+  isMain: BooleanFilter
+
+  """logo"""
+  logo: StringFilter
+  menus: MenuWhereInput
+
+  """name"""
+  name: StringFilter
+  orders: OrderWhereInput
+
+  """owner"""
+  owner: DineUpUserWhereInput
+
+  phoneNumber: StringFilter
+  roles: RoleWhereInput
+
+  """slogan"""
+  slogan: StringFilter
+
+  """slug"""
+  slug: StringFilter
+  socailMedia: SocialMediaWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+
+  """website"""
+  website: StringFilter
+}
+input RestaurantOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  """email"""
+  email: OrderStringEnum
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """is main"""
+  isMain: OrderEnum
+
+  """logo"""
+  logo: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  """owner"""
+  owner: DineUpUserOrderByInput
+
+  phoneNumber: OrderStringEnum
+
+  """slogan"""
+  slogan: OrderStringEnum
+
+  """slug"""
+  slug: OrderStringEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+
+  """website"""
+  website: OrderStringEnum
+}
+input RestaurantCreateNestedManyInput {
+  create: [RestaurantCreateInput]
+  connect: [RestaurantWhereInput]
+}
+input RestaurantCreateInput {
+  branches: BranchCreateNestedManyInput
+  categories: CategoryCreateNestedManyInput
+  createdAt: DateTime
+  createdBy: UserCreateNestedInput
+  email: String
+  employees: EmployeeCreateNestedManyInput
+  isActive: Boolean
+  isMain: Boolean
+  logo: FileInput
+  menus: MenuCreateNestedManyInput
+  name: String!
+  orders: OrderCreateNestedManyInput
+  owner: DineUpUserCreateNestedInput
+  phoneNumber: String
+  roles: RoleCreateNestedManyInput
+  slogan: String
+  slug: String
+  socailMedia: SocialMediaCreateNestedManyInput
+  updatedAt: DateTime
+  updatedBy: UserCreateNestedInput
+  website: String
+}
+input RestaurantCreateNestedInput {
+  create: RestaurantCreateInput
+  connect: RestaurantWhereInput
+}
+input RestaurantUpdateNestedManyInput {
+  create: [RestaurantCreateInput]
+  update: [RestaurantUpdateWithWhereInput]
+  delete: [RestaurantWhereInput]
+  connect: [RestaurantWhereInput]
+  disconnect: [RestaurantWhereInput]
+}
+input RestaurantUpdateWithWhereInput {
+  where: RestaurantWhereInput
+  input: RestaurantUpdateInput
+}
+input RestaurantUpdateInput {
+  branches: BranchUpdateNestedManyInput
+  categories: CategoryUpdateNestedManyInput
+
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """email"""
+  email: String
+  employees: EmployeeUpdateNestedManyInput
+
+  isActive: Boolean
+
+  isMain: Boolean
+
+  """logo"""
+  logo: FileInput
+  menus: MenuUpdateNestedManyInput
+
+  """name"""
+  name: String
+  orders: OrderUpdateNestedManyInput
+
+  """owner"""
+  owner: DineUpUserUpdateNestedInput
+
+  phoneNumber: String
+  roles: RoleUpdateNestedManyInput
+
+  """slogan"""
+  slogan: String
+
+  """slug"""
+  slug: String
+  socailMedia: SocialMediaUpdateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+
+  """website"""
+  website: String
+}
+input RestaurantUpdateNestedInput {
+  create: RestaurantCreateInput
+  update: RestaurantUpdateInput
+  delete: Boolean
+  connect: RestaurantWhereInput
+  disconnect: Boolean
+}
+
+input BranchWhereInput {
+  id: IDFilter
+  OR: [BranchWhereInput]
+  AND: [BranchWhereInput]
+  NOT: BranchWhereInput
+
+  """address"""
+  address: StringFilter
+
+  """address detail"""
+  addressDetail: StringFilter
+
+  """admin"""
+  admin: DineUpUserWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """email"""
+  email: StringFilter
+
+  isActive: BooleanFilter
+
+  """is main"""
+  isMain: BooleanFilter
+  jobFunctions: JobFunctionWhereInput
+  menus: MenuWhereInput
+
+  """name"""
+  name: StringFilter
+  phoneNumbers: BranchPhoneNumberWhereInput
+
+  """postal code"""
+  postalCode: StringFilter
+
+  """restaurant"""
+  restaurant: RestaurantWhereInput
+
+  """slug"""
+  slug: StringFilter
+  tables: TableWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+
+  """website"""
+  website: StringFilter
+}
+input BranchOrderByInput {
+  """address"""
+  address: OrderStringEnum
+
+  """address detail"""
+  addressDetail: OrderStringEnum
+
+  """admin"""
+  admin: DineUpUserOrderByInput
+
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  """email"""
+  email: OrderStringEnum
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """is main"""
+  isMain: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  """postal code"""
+  postalCode: OrderStringEnum
+
+  """restaurant"""
+  restaurant: RestaurantOrderByInput
+
+  """slug"""
+  slug: OrderStringEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+
+  """website"""
+  website: OrderStringEnum
+}
+input BranchCreateNestedManyInput {
+  create: [BranchCreateInput]
+  connect: [BranchWhereInput]
+}
+input BranchCreateInput {
+  address: String
+  addressDetail: String
+  admin: DineUpUserCreateNestedInput
+  createdAt: DateTime
+  createdBy: UserCreateNestedInput
+  email: String
+  isActive: Boolean
+  isMain: Boolean
+  jobFunctions: JobFunctionCreateNestedManyInput
+  menus: MenuCreateNestedManyInput
+  name: String!
+  phoneNumbers: BranchPhoneNumberCreateNestedManyInput
+  postalCode: String
+  restaurant: RestaurantCreateNestedInput
+  slug: String
+  tables: TableCreateNestedManyInput
+  updatedAt: DateTime
+  updatedBy: UserCreateNestedInput
+  website: String
+}
+input BranchCreateNestedInput {
+  create: BranchCreateInput
+  connect: BranchWhereInput
+}
+input BranchUpdateNestedManyInput {
+  create: [BranchCreateInput]
+  update: [BranchUpdateWithWhereInput]
+  delete: [BranchWhereInput]
+  connect: [BranchWhereInput]
+  disconnect: [BranchWhereInput]
+}
+input BranchUpdateWithWhereInput {
+  where: BranchWhereInput
+  input: BranchUpdateInput
+}
+input BranchUpdateInput {
+  """address"""
+  address: String
+
+  """address detail"""
+  addressDetail: String
+
+  """admin"""
+  admin: DineUpUserUpdateNestedInput
+
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """email"""
+  email: String
+
+  isActive: Boolean
+
+  isMain: Boolean
+  jobFunctions: JobFunctionUpdateNestedManyInput
+  menus: MenuUpdateNestedManyInput
+
+  """name"""
+  name: String
+  phoneNumbers: BranchPhoneNumberUpdateNestedManyInput
+
+  """postal code"""
+  postalCode: String
+
+  """restaurant"""
+  restaurant: RestaurantUpdateNestedInput
+
+  """slug"""
+  slug: String
+  tables: TableUpdateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+
+  """website"""
+  website: String
+}
+input BranchUpdateNestedInput {
+  create: BranchCreateInput
+  update: BranchUpdateInput
+  delete: Boolean
+  connect: BranchWhereInput
+  disconnect: Boolean
+}
+
+input BranchPhoneNumberWhereInput {
+  id: IDFilter
+  OR: [BranchPhoneNumberWhereInput]
+  AND: [BranchPhoneNumberWhereInput]
+  NOT: BranchPhoneNumberWhereInput
+
+  """branch"""
+  branch: BranchWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """identifier"""
+  identifier: StringFilter
+
+  isActive: BooleanFilter
+
+  phoneNumber: StringFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input BranchPhoneNumberOrderByInput {
+  """branch"""
+  branch: BranchOrderByInput
+
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  """identifier"""
+  identifier: OrderStringEnum
+
+  isActive: OrderEnum
+
+  phoneNumber: OrderStringEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input BranchPhoneNumberCreateNestedManyInput {
+  create: [BranchPhoneNumberCreateInput]
+  connect: [BranchPhoneNumberWhereInput]
+}
+input BranchPhoneNumberCreateInput {
+  """branch"""
+  branch: BranchCreateNestedInput
+
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  """identifier"""
+  identifier: String
+
+  isActive: Boolean
+
+  phoneNumber: String!
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input BranchPhoneNumberUpdateNestedManyInput {
+  create: [BranchPhoneNumberCreateInput]
+  update: [BranchPhoneNumberUpdateWithWhereInput]
+  delete: [BranchPhoneNumberWhereInput]
+  connect: [BranchPhoneNumberWhereInput]
+  disconnect: [BranchPhoneNumberWhereInput]
+}
+input BranchPhoneNumberUpdateWithWhereInput {
+  where: BranchPhoneNumberWhereInput
+  input: BranchPhoneNumberUpdateInput
+}
+input BranchPhoneNumberUpdateInput {
+  """branch"""
+  branch: BranchUpdateNestedInput
+
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """identifier"""
+  identifier: String
+
+  isActive: Boolean
+
+  phoneNumber: String
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+
+input TableWhereInput {
+  id: IDFilter
+  OR: [TableWhereInput]
+  AND: [TableWhereInput]
+  NOT: TableWhereInput
+
+  """branch"""
+  branch: BranchWhereInput
+
+  """capacity"""
+  capacity: IntFilter
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """identifier"""
+  identifier: StringFilter
+
+  isActive: BooleanFilter
+
+  """location description"""
+  locationDescription: StringFilter
+  orders: OrderWhereInput
+
+  """position"""
+  position: IntFilter
+
+  """status"""
+  status: TableStatusEnum
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input TableOrderByInput {
+  """branch"""
+  branch: BranchOrderByInput
+
+  """capacity"""
+  capacity: OrderEnum
+
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  """identifier"""
+  identifier: OrderStringEnum
+
+  isActive: OrderEnum
+
+  """location description"""
+  locationDescription: OrderStringEnum
+
+  """position"""
+  position: OrderEnum
+
+  """status"""
+  status: OrderStringEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input TableCreateNestedInput {
+  create: TableCreateInput
+  connect: TableWhereInput
+}
+input TableCreateInput {
+  """branch"""
+  branch: BranchCreateNestedInput
+
+  """capacity"""
+  capacity: Int
+
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  """identifier"""
+  identifier: String!
+
+  isActive: Boolean
+
+  """location description"""
+  locationDescription: String
+  orders: OrderCreateNestedManyInput
+
+  """position"""
+  position: Int
+
+  """status"""
+  status: TableStatusEnum
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input TableCreateNestedManyInput {
+  create: [TableCreateInput]
+  connect: [TableWhereInput]
+}
+input TableUpdateNestedInput {
+  create: TableCreateInput
+  update: TableUpdateInput
+  delete: Boolean
+  connect: TableWhereInput
+  disconnect: Boolean
+}
+input TableUpdateInput {
+  """branch"""
+  branch: BranchUpdateNestedInput
+
+  """capacity"""
+  capacity: Int
+
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """identifier"""
+  identifier: String
+
+  isActive: Boolean
+
+  """location description"""
+  locationDescription: String
+  orders: OrderUpdateNestedManyInput
+
+  """position"""
+  position: Int
+
+  """status"""
+  status: TableStatusEnum
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+input TableUpdateNestedManyInput {
+  create: [TableCreateInput]
+  update: [TableUpdateWithWhereInput]
+  delete: [TableWhereInput]
+  connect: [TableWhereInput]
+  disconnect: [TableWhereInput]
+}
+input TableUpdateWithWhereInput {
+  where: TableWhereInput
+  input: TableUpdateInput
+}
+
+input SocialMediaPlatformWhereInput {
+  id: IDFilter
+  OR: [SocialMediaPlatformWhereInput]
+  AND: [SocialMediaPlatformWhereInput]
+  NOT: SocialMediaPlatformWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  isActive: BooleanFilter
+
+  """logo"""
+  logo: StringFilter
+
+  """name"""
+  name: StringFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input SocialMediaPlatformOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """logo"""
+  logo: OrderStringEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input SocialMediaPlatformCreateNestedInput {
+  create: SocialMediaPlatformCreateInput
+  connect: SocialMediaPlatformWhereInput
+}
+input SocialMediaPlatformCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  isActive: Boolean
+
+  """logo"""
+  logo: String!
+
+  """name"""
+  name: String!
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input SocialMediaPlatformCreateNestedManyInput {
+  create: [SocialMediaPlatformCreateInput]
+  connect: [SocialMediaPlatformWhereInput]
+}
+input SocialMediaPlatformUpdateNestedInput {
+  create: SocialMediaPlatformCreateInput
+  update: SocialMediaPlatformUpdateInput
+  delete: Boolean
+  connect: SocialMediaPlatformWhereInput
+  disconnect: Boolean
+}
+input SocialMediaPlatformUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  isActive: Boolean
+
+  """logo"""
+  logo: String
+
+  """name"""
+  name: String
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+input SocialMediaPlatformUpdateNestedManyInput {
+  create: [SocialMediaPlatformCreateInput]
+  update: [SocialMediaPlatformUpdateWithWhereInput]
+  delete: [SocialMediaPlatformWhereInput]
+  connect: [SocialMediaPlatformWhereInput]
+  disconnect: [SocialMediaPlatformWhereInput]
+}
+input SocialMediaPlatformUpdateWithWhereInput {
+  where: SocialMediaPlatformWhereInput
+  input: SocialMediaPlatformUpdateInput
+}
+
+input SocialMediaWhereInput {
+  id: IDFilter
+  OR: [SocialMediaWhereInput]
+  AND: [SocialMediaWhereInput]
+  NOT: SocialMediaWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  isActive: BooleanFilter
+
+  """name"""
+  name: StringFilter
+
+  """restaurant"""
+  restaurant: RestaurantWhereInput
+
+  """social media platform"""
+  socialMediaPlatform: SocialMediaPlatformWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+
+  """url"""
+  url: StringFilter
+}
+input SocialMediaOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  """restaurant"""
+  restaurant: RestaurantOrderByInput
+
+  """social media platform"""
+  socialMediaPlatform: SocialMediaPlatformOrderByInput
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+
+  """url"""
+  url: OrderStringEnum
+}
+input SocialMediaCreateNestedManyInput {
+  create: [SocialMediaCreateInput]
+  connect: [SocialMediaWhereInput]
+}
+input SocialMediaCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  isActive: Boolean
+
+  """name"""
+  name: String
+
+  """restaurant"""
+  restaurant: RestaurantCreateNestedInput
+
+  """social media platform"""
+  socialMediaPlatform: SocialMediaPlatformCreateNestedInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+
+  """url"""
+  url: String!
+}
+input SocialMediaUpdateNestedManyInput {
+  create: [SocialMediaCreateInput]
+  update: [SocialMediaUpdateWithWhereInput]
+  delete: [SocialMediaWhereInput]
+  connect: [SocialMediaWhereInput]
+  disconnect: [SocialMediaWhereInput]
+}
+input SocialMediaUpdateWithWhereInput {
+  where: SocialMediaWhereInput
+  input: SocialMediaUpdateInput
+}
+input SocialMediaUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  isActive: Boolean
+
+  """name"""
+  name: String
+
+  """restaurant"""
+  restaurant: RestaurantUpdateNestedInput
+
+  """social media platform"""
+  socialMediaPlatform: SocialMediaPlatformUpdateNestedInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+
+  """url"""
+  url: String
+}
+
+
+
+
+input OrderStatusWhereInput {
+  id: IDFilter
+  OR: [OrderStatusWhereInput]
+  AND: [OrderStatusWhereInput]
+  NOT: OrderStatusWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  isActive: BooleanFilter
+
+  """name"""
+  name: StringFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input OrderStatusOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input OrderStatusCreateNestedInput {
+  create: OrderStatusCreateInput
+  connect: OrderStatusWhereInput
+}
+input OrderStatusCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  isActive: Boolean
+
+  """name"""
+  name: String!
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input OrderStatusCreateNestedManyInput {
+  create: [OrderStatusCreateInput]
+  connect: [OrderStatusWhereInput]
+}
+input OrderStatusUpdateNestedInput {
+  create: OrderStatusCreateInput
+  update: OrderStatusUpdateInput
+  delete: Boolean
+  connect: OrderStatusWhereInput
+  disconnect: Boolean
+}
+input OrderStatusUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  isActive: Boolean
+
+  """name"""
+  name: String
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+input OrderStatusUpdateNestedManyInput {
+  create: [OrderStatusCreateInput]
+  update: [OrderStatusUpdateWithWhereInput]
+  delete: [OrderStatusWhereInput]
+  connect: [OrderStatusWhereInput]
+  disconnect: [OrderStatusWhereInput]
+}
+input OrderStatusUpdateWithWhereInput {
+  where: OrderStatusWhereInput
+  input: OrderStatusUpdateInput
+}
+
+input OrderWhereInput {
+  id: IDFilter
+  OR: [OrderWhereInput]
+  AND: [OrderWhereInput]
+  NOT: OrderWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """diner"""
+  diner: DineUpUserWhereInput
+
+  isActive: BooleanFilter
+
+  """number"""
+  number: IntFilter
+  orderItems: OrderItemWhereInput
+
+  """restaurant"""
+  restaurant: RestaurantWhereInput
+
+  """status"""
+  status: OrderStatusWhereInput
+
+  """table"""
+  table: TableWhereInput
+
+  """total"""
+  total: FloatFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+
+  """waiter"""
+  waiter: EmployeeWhereInput
+}
+input OrderOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  """diner"""
+  diner: DineUpUserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """number"""
+  number: OrderEnum
+
+  """restaurant"""
+  restaurant: RestaurantOrderByInput
+
+  """status"""
+  status: OrderStatusOrderByInput
+
+  """table"""
+  table: TableOrderByInput
+
+  """total"""
+  total: OrderEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+
+  """waiter"""
+  waiter: EmployeeOrderByInput
+}
+input OrderCreateNestedManyInput {
+  create: [OrderCreateInput]
+  connect: [OrderWhereInput]
+}
+input OrderCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  """diner"""
+  diner: DineUpUserCreateNestedInput
+
+  isActive: Boolean
+
+  """number"""
+  number: Int
+  orderItems: OrderItemCreateNestedManyInput
+
+  """restaurant"""
+  restaurant: RestaurantCreateNestedInput
+
+  """status"""
+  status: OrderStatusCreateNestedInput
+
+  """table"""
+  table: TableCreateNestedInput
+
+  """total"""
+  total: Float
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+
+  """waiter"""
+  waiter: EmployeeCreateNestedInput
+}
+input OrderCreateNestedInput {
+  create: OrderCreateInput
+  connect: OrderWhereInput
+}
+input OrderUpdateNestedManyInput {
+  create: [OrderCreateInput]
+  update: [OrderUpdateWithWhereInput]
+  delete: [OrderWhereInput]
+  connect: [OrderWhereInput]
+  disconnect: [OrderWhereInput]
+}
+input OrderUpdateWithWhereInput {
+  where: OrderWhereInput
+  input: OrderUpdateInput
+}
+input OrderUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """diner"""
+  diner: DineUpUserUpdateNestedInput
+
+  isActive: Boolean
+
+  """number"""
+  number: Int
+  orderItems: OrderItemUpdateNestedManyInput
+
+  """restaurant"""
+  restaurant: RestaurantUpdateNestedInput
+
+  """status"""
+  status: OrderStatusUpdateNestedInput
+
+  """table"""
+  table: TableUpdateNestedInput
+
+  """total"""
+  total: Float
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+
+  """waiter"""
+  waiter: EmployeeUpdateNestedInput
+}
+input OrderUpdateNestedInput {
+  create: OrderCreateInput
+  update: OrderUpdateInput
+  delete: Boolean
+  connect: OrderWhereInput
+  disconnect: Boolean
+}
+
+input OrderItemWhereInput {
+  id: IDFilter
+  OR: [OrderItemWhereInput]
+  AND: [OrderItemWhereInput]
+  NOT: OrderItemWhereInput
+
+  """amount"""
+  amount: IntFilter
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """diner name"""
+  dinerName: StringFilter
+
+  isActive: BooleanFilter
+
+  """menu item"""
+  menuItem: MenuItemWhereInput
+
+  """observations"""
+  observations: StringFilter
+
+  """order"""
+  order: OrderWhereInput
+  orderItemOptions: OrderItemOptionWhereInput
+
+  """price"""
+  price: FloatFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+
+  """variant option"""
+  variantOption: VariantOptionWhereInput
+}
+input OrderItemOrderByInput {
+  """amount"""
+  amount: OrderEnum
+
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  """diner name"""
+  dinerName: OrderStringEnum
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """menu item"""
+  menuItem: MenuItemOrderByInput
+
+  """observations"""
+  observations: OrderStringEnum
+
+  """order"""
+  order: OrderOrderByInput
+
+  """price"""
+  price: OrderEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+
+  """variant option"""
+  variantOption: VariantOptionOrderByInput
+}
+input OrderItemCreateNestedManyInput {
+  create: [OrderItemCreateInput]
+  connect: [OrderItemWhereInput]
+}
+input OrderItemCreateInput {
+  """amount"""
+  amount: Int
+
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  """diner name"""
+  dinerName: String
+
+  isActive: Boolean
+
+  """menu item"""
+  menuItem: MenuItemCreateNestedInput
+
+  """observations"""
+  observations: String
+
+  """order"""
+  order: OrderCreateNestedInput
+  orderItemOptions: OrderItemOptionCreateNestedManyInput
+
+  """price"""
+  price: Float
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+
+  """variant option"""
+  variantOption: VariantOptionCreateNestedInput
+}
+input OrderItemCreateNestedInput {
+  create: OrderItemCreateInput
+  connect: OrderItemWhereInput
+}
+input OrderItemUpdateNestedManyInput {
+  create: [OrderItemCreateInput]
+  update: [OrderItemUpdateWithWhereInput]
+  delete: [OrderItemWhereInput]
+  connect: [OrderItemWhereInput]
+  disconnect: [OrderItemWhereInput]
+}
+input OrderItemUpdateWithWhereInput {
+  where: OrderItemWhereInput
+  input: OrderItemUpdateInput
+}
+input OrderItemUpdateInput {
+  """amount"""
+  amount: Int
+
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """diner name"""
+  dinerName: String
+
+  isActive: Boolean
+
+  """menu item"""
+  menuItem: MenuItemUpdateNestedInput
+
+  """observations"""
+  observations: String
+
+  """order"""
+  order: OrderUpdateNestedInput
+  orderItemOptions: OrderItemOptionUpdateNestedManyInput
+
+  """price"""
+  price: Float
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+
+  """variant option"""
+  variantOption: VariantOptionUpdateNestedInput
+}
+input OrderItemUpdateNestedInput {
+  create: OrderItemCreateInput
+  update: OrderItemUpdateInput
+  delete: Boolean
+  connect: OrderItemWhereInput
+  disconnect: Boolean
+}
+
+input OrderItemOptionWhereInput {
+  id: IDFilter
+  OR: [OrderItemOptionWhereInput]
+  AND: [OrderItemOptionWhereInput]
+  NOT: OrderItemOptionWhereInput
+
+  """amount"""
+  amount: IntFilter
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  isActive: BooleanFilter
+
+  """item option"""
+  itemOption: ItemOptionWhereInput
+
+  """order item"""
+  orderItem: OrderItemWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input OrderItemOptionOrderByInput {
+  """amount"""
+  amount: OrderEnum
+
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """item option"""
+  itemOption: ItemOptionOrderByInput
+
+  """order item"""
+  orderItem: OrderItemOrderByInput
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input OrderItemOptionCreateNestedManyInput {
+  create: [OrderItemOptionCreateInput]
+  connect: [OrderItemOptionWhereInput]
+}
+input OrderItemOptionCreateInput {
+  """amount"""
+  amount: Int
+
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  isActive: Boolean
+
+  """item option"""
+  itemOption: ItemOptionCreateNestedInput
+
+  """order item"""
+  orderItem: OrderItemCreateNestedInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input OrderItemOptionUpdateNestedManyInput {
+  create: [OrderItemOptionCreateInput]
+  update: [OrderItemOptionUpdateWithWhereInput]
+  delete: [OrderItemOptionWhereInput]
+  connect: [OrderItemOptionWhereInput]
+  disconnect: [OrderItemOptionWhereInput]
+}
+input OrderItemOptionUpdateWithWhereInput {
+  where: OrderItemOptionWhereInput
+  input: OrderItemOptionUpdateInput
+}
+input OrderItemOptionUpdateInput {
+  """amount"""
+  amount: Int
+
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  isActive: Boolean
+
+  """item option"""
+  itemOption: ItemOptionUpdateNestedInput
+
+  """order item"""
+  orderItem: OrderItemUpdateNestedInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+
+
+
+
+input MenuWhereInput {
+  id: IDFilter
+  OR: [MenuWhereInput]
+  AND: [MenuWhereInput]
+  NOT: MenuWhereInput
+  categories: CategoryWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  isActive: BooleanFilter
+
+  """is main"""
+  isMain: BooleanFilter
+  items: MenuItemWhereInput
+
+  """name"""
+  name: StringFilter
+
+  """restaurant"""
+  restaurant: RestaurantWhereInput
+  restaurantBranches: BranchWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input MenuOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """is main"""
+  isMain: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  """restaurant"""
+  restaurant: RestaurantOrderByInput
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input MenuCreateInput {
+  
+  name: String
+  isMain: Boolean
+  categories: CategoryCreateNestedManyInput
+  items: MenuItemCreateNestedManyInput
+  restaurant: RestaurantCreateNestedInput
+  restaurantBranches: BranchCreateNestedManyInput
+
+  isActive: Boolean
+  createdAt: DateTime
+  createdBy: UserCreateNestedInput
+  updatedAt: DateTime
+  updatedBy: UserCreateNestedInput
+}
+input MenuCreateNestedInput {
+  create: MenuCreateInput
+  connect: MenuWhereInput
+}
+input MenuCreateNestedManyInput {
+  create: [MenuCreateInput]
+  connect: [MenuWhereInput]
+}
+input MenuUpdateNestedInput {
+  create: MenuCreateInput
+  update: MenuUpdateInput
+  delete: Boolean
+  connect: MenuWhereInput
+  disconnect: Boolean
+}
+input MenuUpdateInput {
+  categories: CategoryUpdateNestedManyInput
+
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  isActive: Boolean
+
+  isMain: Boolean
+  items: MenuItemUpdateNestedManyInput
+
+  """name"""
+  name: String
+
+  """restaurant"""
+  restaurant: RestaurantUpdateNestedInput
+  restaurantBranches: BranchUpdateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+input MenuUpdateNestedManyInput {
+  create: [MenuCreateInput]
+  update: [MenuUpdateWithWhereInput]
+  delete: [MenuWhereInput]
+  connect: [MenuWhereInput]
+  disconnect: [MenuWhereInput]
+}
+input MenuUpdateWithWhereInput {
+  where: MenuWhereInput
+  input: MenuUpdateInput
+}
+
+input CategoryWhereInput {
+  id: IDFilter
+  OR: [CategoryWhereInput]
+  AND: [CategoryWhereInput]
+  NOT: CategoryWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """description"""
+  description: StringFilter
+
+  """icon"""
+  icon: StringFilter
+
+  isActive: BooleanFilter
+  items: MenuItemWhereInput
+  menus: MenuWhereInput
+
+  """name"""
+  name: StringFilter
+
+  """position"""
+  position: IntFilter
+
+  """restaurant"""
+  restaurant: RestaurantWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input CategoryOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  """description"""
+  description: OrderStringEnum
+
+  """icon"""
+  icon: OrderStringEnum
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  """position"""
+  position: OrderEnum
+
+  """restaurant"""
+  restaurant: RestaurantOrderByInput
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input CategoryCreateNestedManyInput {
+  create: [CategoryCreateInput]
+  connect: [CategoryWhereInput]
+}
+input CategoryCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  """description"""
+  description: String
+
+  """icon"""
+  icon: String
+
+  isActive: Boolean
+  items: MenuItemCreateNestedManyInput
+  menus: MenuCreateNestedManyInput
+
+  """name"""
+  name: String!
+
+  """position"""
+  position: Int
+
+  """restaurant"""
+  restaurant: RestaurantCreateNestedInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input CategoryCreateNestedInput {
+  create: CategoryCreateInput
+  connect: CategoryWhereInput
+}
+input CategoryUpdateNestedManyInput {
+  create: [CategoryCreateInput]
+  update: [CategoryUpdateWithWhereInput]
+  delete: [CategoryWhereInput]
+  connect: [CategoryWhereInput]
+  disconnect: [CategoryWhereInput]
+}
+input CategoryUpdateWithWhereInput {
+  where: CategoryWhereInput
+  input: CategoryUpdateInput
+}
+input CategoryUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """description"""
+  description: String
+
+  """icon"""
+  icon: String
+
+  isActive: Boolean
+  items: MenuItemUpdateNestedManyInput
+  menus: MenuUpdateNestedManyInput
+
+  """name"""
+  name: String
+
+  """position"""
+  position: Int
+
+  """restaurant"""
+  restaurant: RestaurantUpdateNestedInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+input CategoryUpdateNestedInput {
+  create: CategoryCreateInput
+  update: CategoryUpdateInput
+  delete: Boolean
+  connect: CategoryWhereInput
+  disconnect: Boolean
+}
+
+input MenuItemWhereInput {
+  id: IDFilter
+  OR: [MenuItemWhereInput]
+  AND: [MenuItemWhereInput]
+  NOT: MenuItemWhereInput
+
+  """category"""
+  category: CategoryWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """description"""
+  description: StringFilter
+
+  """has multiple price"""
+  hasMultiplePrice: BooleanFilter
+  images: ItemImageWhereInput
+
+  isActive: BooleanFilter
+
+  """menu"""
+  menu: MenuWhereInput
+
+  """name"""
+  name: StringFilter
+  optionGroups: OptionGroupWhereInput
+  optionGroupsShared: OptionGroupWhereInput
+
+  """position"""
+  position: IntFilter
+
+  """price"""
+  price: FloatFilter
+  tags: ItemTagWhereInput
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+  variant: MenuItemVariantWhereInput
+}
+input MenuItemOrderByInput {
+  """category"""
+  category: CategoryOrderByInput
+
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  """description"""
+  description: OrderStringEnum
+
+  """has multiple price"""
+  hasMultiplePrice: OrderEnum
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """menu"""
+  menu: MenuOrderByInput
+
+  """name"""
+  name: OrderStringEnum
+
+  """position"""
+  position: OrderEnum
+
+  """price"""
+  price: OrderEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+  variant: MenuItemVariantOrderByInput
+}
+input MenuItemCreateNestedManyInput {
+  create: [MenuItemCreateInput]
+  connect: [MenuItemWhereInput]
+}
+input MenuItemCreateInput {
+  """category"""
+  category: CategoryCreateNestedInput
+
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  """description"""
+  description: String
+
+  hasMultiplePrice: Boolean
+  images: ItemImageCreateNestedManyInput
+
+  isActive: Boolean
+
+  """menu"""
+  menu: MenuCreateNestedInput
+
+  """name"""
+  name: String!
+  optionGroups: OptionGroupCreateNestedManyInput
+  optionGroupsShared: OptionGroupCreateNestedManyInput
+
+  """position"""
+  position: Int
+
+  """price"""
+  price: Float
+  tags: ItemTagCreateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+  variant: MenuItemVariantCreateNestedInput
+}
+input MenuItemCreateNestedInput {
+  create: MenuItemCreateInput
+  connect: MenuItemWhereInput
+}
+input MenuItemUpdateNestedManyInput {
+  create: [MenuItemCreateInput]
+  update: [MenuItemUpdateWithWhereInput]
+  delete: [MenuItemWhereInput]
+  connect: [MenuItemWhereInput]
+  disconnect: [MenuItemWhereInput]
+}
+input MenuItemUpdateWithWhereInput {
+  where: MenuItemWhereInput
+  input: MenuItemUpdateInput
+}
+input MenuItemUpdateInput {
+  """category"""
+  category: CategoryUpdateNestedInput
+
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """description"""
+  description: String
+
+  hasMultiplePrice: Boolean
+  images: ItemImageUpdateNestedManyInput
+
+  isActive: Boolean
+
+  """menu"""
+  menu: MenuUpdateNestedInput
+
+  """name"""
+  name: String
+  optionGroups: OptionGroupUpdateNestedManyInput
+  optionGroupsShared: OptionGroupUpdateNestedManyInput
+
+  """position"""
+  position: Int
+
+  """price"""
+  price: Float
+  tags: ItemTagUpdateNestedManyInput
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+  variant: MenuItemVariantUpdateNestedInput
+}
+input MenuItemUpdateNestedInput {
+  create: MenuItemCreateInput
+  update: MenuItemUpdateInput
+  delete: Boolean
+  connect: MenuItemWhereInput
+  disconnect: Boolean
+}
+
+input MenuItemVariantWhereInput {
+  id: IDFilter
+  OR: [MenuItemVariantWhereInput]
+  AND: [MenuItemVariantWhereInput]
+  NOT: MenuItemVariantWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  isActive: BooleanFilter
+
+  """menu item"""
+  menuItem: MenuItemWhereInput
+
+  """name"""
+  name: StringFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+  variantOptions: VariantOptionWhereInput
+}
+input MenuItemVariantOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """menu item"""
+  menuItem: MenuItemOrderByInput
+
+  """name"""
+  name: OrderStringEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input MenuItemVariantCreateNestedInput {
+  create: MenuItemVariantCreateInput
+  connect: MenuItemVariantWhereInput
+}
+input MenuItemVariantCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  isActive: Boolean
+
+  """menu item"""
+  menuItem: MenuItemCreateNestedInput
+
+  """name"""
+  name: String!
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+  variantOptions: VariantOptionCreateNestedManyInput
+}
+input MenuItemVariantCreateNestedManyInput {
+  create: [MenuItemVariantCreateInput]
+  connect: [MenuItemVariantWhereInput]
+}
+input MenuItemVariantUpdateNestedInput {
+  create: MenuItemVariantCreateInput
+  update: MenuItemVariantUpdateInput
+  delete: Boolean
+  connect: MenuItemVariantWhereInput
+  disconnect: Boolean
+}
+input MenuItemVariantUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  isActive: Boolean
+
+  """menu item"""
+  menuItem: MenuItemUpdateNestedInput
+
+  """name"""
+  name: String
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+  variantOptions: VariantOptionUpdateNestedManyInput
+}
+input MenuItemVariantUpdateNestedManyInput {
+  create: [MenuItemVariantCreateInput]
+  update: [MenuItemVariantUpdateWithWhereInput]
+  delete: [MenuItemVariantWhereInput]
+  connect: [MenuItemVariantWhereInput]
+  disconnect: [MenuItemVariantWhereInput]
+}
+input MenuItemVariantUpdateWithWhereInput {
+  where: MenuItemVariantWhereInput
+  input: MenuItemVariantUpdateInput
+}
+
+input VariantOptionWhereInput {
+  id: IDFilter
+  OR: [VariantOptionWhereInput]
+  AND: [VariantOptionWhereInput]
+  NOT: VariantOptionWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """description"""
+  description: StringFilter
+
+  isActive: BooleanFilter
+
+  """is default"""
+  isDefault: BooleanFilter
+
+  """name"""
+  name: StringFilter
+
+  """position"""
+  position: IntFilter
+
+  """price"""
+  price: FloatFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+
+  """variant"""
+  variant: MenuItemVariantWhereInput
+}
+input VariantOptionOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  """description"""
+  description: OrderStringEnum
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """is default"""
+  isDefault: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  """position"""
+  position: OrderEnum
+
+  """price"""
+  price: OrderEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+
+  """variant"""
+  variant: MenuItemVariantOrderByInput
+}
+input VariantOptionCreateNestedManyInput {
+  create: [VariantOptionCreateInput]
+  connect: [VariantOptionWhereInput]
+}
+input VariantOptionCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  """description"""
+  description: String
+
+  isActive: Boolean
+
+  isDefault: Boolean
+
+  """name"""
+  name: String!
+
+  """position"""
+  position: Int
+
+  """price"""
+  price: Float!
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+
+  """variant"""
+  variant: MenuItemVariantCreateNestedInput
+}
+input VariantOptionCreateNestedInput {
+  create: VariantOptionCreateInput
+  connect: VariantOptionWhereInput
+}
+input VariantOptionUpdateNestedManyInput {
+  create: [VariantOptionCreateInput]
+  update: [VariantOptionUpdateWithWhereInput]
+  delete: [VariantOptionWhereInput]
+  connect: [VariantOptionWhereInput]
+  disconnect: [VariantOptionWhereInput]
+}
+input VariantOptionUpdateWithWhereInput {
+  where: VariantOptionWhereInput
+  input: VariantOptionUpdateInput
+}
+input VariantOptionUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """description"""
+  description: String
+
+  isActive: Boolean
+
+  isDefault: Boolean
+
+  """name"""
+  name: String
+
+  """position"""
+  position: Int
+
+  """price"""
+  price: Float
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+
+  """variant"""
+  variant: MenuItemVariantUpdateNestedInput
+}
+input VariantOptionUpdateNestedInput {
+  create: VariantOptionCreateInput
+  update: VariantOptionUpdateInput
+  delete: Boolean
+  connect: VariantOptionWhereInput
+  disconnect: Boolean
+}
+
+input ItemImageWhereInput {
+  id: IDFilter
+  OR: [ItemImageWhereInput]
+  AND: [ItemImageWhereInput]
+  NOT: ItemImageWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  """image"""
+  image: StringFilter
+
+  isActive: BooleanFilter
+
+  """menu item"""
+  menuItem: MenuItemWhereInput
+
+  """position"""
+  position: IntFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input ItemImageOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  """image"""
+  image: OrderEnum
+
+  isActive: OrderEnum
+
+  """menu item"""
+  menuItem: MenuItemOrderByInput
+
+  """position"""
+  position: OrderEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input ItemImageCreateNestedManyInput {
+  create: [ItemImageCreateInput]
+  connect: [ItemImageWhereInput]
+}
+input ItemImageCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  """image"""
+  image: FileInput!
+
+  isActive: Boolean
+
+  """menu item"""
+  menuItem: MenuItemCreateNestedInput
+
+  """position"""
+  position: Int
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input ItemImageUpdateNestedManyInput {
+  create: [ItemImageCreateInput]
+  update: [ItemImageUpdateWithWhereInput]
+  delete: [ItemImageWhereInput]
+  connect: [ItemImageWhereInput]
+  disconnect: [ItemImageWhereInput]
+}
+input ItemImageUpdateWithWhereInput {
+  where: ItemImageWhereInput
+  input: ItemImageUpdateInput
+}
+input ItemImageUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  """image"""
+  image: FileInput
+
+  isActive: Boolean
+
+  """menu item"""
+  menuItem: MenuItemUpdateNestedInput
+
+  """position"""
+  position: Int
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+
+input OptionGroupWhereInput {
+  id: IDFilter
+  OR: [OptionGroupWhereInput]
+  AND: [OptionGroupWhereInput]
+  NOT: OptionGroupWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  isActive: BooleanFilter
+
+  """is multiple"""
+  isMultiple: BooleanFilter
+
+  """is required"""
+  isRequired: BooleanFilter
+  itemOptions: ItemOptionWhereInput
+
+  """maximum"""
+  maximum: IntFilter
+
+  """menu item"""
+  menuItem: MenuItemWhereInput
+  menuItems: MenuItemWhereInput
+
+  """minimum"""
+  minimum: IntFilter
+
+  """name"""
+  name: StringFilter
+
+  """name type"""
+  nameType: OptionGroupNameTypeEnum
+
+  """position"""
+  position: IntFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input OptionGroupOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """is multiple"""
+  isMultiple: OrderEnum
+
+  """is required"""
+  isRequired: OrderEnum
+
+  """maximum"""
+  maximum: OrderEnum
+
+  """menu item"""
+  menuItem: MenuItemOrderByInput
+
+  """minimum"""
+  minimum: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  """name type"""
+  nameType: OrderStringEnum
+
+  """position"""
+  position: OrderEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input OptionGroupCreateNestedManyInput {
+  create: [OptionGroupCreateInput]
+  connect: [OptionGroupWhereInput]
+}
+input OptionGroupCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  isActive: Boolean
+
+  isMultiple: Boolean
+
+  isRequired: Boolean
+  itemOptions: ItemOptionCreateNestedManyInput
+
+  """maximum"""
+  maximum: Int
+
+  """menu item"""
+  menuItem: MenuItemCreateNestedInput
+  menuItems: MenuItemCreateNestedManyInput
+
+  """minimum"""
+  minimum: Int
+
+  """name"""
+  name: String!
+
+  """name type"""
+  nameType: OptionGroupNameTypeEnum
+
+  """position"""
+  position: Int
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input OptionGroupCreateNestedInput {
+  create: OptionGroupCreateInput
+  connect: OptionGroupWhereInput
+}
+input OptionGroupUpdateNestedManyInput {
+  create: [OptionGroupCreateInput]
+  update: [OptionGroupUpdateWithWhereInput]
+  delete: [OptionGroupWhereInput]
+  connect: [OptionGroupWhereInput]
+  disconnect: [OptionGroupWhereInput]
+}
+input OptionGroupUpdateWithWhereInput {
+  where: OptionGroupWhereInput
+  input: OptionGroupUpdateInput
+}
+input OptionGroupUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  isActive: Boolean
+
+  isMultiple: Boolean
+
+  isRequired: Boolean
+  itemOptions: ItemOptionUpdateNestedManyInput
+
+  """maximum"""
+  maximum: Int
+
+  """menu item"""
+  menuItem: MenuItemUpdateNestedInput
+  menuItems: MenuItemUpdateNestedManyInput
+
+  """minimum"""
+  minimum: Int
+
+  """name"""
+  name: String
+
+  """name type"""
+  nameType: OptionGroupNameTypeEnum
+
+  """position"""
+  position: Int
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+input OptionGroupUpdateNestedInput {
+  create: OptionGroupCreateInput
+  update: OptionGroupUpdateInput
+  delete: Boolean
+  connect: OptionGroupWhereInput
+  disconnect: Boolean
+}
+
+input ItemOptionWhereInput {
+  id: IDFilter
+  OR: [ItemOptionWhereInput]
+  AND: [ItemOptionWhereInput]
+  NOT: ItemOptionWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+  dependentOptions: ItemOptionWhereInput
+
+  """description"""
+  description: StringFilter
+
+  """group"""
+  group: OptionGroupWhereInput
+
+  isActive: BooleanFilter
+
+  """is default"""
+  isDefault: BooleanFilter
+  itemoption: ItemOptionWhereInput
+
+  """name"""
+  name: StringFilter
+
+  """position"""
+  position: IntFilter
+
+  """price"""
+  price: FloatFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input ItemOptionOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  """description"""
+  description: OrderStringEnum
+
+  """group"""
+  group: OptionGroupOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """is default"""
+  isDefault: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  """position"""
+  position: OrderEnum
+
+  """price"""
+  price: OrderEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input ItemOptionCreateNestedManyInput {
+  create: [ItemOptionCreateInput]
+  connect: [ItemOptionWhereInput]
+}
+input ItemOptionCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+  dependentOptions: ItemOptionCreateNestedManyInput
+
+  """description"""
+  description: String
+
+  """group"""
+  group: OptionGroupCreateNestedInput
+
+  isActive: Boolean
+
+  isDefault: Boolean
+  itemoptionSet: ItemOptionCreateNestedManyInput
+
+  """name"""
+  name: String!
+
+  """position"""
+  position: Int
+
+  """price"""
+  price: Float!
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input ItemOptionCreateNestedInput {
+  create: ItemOptionCreateInput
+  connect: ItemOptionWhereInput
+}
+input ItemOptionUpdateNestedManyInput {
+  create: [ItemOptionCreateInput]
+  update: [ItemOptionUpdateWithWhereInput]
+  delete: [ItemOptionWhereInput]
+  connect: [ItemOptionWhereInput]
+  disconnect: [ItemOptionWhereInput]
+}
+input ItemOptionUpdateWithWhereInput {
+  where: ItemOptionWhereInput
+  input: ItemOptionUpdateInput
+}
+input ItemOptionUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+  dependentOptions: ItemOptionUpdateNestedManyInput
+
+  """description"""
+  description: String
+
+  """group"""
+  group: OptionGroupUpdateNestedInput
+
+  isActive: Boolean
+
+  isDefault: Boolean
+  itemoptionSet: ItemOptionUpdateNestedManyInput
+
+  """name"""
+  name: String
+
+  """position"""
+  position: Int
+
+  """price"""
+  price: Float
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+input ItemOptionUpdateNestedInput {
+  create: ItemOptionCreateInput
+  update: ItemOptionUpdateInput
+  delete: Boolean
+  connect: ItemOptionWhereInput
+  disconnect: Boolean
+}
+
+input ItemTagWhereInput {
+  id: IDFilter
+  OR: [ItemTagWhereInput]
+  AND: [ItemTagWhereInput]
+  NOT: ItemTagWhereInput
+
+  createdAt: DateTimeFilter
+
+  createdBy: UserWhereInput
+
+  isActive: BooleanFilter
+  items: MenuItemWhereInput
+
+  """name"""
+  name: StringFilter
+
+  updatedAt: DateTimeFilter
+
+  updatedBy: UserWhereInput
+}
+input ItemTagOrderByInput {
+  createdAt: OrderEnum
+
+  createdBy: UserOrderByInput
+
+  id: OrderEnum
+
+  isActive: OrderEnum
+
+  """name"""
+  name: OrderStringEnum
+
+  updatedAt: OrderEnum
+
+  updatedBy: UserOrderByInput
+}
+input ItemTagCreateNestedManyInput {
+  create: [ItemTagCreateInput]
+  connect: [ItemTagWhereInput]
+}
+input ItemTagCreateInput {
+  createdAt: DateTime
+
+  createdBy: UserCreateNestedInput
+
+  isActive: Boolean
+  items: MenuItemCreateNestedManyInput
+
+  """name"""
+  name: String!
+
+  updatedAt: DateTime
+
+  updatedBy: UserCreateNestedInput
+}
+input ItemTagUpdateNestedManyInput {
+  create: [ItemTagCreateInput]
+  update: [ItemTagUpdateWithWhereInput]
+  delete: [ItemTagWhereInput]
+  connect: [ItemTagWhereInput]
+  disconnect: [ItemTagWhereInput]
+}
+input ItemTagUpdateWithWhereInput {
+  where: ItemTagWhereInput
+  input: ItemTagUpdateInput
+}
+input ItemTagUpdateInput {
+  createdAt: DateTime
+
+  createdBy: UserUpdateNestedInput
+
+  isActive: Boolean
+  items: MenuItemUpdateNestedManyInput
+
+  """name"""
+  name: String
+
+  updatedAt: DateTime
+
+  updatedBy: UserUpdateNestedInput
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+type UserType {
+  """unique identification field"""
+  id: ID
+  branchCreatedBy(where: BranchWhereInput, orderBy: [BranchOrderByInput], limit: Int, offset: Int): BranchTypeConnection
+  branchUpdatedBy(where: BranchWhereInput, orderBy: [BranchOrderByInput], limit: Int, offset: Int): BranchTypeConnection
+  branchphonenumberCreatedBy(where: BranchPhoneNumberWhereInput, orderBy: [BranchPhoneNumberOrderByInput], limit: Int, offset: Int): BranchPhoneNumberTypeConnection
+  branchphonenumberUpdatedBy(where: BranchPhoneNumberWhereInput, orderBy: [BranchPhoneNumberOrderByInput], limit: Int, offset: Int): BranchPhoneNumberTypeConnection
+  categoryCreatedBy(where: CategoryWhereInput, orderBy: [CategoryOrderByInput], limit: Int, offset: Int): CategoryTypeConnection
+  categoryUpdatedBy(where: CategoryWhereInput, orderBy: [CategoryOrderByInput], limit: Int, offset: Int): CategoryTypeConnection
+
+  """date joined"""
+  dateJoined: DateTime
+  dineupuser: DineUpUserType
+  dineupuserCreatedBy(where: DineUpUserWhereInput, orderBy: [DineUpUserOrderByInput], limit: Int, offset: Int): DineUpUserTypeConnection
+  dineupuserUpdatedBy(where: DineUpUserWhereInput, orderBy: [DineUpUserOrderByInput], limit: Int, offset: Int): DineUpUserTypeConnection
+
+  """email address"""
+  email: String
+  employeeCreatedBy(where: EmployeeWhereInput, orderBy: [EmployeeOrderByInput], limit: Int, offset: Int): EmployeeTypeConnection
+  employeeUpdatedBy(where: EmployeeWhereInput, orderBy: [EmployeeOrderByInput], limit: Int, offset: Int): EmployeeTypeConnection
+
+  """first name"""
+  firstName: String
+  groups(where: GroupWhereInput, orderBy: [GroupOrderByInput], limit: Int, offset: Int): GroupTypeConnection
+
+  """
+  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
+  """
+  isActive: Boolean
+
+  """Designates whether the user can log into this admin site."""
+  isStaff: Boolean
+
+  """
+  Designates that this user has all permissions without explicitly assigning them.
+  """
+  isSuperuser: Boolean
+  itemimageCreatedBy(where: ItemImageWhereInput, orderBy: [ItemImageOrderByInput], limit: Int, offset: Int): ItemImageTypeConnection
+  itemimageUpdatedBy(where: ItemImageWhereInput, orderBy: [ItemImageOrderByInput], limit: Int, offset: Int): ItemImageTypeConnection
+  itemoptionCreatedBy(where: ItemOptionWhereInput, orderBy: [ItemOptionOrderByInput], limit: Int, offset: Int): ItemOptionTypeConnection
+  itemoptionUpdatedBy(where: ItemOptionWhereInput, orderBy: [ItemOptionOrderByInput], limit: Int, offset: Int): ItemOptionTypeConnection
+  itemtagCreatedBy(where: ItemTagWhereInput, orderBy: [ItemTagOrderByInput], limit: Int, offset: Int): ItemTagTypeConnection
+  itemtagUpdatedBy(where: ItemTagWhereInput, orderBy: [ItemTagOrderByInput], limit: Int, offset: Int): ItemTagTypeConnection
+  jobfunctionCreatedBy(where: JobFunctionWhereInput, orderBy: [JobFunctionOrderByInput], limit: Int, offset: Int): JobFunctionTypeConnection
+  jobfunctionUpdatedBy(where: JobFunctionWhereInput, orderBy: [JobFunctionOrderByInput], limit: Int, offset: Int): JobFunctionTypeConnection
+
+  """last login"""
+  lastLogin: DateTime
+
+  """last name"""
+  lastName: String
+  menuCreatedBy(where: MenuWhereInput, orderBy: [MenuOrderByInput], limit: Int, offset: Int): MenuTypeConnection
+  menuUpdatedBy(where: MenuWhereInput, orderBy: [MenuOrderByInput], limit: Int, offset: Int): MenuTypeConnection
+  menuitemCreatedBy(where: MenuItemWhereInput, orderBy: [MenuItemOrderByInput], limit: Int, offset: Int): MenuItemTypeConnection
+  menuitemUpdatedBy(where: MenuItemWhereInput, orderBy: [MenuItemOrderByInput], limit: Int, offset: Int): MenuItemTypeConnection
+  menuitemvariantCreatedBy(where: MenuItemVariantWhereInput, orderBy: [MenuItemVariantOrderByInput], limit: Int, offset: Int): MenuItemVariantTypeConnection
+  menuitemvariantUpdatedBy(where: MenuItemVariantWhereInput, orderBy: [MenuItemVariantOrderByInput], limit: Int, offset: Int): MenuItemVariantTypeConnection
+  optiongroupCreatedBy(where: OptionGroupWhereInput, orderBy: [OptionGroupOrderByInput], limit: Int, offset: Int): OptionGroupTypeConnection
+  optiongroupUpdatedBy(where: OptionGroupWhereInput, orderBy: [OptionGroupOrderByInput], limit: Int, offset: Int): OptionGroupTypeConnection
+  orderCreatedBy(where: OrderWhereInput, orderBy: [OrderOrderByInput], limit: Int, offset: Int): OrderTypeConnection
+  orderUpdatedBy(where: OrderWhereInput, orderBy: [OrderOrderByInput], limit: Int, offset: Int): OrderTypeConnection
+  orderitemCreatedBy(where: OrderItemWhereInput, orderBy: [OrderItemOrderByInput], limit: Int, offset: Int): OrderItemTypeConnection
+  orderitemUpdatedBy(where: OrderItemWhereInput, orderBy: [OrderItemOrderByInput], limit: Int, offset: Int): OrderItemTypeConnection
+  orderitemoptionCreatedBy(where: OrderItemOptionWhereInput, orderBy: [OrderItemOptionOrderByInput], limit: Int, offset: Int): OrderItemOptionTypeConnection
+  orderitemoptionUpdatedBy(where: OrderItemOptionWhereInput, orderBy: [OrderItemOptionOrderByInput], limit: Int, offset: Int): OrderItemOptionTypeConnection
+  orderstatusCreatedBy(where: OrderStatusWhereInput, orderBy: [OrderStatusOrderByInput], limit: Int, offset: Int): OrderStatusTypeConnection
+  orderstatusUpdatedBy(where: OrderStatusWhereInput, orderBy: [OrderStatusOrderByInput], limit: Int, offset: Int): OrderStatusTypeConnection
+
+  """password"""
+  password: String
+  restaurantCreatedBy(where: RestaurantWhereInput, orderBy: [RestaurantOrderByInput], limit: Int, offset: Int): RestaurantTypeConnection
+  restaurantUpdatedBy(where: RestaurantWhereInput, orderBy: [RestaurantOrderByInput], limit: Int, offset: Int): RestaurantTypeConnection
+  roleCreatedBy(where: RoleWhereInput, orderBy: [RoleOrderByInput], limit: Int, offset: Int): RoleTypeConnection
+  roleUpdatedBy(where: RoleWhereInput, orderBy: [RoleOrderByInput], limit: Int, offset: Int): RoleTypeConnection
+  socialmediaCreatedBy(where: SocialMediaWhereInput, orderBy: [SocialMediaOrderByInput], limit: Int, offset: Int): SocialMediaTypeConnection
+  socialmediaUpdatedBy(where: SocialMediaWhereInput, orderBy: [SocialMediaOrderByInput], limit: Int, offset: Int): SocialMediaTypeConnection
+  socialmediaplatformCreatedBy(where: SocialMediaPlatformWhereInput, orderBy: [SocialMediaPlatformOrderByInput], limit: Int, offset: Int): SocialMediaPlatformTypeConnection
+  socialmediaplatformUpdatedBy(where: SocialMediaPlatformWhereInput, orderBy: [SocialMediaPlatformOrderByInput], limit: Int, offset: Int): SocialMediaPlatformTypeConnection
+  tableCreatedBy(where: TableWhereInput, orderBy: [TableOrderByInput], limit: Int, offset: Int): TableTypeConnection
+  tableUpdatedBy(where: TableWhereInput, orderBy: [TableOrderByInput], limit: Int, offset: Int): TableTypeConnection
+
+  """Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."""
+  username: String
+  variantoptionCreatedBy(where: VariantOptionWhereInput, orderBy: [VariantOptionOrderByInput], limit: Int, offset: Int): VariantOptionTypeConnection
+  variantoptionUpdatedBy(where: VariantOptionWhereInput, orderBy: [VariantOptionOrderByInput], limit: Int, offset: Int): VariantOptionTypeConnection
+}
+type BranchTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [BranchType]!
+  count: Int
+}
+type BranchType {
+  """unique identification field"""
+  id: ID
+
+  """address"""
+  address: String
+
+  """address detail"""
+  addressDetail: String
+
+  """admin"""
+  admin: DineUpUserType
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """email"""
+  email: String
+
+  isActive: Boolean
+
+  isMain: Boolean
+  jobFunctions(where: JobFunctionWhereInput, orderBy: [JobFunctionOrderByInput], limit: Int, offset: Int): JobFunctionTypeConnection
+  menus(where: MenuWhereInput, orderBy: [MenuOrderByInput], limit: Int, offset: Int): MenuTypeConnection
+
+  """name"""
+  name: String
+  phoneNumbers(where: BranchPhoneNumberWhereInput, orderBy: [BranchPhoneNumberOrderByInput], limit: Int, offset: Int): BranchPhoneNumberTypeConnection
+
+  """postal code"""
+  postalCode: String
+
+  """restaurant"""
+  restaurant: RestaurantType
+
+  """slug"""
+  slug: String
+  tables(where: TableWhereInput, orderBy: [TableOrderByInput], limit: Int, offset: Int): TableTypeConnection
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+
+  """website"""
+  website: String
+}
+type DineUpUserType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+  employment: EmployeeType
+
+  isActive: Boolean
+  managedBranches(where: BranchWhereInput, orderBy: [BranchOrderByInput], limit: Int, offset: Int): BranchTypeConnection
+  orders(where: OrderWhereInput, orderBy: [OrderOrderByInput], limit: Int, offset: Int): OrderTypeConnection
+
+  phoneNumber: String
+  restaurants(where: RestaurantWhereInput, orderBy: [RestaurantOrderByInput], limit: Int, offset: Int): RestaurantTypeConnection
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+
+  user: UserType
+}
+type EmployeeType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """dine up user"""
+  dineUpUser: DineUpUserType
+
+  isActive: Boolean
+  jobFunctions(where: JobFunctionWhereInput, orderBy: [JobFunctionOrderByInput], limit: Int, offset: Int): JobFunctionTypeConnection
+
+  """leader"""
+  leader: EmployeeType
+  orders(where: OrderWhereInput, orderBy: [OrderOrderByInput], limit: Int, offset: Int): OrderTypeConnection
+  restaurants(where: RestaurantWhereInput, orderBy: [RestaurantOrderByInput], limit: Int, offset: Int): RestaurantTypeConnection
+  teamMembers(where: EmployeeWhereInput, orderBy: [EmployeeOrderByInput], limit: Int, offset: Int): EmployeeTypeConnection
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type JobFunctionTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [JobFunctionType]!
+  count: Int
+}
+type JobFunctionType {
+  """unique identification field"""
+  id: ID
+
+  """branch"""
+  branch: BranchType
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """employee"""
+  employee: EmployeeType
+
+  isActive: Boolean
+  roles(where: RoleWhereInput, orderBy: [RoleOrderByInput], limit: Int, offset: Int): RoleTypeConnection
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type RoleTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [RoleType]!
+  count: Int
+}
+type RoleType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  isActive: Boolean
+
+  isDefault: Boolean
+  jobfunctionSet(where: JobFunctionWhereInput, orderBy: [JobFunctionOrderByInput], limit: Int, offset: Int): JobFunctionTypeConnection
+
+  """name"""
+  name: String
+  restaurants(where: RestaurantWhereInput, orderBy: [RestaurantOrderByInput], limit: Int, offset: Int): RestaurantTypeConnection
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type RestaurantTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [RestaurantType]!
+  count: Int
+}
+type RestaurantType {
+  """unique identification field"""
+  id: ID
+  branches(where: BranchWhereInput, orderBy: [BranchOrderByInput], limit: Int, offset: Int): BranchTypeConnection
+  categories(where: CategoryWhereInput, orderBy: [CategoryOrderByInput], limit: Int, offset: Int): CategoryTypeConnection
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """email"""
+  email: String
+  employees(where: EmployeeWhereInput, orderBy: [EmployeeOrderByInput], limit: Int, offset: Int): EmployeeTypeConnection
+
+  isActive: Boolean
+
+  isMain: Boolean
+
+  """logo"""
+  logo: File
+  menus(where: MenuWhereInput, orderBy: [MenuOrderByInput], limit: Int, offset: Int): MenuTypeConnection
+
+  """name"""
+  name: String
+  orders(where: OrderWhereInput, orderBy: [OrderOrderByInput], limit: Int, offset: Int): OrderTypeConnection
+
+  """owner"""
+  owner: DineUpUserType
+
+  phoneNumber: String
+  roles(where: RoleWhereInput, orderBy: [RoleOrderByInput], limit: Int, offset: Int): RoleTypeConnection
+
+  """slogan"""
+  slogan: String
+
+  """slug"""
+  slug: String
+  socailMedia(where: SocialMediaWhereInput, orderBy: [SocialMediaOrderByInput], limit: Int, offset: Int): SocialMediaTypeConnection
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+
+  """website"""
+  website: String
+}
+type CategoryTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [CategoryType]!
+  count: Int
+}
+type CategoryType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """description"""
+  description: String
+
+  """icon"""
+  icon: String
+
+  isActive: Boolean
+  items(where: MenuItemWhereInput, orderBy: [MenuItemOrderByInput], limit: Int, offset: Int): MenuItemTypeConnection
+  menus(where: MenuWhereInput, orderBy: [MenuOrderByInput], limit: Int, offset: Int): MenuTypeConnection
+
+  """name"""
+  name: String
+
+  """position"""
+  position: Int
+
+  """restaurant"""
+  restaurant: RestaurantType
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type MenuItemTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [MenuItemType]!
+  count: Int
+}
+type MenuItemType {
+  """unique identification field"""
+  id: ID
+
+  """category"""
+  category: CategoryType
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """description"""
+  description: String
+
+  hasMultiplePrice: Boolean
+  images(where: ItemImageWhereInput, orderBy: [ItemImageOrderByInput], limit: Int, offset: Int): ItemImageTypeConnection
+
+  isActive: Boolean
+
+  """menu"""
+  menu: MenuType
+
+  """name"""
+  name: String
+  optionGroups(where: OptionGroupWhereInput, orderBy: [OptionGroupOrderByInput], limit: Int, offset: Int): OptionGroupTypeConnection
+  optionGroupsShared(where: OptionGroupWhereInput, orderBy: [OptionGroupOrderByInput], limit: Int, offset: Int): OptionGroupTypeConnection
+
+  """position"""
+  position: Int
+
+  """price"""
+  price: Float
+  tags(where: ItemTagWhereInput, orderBy: [ItemTagOrderByInput], limit: Int, offset: Int): ItemTagTypeConnection
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+  variant: MenuItemVariantType
+}
+type ItemImageTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [ItemImageType]!
+  count: Int
+}
+type ItemImageType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """image"""
+  image: File
+
+  isActive: Boolean
+
+  """menu item"""
+  menuItem: MenuItemType
+
+  """position"""
+  position: Int
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type File {
+  url: String
+  size: Int
+  filename: String
+}
+type MenuType {
+  """unique identification field"""
+  id: ID
+  categories(where: CategoryWhereInput, orderBy: [CategoryOrderByInput], limit: Int, offset: Int): CategoryTypeConnection
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  isActive: Boolean
+
+  isMain: Boolean
+  items(where: MenuItemWhereInput, orderBy: [MenuItemOrderByInput], limit: Int, offset: Int): MenuItemTypeConnection
+
+  """name"""
+  name: String
+
+  """restaurant"""
+  restaurant: RestaurantType
+  restaurantBranches(where: BranchWhereInput, orderBy: [BranchOrderByInput], limit: Int, offset: Int): BranchTypeConnection
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type OptionGroupTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [OptionGroupType]!
+  count: Int
+}
+type OptionGroupType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  isActive: Boolean
+
+  isMultiple: Boolean
+
+  isRequired: Boolean
+  itemOptions(where: ItemOptionWhereInput, orderBy: [ItemOptionOrderByInput], limit: Int, offset: Int): ItemOptionTypeConnection
+
+  """maximum"""
+  maximum: Int
+
+  """menu item"""
+  menuItem: MenuItemType
+  menuItems(where: MenuItemWhereInput, orderBy: [MenuItemOrderByInput], limit: Int, offset: Int): MenuItemTypeConnection
+
+  """minimum"""
+  minimum: Int
+
+  """name"""
+  name: String
+
+  """name type"""
+  nameType: OptionGroupNameTypeEnum
+
+  """position"""
+  position: Int
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type ItemOptionTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [ItemOptionType]!
+  count: Int
+}
+type ItemOptionType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+  dependentOptions(where: ItemOptionWhereInput, orderBy: [ItemOptionOrderByInput], limit: Int, offset: Int): ItemOptionTypeConnection
+
+  """description"""
+  description: String
+
+  """group"""
+  group: OptionGroupType
+
+  isActive: Boolean
+
+  isDefault: Boolean
+  itemoptionSet(where: ItemOptionWhereInput, orderBy: [ItemOptionOrderByInput], limit: Int, offset: Int): ItemOptionTypeConnection
+
+  """name"""
+  name: String
+
+  """position"""
+  position: Int
+
+  """price"""
+  price: Float
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type ItemTagTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [ItemTagType]!
+  count: Int
+}
+type ItemTagType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  isActive: Boolean
+  items(where: MenuItemWhereInput, orderBy: [MenuItemOrderByInput], limit: Int, offset: Int): MenuItemTypeConnection
+
+  """name"""
+  name: String
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type MenuItemVariantType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  isActive: Boolean
+
+  """menu item"""
+  menuItem: MenuItemType
+
+  """name"""
+  name: String
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+  variantOptions(where: VariantOptionWhereInput, orderBy: [VariantOptionOrderByInput], limit: Int, offset: Int): VariantOptionTypeConnection
+}
+type VariantOptionTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [VariantOptionType]!
+  count: Int
+}
+type VariantOptionType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """description"""
+  description: String
+
+  isActive: Boolean
+
+  isDefault: Boolean
+
+  """name"""
+  name: String
+
+  """position"""
+  position: Int
+
+  """price"""
+  price: Float
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+
+  """variant"""
+  variant: MenuItemVariantType
+}
+type MenuTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [MenuType]!
+  count: Int
+}
+type EmployeeTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [EmployeeType]!
+  count: Int
+}
+type OrderTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [OrderType]!
+  count: Int
+}
+type OrderType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """diner"""
+  diner: DineUpUserType
+
+  isActive: Boolean
+
+  """number"""
+  number: Int
+  orderItems(where: OrderItemWhereInput, orderBy: [OrderItemOrderByInput], limit: Int, offset: Int): OrderItemTypeConnection
+
+  """restaurant"""
+  restaurant: RestaurantType
+
+  """status"""
+  status: OrderStatusType
+
+  """table"""
+  table: TableType
+
+  """total"""
+  total: Float
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+
+  """waiter"""
+  waiter: EmployeeType
+}
+type OrderItemTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [OrderItemType]!
+  count: Int
+}
+type OrderItemType {
+  """unique identification field"""
+  id: ID
+
+  """amount"""
+  amount: Int
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """diner name"""
+  dinerName: String
+
+  isActive: Boolean
+
+  """menu item"""
+  menuItem: MenuItemType
+
+  """observations"""
+  observations: String
+
+  """order"""
+  order: OrderType
+  orderItemOptions(where: OrderItemOptionWhereInput, orderBy: [OrderItemOptionOrderByInput], limit: Int, offset: Int): OrderItemOptionTypeConnection
+
+  """price"""
+  price: Float
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+
+  """variant option"""
+  variantOption: VariantOptionType
+}
+type OrderItemOptionTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [OrderItemOptionType]!
+  count: Int
+}
+type OrderItemOptionType {
+  """unique identification field"""
+  id: ID
+
+  """amount"""
+  amount: Int
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  isActive: Boolean
+
+  """item option"""
+  itemOption: ItemOptionType
+
+  """order item"""
+  orderItem: OrderItemType
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type OrderStatusType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  isActive: Boolean
+
+  """name"""
+  name: String
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type TableType {
+  """unique identification field"""
+  id: ID
+
+  """branch"""
+  branch: BranchType
+
+  """capacity"""
+  capacity: Int
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """identifier"""
+  identifier: String
+
+  isActive: Boolean
+
+  """location description"""
+  locationDescription: String
+  orders(where: OrderWhereInput, orderBy: [OrderOrderByInput], limit: Int, offset: Int): OrderTypeConnection
+
+  """position"""
+  position: Int
+
+  """status"""
+  status: TableStatusEnum
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type SocialMediaTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [SocialMediaType]!
+  count: Int
+}
+type SocialMediaType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  isActive: Boolean
+
+  """name"""
+  name: String
+
+  """restaurant"""
+  restaurant: RestaurantType
+
+  """social media platform"""
+  socialMediaPlatform: SocialMediaPlatformType
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+
+  """url"""
+  url: String
+}
+type SocialMediaPlatformType {
+  """unique identification field"""
+  id: ID
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  isActive: Boolean
+
+  """logo"""
+  logo: String
+
+  """name"""
+  name: String
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type BranchPhoneNumberTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [BranchPhoneNumberType]!
+  count: Int
+}
+type BranchPhoneNumberType {
+  """unique identification field"""
+  id: ID
+
+  """branch"""
+  branch: BranchType
+
+  createdAt: DateTime
+
+  createdBy: UserType
+
+  """identifier"""
+  identifier: String
+
+  isActive: Boolean
+
+  phoneNumber: String
+
+  updatedAt: DateTime
+
+  updatedBy: UserType
+}
+type TableTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [TableType]!
+  count: Int
+}
+type DineUpUserTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [DineUpUserType]!
+  count: Int
+}
+type GroupTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [GroupType]!
+  count: Int
+}
+type GroupType {
+  """unique identification field"""
+  id: ID
+
+  """name"""
+  name: String
+  userSet(where: UserWhereInput, orderBy: [UserOrderByInput], limit: Int, offset: Int): UserTypeConnection
+}
+type UserTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [UserType]!
+  count: Int
+}
+type MenuItemVariantTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [MenuItemVariantType]!
+  count: Int
+}
+type OrderStatusTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [OrderStatusType]!
+  count: Int
+}
+type SocialMediaPlatformTypeConnection {
+  """Contains the nodes in this connection."""
+  data: [SocialMediaPlatformType]!
+  count: Int
+}
+type UserCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: UserType
+}
+type ErrorType {
+  field: String!
+  messages: [String!]!
+}
+type UserUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: UserType
+}
+type UserDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type GroupCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: GroupType
+}
+type GroupUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: GroupType
+}
+type GroupDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type RestaurantCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: RestaurantType
+}
+type RestaurantUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: RestaurantType
+}
+type RestaurantDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type BranchCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: BranchType
+}
+type BranchUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: BranchType
+}
+type BranchDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type BranchPhoneNumberCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: BranchPhoneNumberType
+}
+type BranchPhoneNumberUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: BranchPhoneNumberType
+}
+type BranchPhoneNumberDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type TableCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: TableType
+}
+type TableUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: TableType
+}
+type TableDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type SocialMediaPlatformCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: SocialMediaPlatformType
+}
+type SocialMediaPlatformUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: SocialMediaPlatformType
+}
+type SocialMediaPlatformDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type SocialMediaCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: SocialMediaType
+}
+type SocialMediaUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: SocialMediaType
+}
+type SocialMediaDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type OrderStatusCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: OrderStatusType
+}
+type OrderStatusUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: OrderStatusType
+}
+type OrderStatusDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type OrderCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: OrderType
+}
+type OrderUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: OrderType
+}
+type OrderDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type OrderItemCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: OrderItemType
+}
+type OrderItemUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: OrderItemType
+}
+type OrderItemDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type OrderItemOptionCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: OrderItemOptionType
+}
+type OrderItemOptionUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: OrderItemOptionType
+}
+type OrderItemOptionDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type MenuCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: MenuType
+}
+type MenuUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: MenuType
+}
+type MenuDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type CategoryCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: CategoryType
+}
+type CategoryUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: CategoryType
+}
+type CategoryDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type MenuItemCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: MenuItemType
+}
+type MenuItemUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: MenuItemType
+}
+type MenuItemDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type MenuItemVariantCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: MenuItemVariantType
+}
+type MenuItemVariantUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: MenuItemVariantType
+}
+type MenuItemVariantDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type VariantOptionCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: VariantOptionType
+}
+type VariantOptionUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: VariantOptionType
+}
+type VariantOptionDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type ItemImageCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: ItemImageType
+}
+type ItemImageUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: ItemImageType
+}
+type ItemImageDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type OptionGroupCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: OptionGroupType
+}
+type OptionGroupUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: OptionGroupType
+}
+type OptionGroupDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type ItemOptionCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: ItemOptionType
+}
+type ItemOptionUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: ItemOptionType
+}
+type ItemOptionDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type ItemTagCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: ItemTagType
+}
+type ItemTagUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: ItemTagType
+}
+type ItemTagDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type DineUpUserCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: DineUpUserType
+}
+type DineUpUserUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: DineUpUserType
+}
+type DineUpUserDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type RoleCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: RoleType
+}
+type RoleUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: RoleType
+}
+type RoleDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type EmployeeCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: EmployeeType
+}
+type EmployeeUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: EmployeeType
+}
+type EmployeeDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+type JobFunctionCreatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: JobFunctionType
+}
+type JobFunctionUpdatePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+  result: JobFunctionType
+}
+type JobFunctionDeletePayload {
+  """Boolean field that return the success state of request."""
+  ok: Boolean
+
+  """Errors list for the field"""
+  errors: [ErrorType]
+}
+
+
+
+
