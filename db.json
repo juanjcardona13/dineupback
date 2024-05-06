@@ -1,0 +1,735 @@
+[
+  {
+    "model": "accounts.dineupuser",
+    "pk": "557fa04c-22ce-407e-8c5c-9c371123c687",
+    "fields": {
+      "created_at": "2023-05-23T21:15:18.386Z",
+      "updated_at": "2023-05-23T21:15:18.386Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "user": 1,
+      "phone_number": null
+    }
+  },
+  {
+    "model": "menu.menu",
+    "pk": "87d1435a-624c-483d-92b0-ccce246a3841",
+    "fields": {
+      "created_at": "2023-07-14T22:50:51.370Z",
+      "updated_at": "2023-07-14T22:50:51.370Z",
+      "created_by": 1,
+      "updated_by": null,
+      "is_active": true,
+      "name": "Main Menu",
+      "restaurant": "21af29f1-7177-4c17-b6b1-60651038bc46",
+      "is_main": true,
+      "restaurant_branches": ["0ccb1368-3f0d-4e2a-a1bd-529f50f9a201"]
+    }
+  },
+  {
+    "model": "menu.category",
+    "pk": "09c0611c-fc9d-4180-adf2-23f70de29880",
+    "fields": {
+      "created_at": "2023-07-14T22:51:05.967Z",
+      "updated_at": "2023-07-15T22:36:43.001Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "name": "HAMBURGUESAS",
+      "icon": "burger",
+      "restaurant": "21af29f1-7177-4c17-b6b1-60651038bc46",
+      "description": "Deliciosas",
+      "position": 1,
+      "menus": ["87d1435a-624c-483d-92b0-ccce246a3841"]
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": "2785f35e-0c2e-469c-9aee-c57884c4f5b8",
+    "fields": {
+      "created_at": "2023-07-15T13:43:12.795Z",
+      "updated_at": "2023-07-15T13:43:12.795Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "menu": "87d1435a-624c-483d-92b0-ccce246a3841",
+      "name": "PERRO MX",
+      "description": "DES DEL PERRO",
+      "price": "2.00",
+      "has_multiple_price": false,
+      "category": "09c0611c-fc9d-4180-adf2-23f70de29880",
+      "position": 1,
+      "tags": []
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": "3144a2b4-aaa2-40d6-ad14-96547eb76f75",
+    "fields": {
+      "created_at": "2023-07-15T22:01:04.916Z",
+      "updated_at": "2023-07-15T22:35:58.829Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "menu": "87d1435a-624c-483d-92b0-ccce246a3841",
+      "name": "HAMBURGUESA UPDATE",
+      "description": "DETALLE DE LA HAMBURGUESA",
+      "price": null,
+      "has_multiple_price": true,
+      "category": "09c0611c-fc9d-4180-adf2-23f70de29880",
+      "position": 1,
+      "tags": []
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": "6767b41c-5148-43e7-a6ce-c959dec487f0",
+    "fields": {
+      "created_at": "2023-07-15T13:51:28.433Z",
+      "updated_at": "2023-07-15T13:51:28.433Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "menu": "87d1435a-624c-483d-92b0-ccce246a3841",
+      "name": "PERRO MX",
+      "description": "DES DEL PERRO",
+      "price": "2.00",
+      "has_multiple_price": false,
+      "category": "09c0611c-fc9d-4180-adf2-23f70de29880",
+      "position": 1,
+      "tags": []
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": "9b40c9ea-3bcc-4c68-a5d2-ef701e156acb",
+    "fields": {
+      "created_at": "2023-07-15T14:35:47.575Z",
+      "updated_at": "2023-07-15T14:35:47.575Z",
+      "created_by": 2,
+      "updated_by": null,
+      "is_active": true,
+      "menu": "87d1435a-624c-483d-92b0-ccce246a3841",
+      "name": "AEASD",
+      "description": "SDFER",
+      "price": null,
+      "has_multiple_price": true,
+      "category": "09c0611c-fc9d-4180-adf2-23f70de29880",
+      "position": 1,
+      "tags": []
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": "bcde2249-0e97-4c24-8ff3-31ae19458367",
+    "fields": {
+      "created_at": "2023-07-15T13:58:40.112Z",
+      "updated_at": "2023-07-15T13:58:40.112Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "menu": "87d1435a-624c-483d-92b0-ccce246a3841",
+      "name": "PERRO MX",
+      "description": "DES DEL PERRO",
+      "price": "2.00",
+      "has_multiple_price": false,
+      "category": "09c0611c-fc9d-4180-adf2-23f70de29880",
+      "position": 1,
+      "tags": []
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": "c5a92426-a5b0-4487-bdbe-d62ccf15f32d",
+    "fields": {
+      "created_at": "2023-07-15T14:16:25.309Z",
+      "updated_at": "2023-07-15T14:16:25.309Z",
+      "created_by": 2,
+      "updated_by": null,
+      "is_active": true,
+      "menu": "87d1435a-624c-483d-92b0-ccce246a3841",
+      "name": "HAM",
+      "description": "SDFSDF",
+      "price": "234.00",
+      "has_multiple_price": false,
+      "category": "09c0611c-fc9d-4180-adf2-23f70de29880",
+      "position": 1,
+      "tags": []
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": "d6bee9ca-12b9-40db-99ae-3d8860c66364",
+    "fields": {
+      "created_at": "2023-07-15T16:58:47.734Z",
+      "updated_at": "2023-07-15T16:58:47.734Z",
+      "created_by": 2,
+      "updated_by": null,
+      "is_active": true,
+      "menu": "87d1435a-624c-483d-92b0-ccce246a3841",
+      "name": "SDF",
+      "description": "SDF",
+      "price": "234.00",
+      "has_multiple_price": false,
+      "category": "09c0611c-fc9d-4180-adf2-23f70de29880",
+      "position": 1,
+      "tags": []
+    }
+  },
+  {
+    "model": "menu.menuitemvariant",
+    "pk": "3bd82cd7-e3f7-40ca-8d2a-44a2c197292d",
+    "fields": {
+      "created_at": "2023-07-15T13:43:12.815Z",
+      "updated_at": "2023-07-15T13:43:12.815Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "menu_item": "2785f35e-0c2e-469c-9aee-c57884c4f5b8",
+      "name": "TAMAÑO"
+    }
+  },
+  {
+    "model": "menu.menuitemvariant",
+    "pk": "5b82bd97-da11-4842-a02a-e4f92202f8a5",
+    "fields": {
+      "created_at": "2023-07-15T14:35:47.587Z",
+      "updated_at": "2023-07-15T14:35:47.587Z",
+      "created_by": 2,
+      "updated_by": null,
+      "is_active": true,
+      "menu_item": "9b40c9ea-3bcc-4c68-a5d2-ef701e156acb",
+      "name": "ASD"
+    }
+  },
+  {
+    "model": "menu.menuitemvariant",
+    "pk": "66d43a80-ce69-402d-85aa-54716c2c63f3",
+    "fields": {
+      "created_at": "2023-07-15T13:51:28.447Z",
+      "updated_at": "2023-07-15T13:51:28.447Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "menu_item": "6767b41c-5148-43e7-a6ce-c959dec487f0",
+      "name": "TAMAÑO"
+    }
+  },
+  {
+    "model": "menu.menuitemvariant",
+    "pk": "7901113b-5be2-406f-bfd1-7333bd84cba8",
+    "fields": {
+      "created_at": "2023-07-15T13:58:40.123Z",
+      "updated_at": "2023-07-15T13:58:40.123Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "menu_item": "bcde2249-0e97-4c24-8ff3-31ae19458367",
+      "name": "TAMAÑO"
+    }
+  },
+  {
+    "model": "menu.menuitemvariant",
+    "pk": "9d5e6125-f312-4083-8261-cf98b9920b8d",
+    "fields": {
+      "created_at": "2023-07-15T22:01:04.948Z",
+      "updated_at": "2023-07-15T22:35:58.870Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "menu_item": "3144a2b4-aaa2-40d6-ad14-96547eb76f75",
+      "name": "TAMAÑO"
+    }
+  },
+  {
+    "model": "menu.variantoption",
+    "pk": "40c7e0cb-3281-4b61-839f-88b3be9ded8b",
+    "fields": {
+      "created_at": "2023-07-15T22:01:04.961Z",
+      "updated_at": "2023-07-15T22:35:58.883Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "variant": "9d5e6125-f312-4083-8261-cf98b9920b8d",
+      "name": "XS",
+      "price": "15000.00",
+      "description": "",
+      "is_default": false,
+      "position": 1
+    }
+  },
+  {
+    "model": "menu.variantoption",
+    "pk": "50a5913b-ee28-426d-a925-f594a055dc4d",
+    "fields": {
+      "created_at": "2023-07-15T22:01:04.955Z",
+      "updated_at": "2023-07-15T22:35:58.894Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "variant": "9d5e6125-f312-4083-8261-cf98b9920b8d",
+      "name": "SM",
+      "price": "18000.00",
+      "description": "",
+      "is_default": false,
+      "position": 1
+    }
+  },
+  {
+    "model": "menu.variantoption",
+    "pk": "61dcc791-afc2-493c-937a-e0c212eb8ac8",
+    "fields": {
+      "created_at": "2023-07-15T13:58:40.129Z",
+      "updated_at": "2023-07-15T13:58:40.129Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "variant": "7901113b-5be2-406f-bfd1-7333bd84cba8",
+      "name": "xs",
+      "price": "2.00",
+      "description": "The most small",
+      "is_default": true,
+      "position": 1
+    }
+  },
+  {
+    "model": "menu.variantoption",
+    "pk": "6b8376cc-4899-458d-bc63-137a8604862d",
+    "fields": {
+      "created_at": "2023-07-15T13:51:28.461Z",
+      "updated_at": "2023-07-15T13:51:28.461Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "variant": "66d43a80-ce69-402d-85aa-54716c2c63f3",
+      "name": "xs",
+      "price": "2.00",
+      "description": "The most small",
+      "is_default": true,
+      "position": 1
+    }
+  },
+  {
+    "model": "menu.variantoption",
+    "pk": "6cbd9b82-dfba-4c36-864b-57e887c68cef",
+    "fields": {
+      "created_at": "2023-07-15T14:35:47.596Z",
+      "updated_at": "2023-07-15T14:35:47.596Z",
+      "created_by": 2,
+      "updated_by": null,
+      "is_active": true,
+      "variant": "5b82bd97-da11-4842-a02a-e4f92202f8a5",
+      "name": "ASDER",
+      "price": "213.00",
+      "description": "",
+      "is_default": false,
+      "position": 1
+    }
+  },
+  {
+    "model": "menu.variantoption",
+    "pk": "ee678a3f-7428-44cd-b0f5-491870e1d37f",
+    "fields": {
+      "created_at": "2023-07-15T13:43:12.826Z",
+      "updated_at": "2023-07-15T13:43:12.826Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "variant": "3bd82cd7-e3f7-40ca-8d2a-44a2c197292d",
+      "name": "xs",
+      "price": "2.00",
+      "description": "The most small",
+      "is_default": true,
+      "position": 1
+    }
+  },
+  {
+    "model": "menu.itemimage",
+    "pk": "1d65fd51-eee4-483d-bbc6-887cbb568854",
+    "fields": {
+      "created_at": "2023-07-15T22:01:04.927Z",
+      "updated_at": "2023-07-15T22:35:58.847Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "menu_item": "3144a2b4-aaa2-40d6-ad14-96547eb76f75",
+      "image": "media/menu_item_images/download_1.jpeg",
+      "position": 1
+    }
+  },
+  {
+    "model": "menu.itemimage",
+    "pk": "5592369f-ddc7-4f43-b74a-e6a41aab47f7",
+    "fields": {
+      "created_at": "2023-07-15T22:01:04.937Z",
+      "updated_at": "2023-07-15T22:35:58.857Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "menu_item": "3144a2b4-aaa2-40d6-ad14-96547eb76f75",
+      "image": "media/menu_item_images/download_fhuu6br.jpeg",
+      "position": 1
+    }
+  },
+  {
+    "model": "menu.optiongroup",
+    "pk": "1952a4fc-e4af-4af2-9d3e-88bc23943cb2",
+    "fields": {
+      "created_at": "2023-07-15T22:01:05.005Z",
+      "updated_at": "2023-07-15T22:35:58.923Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "menu_item": "3144a2b4-aaa2-40d6-ad14-96547eb76f75",
+      "name": "OTROS",
+      "name_type": "ADDITIONAL",
+      "is_required": false,
+      "is_multiple": false,
+      "minimum": null,
+      "maximum": null,
+      "position": 1,
+      "menu_items": []
+    }
+  },
+  {
+    "model": "menu.optiongroup",
+    "pk": "216e6495-2d93-4fa5-9e95-56bdf2dbb62f",
+    "fields": {
+      "created_at": "2023-07-15T13:51:28.468Z",
+      "updated_at": "2023-07-15T13:51:28.468Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "menu_item": "6767b41c-5148-43e7-a6ce-c959dec487f0",
+      "name": "SALSAS",
+      "name_type": "ADDITIONAL",
+      "is_required": false,
+      "is_multiple": false,
+      "minimum": 0,
+      "maximum": 10,
+      "position": 1,
+      "menu_items": []
+    }
+  },
+  {
+    "model": "menu.optiongroup",
+    "pk": "284b8161-75ee-4772-a1e5-8773ec739d1d",
+    "fields": {
+      "created_at": "2023-07-15T22:01:04.987Z",
+      "updated_at": "2023-07-15T22:35:58.966Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "menu_item": "3144a2b4-aaa2-40d6-ad14-96547eb76f75",
+      "name": "QUESOS",
+      "name_type": "OPTION",
+      "is_required": true,
+      "is_multiple": false,
+      "minimum": null,
+      "maximum": null,
+      "position": 1,
+      "menu_items": []
+    }
+  },
+  {
+    "model": "menu.optiongroup",
+    "pk": "67fe96ff-dce9-4cd9-8f9a-fe8ce122c99b",
+    "fields": {
+      "created_at": "2023-07-15T13:58:40.136Z",
+      "updated_at": "2023-07-15T13:58:40.136Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "menu_item": "bcde2249-0e97-4c24-8ff3-31ae19458367",
+      "name": "SALSAS",
+      "name_type": "ADDITIONAL",
+      "is_required": false,
+      "is_multiple": false,
+      "minimum": 0,
+      "maximum": 10,
+      "position": 1,
+      "menu_items": []
+    }
+  },
+  {
+    "model": "menu.optiongroup",
+    "pk": "69100f93-feb6-44fa-ba88-9424fa03c389",
+    "fields": {
+      "created_at": "2023-07-15T22:01:04.968Z",
+      "updated_at": "2023-07-15T22:35:59.005Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "menu_item": "3144a2b4-aaa2-40d6-ad14-96547eb76f75",
+      "name": "SALSAS",
+      "name_type": "OPTION",
+      "is_required": false,
+      "is_multiple": true,
+      "minimum": 1,
+      "maximum": 5,
+      "position": 1,
+      "menu_items": []
+    }
+  },
+  {
+    "model": "menu.optiongroup",
+    "pk": "76483c62-3b20-40f7-acb1-fecfd760fe5b",
+    "fields": {
+      "created_at": "2023-07-15T13:43:12.839Z",
+      "updated_at": "2023-07-15T13:43:12.839Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "menu_item": "2785f35e-0c2e-469c-9aee-c57884c4f5b8",
+      "name": "SALSAS",
+      "name_type": "ADDITIONAL",
+      "is_required": false,
+      "is_multiple": false,
+      "minimum": 0,
+      "maximum": 10,
+      "position": 1,
+      "menu_items": []
+    }
+  },
+  {
+    "model": "menu.optiongroup",
+    "pk": "de9486dd-c5a4-44c2-9e91-9f69f76dbe6e",
+    "fields": {
+      "created_at": "2023-07-15T16:58:47.747Z",
+      "updated_at": "2023-07-15T16:58:47.747Z",
+      "created_by": 2,
+      "updated_by": null,
+      "is_active": true,
+      "menu_item": "d6bee9ca-12b9-40db-99ae-3d8860c66364",
+      "name": "SDF",
+      "name_type": "OPTION",
+      "is_required": false,
+      "is_multiple": false,
+      "minimum": null,
+      "maximum": null,
+      "position": 1,
+      "menu_items": []
+    }
+  },
+  {
+    "model": "menu.itemoption",
+    "pk": "14749578-c629-4351-a2de-2fac728cb5d3",
+    "fields": {
+      "created_at": "2023-07-15T22:01:04.995Z",
+      "updated_at": "2023-07-15T22:35:58.986Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "group": "284b8161-75ee-4772-a1e5-8773ec739d1d",
+      "name": "CHEDEER",
+      "description": "",
+      "price": "1000.00",
+      "is_default": false,
+      "position": 1,
+      "dependent_options": []
+    }
+  },
+  {
+    "model": "menu.itemoption",
+    "pk": "17840bf2-3fbe-4406-b18b-15576bfbd5e5",
+    "fields": {
+      "created_at": "2023-07-15T13:51:28.479Z",
+      "updated_at": "2023-07-15T13:51:28.479Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "group": "216e6495-2d93-4fa5-9e95-56bdf2dbb62f",
+      "name": "mayonesa",
+      "description": "des",
+      "price": "2.00",
+      "is_default": true,
+      "position": 1,
+      "dependent_options": []
+    }
+  },
+  {
+    "model": "menu.itemoption",
+    "pk": "35da6010-5390-4030-a399-e981542887de",
+    "fields": {
+      "created_at": "2023-07-15T13:58:40.145Z",
+      "updated_at": "2023-07-15T13:58:40.145Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "group": "67fe96ff-dce9-4cd9-8f9a-fe8ce122c99b",
+      "name": "mayonesa",
+      "description": "des",
+      "price": "2.00",
+      "is_default": true,
+      "position": 1,
+      "dependent_options": []
+    }
+  },
+  {
+    "model": "menu.itemoption",
+    "pk": "37ac4f0a-85b1-47c3-8d8a-00dfed2bed86",
+    "fields": {
+      "created_at": "2023-06-14T12:25:44.812Z",
+      "updated_at": "2023-06-14T12:25:44.812Z",
+      "created_by": 2,
+      "updated_by": null,
+      "is_active": true,
+      "group": null,
+      "name": "res",
+      "description": "",
+      "price": "0.00",
+      "is_default": false,
+      "position": 1,
+      "dependent_options": []
+    }
+  },
+  {
+    "model": "menu.itemoption",
+    "pk": "65b219ba-7019-42fc-997f-79996293a09f",
+    "fields": {
+      "created_at": "2023-07-15T13:43:12.861Z",
+      "updated_at": "2023-07-15T13:43:12.861Z",
+      "created_by": null,
+      "updated_by": null,
+      "is_active": true,
+      "group": "76483c62-3b20-40f7-acb1-fecfd760fe5b",
+      "name": "mayonesa",
+      "description": "des",
+      "price": "2.00",
+      "is_default": true,
+      "position": 1,
+      "dependent_options": []
+    }
+  },
+  {
+    "model": "menu.itemoption",
+    "pk": "82765383-c0bf-4fd4-99af-f36c238b4c06",
+    "fields": {
+      "created_at": "2023-07-15T22:01:05.015Z",
+      "updated_at": "2023-07-15T22:35:58.947Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "group": "1952a4fc-e4af-4af2-9d3e-88bc23943cb2",
+      "name": "TOCINETA",
+      "description": "",
+      "price": "1000.00",
+      "is_default": false,
+      "position": 1,
+      "dependent_options": []
+    }
+  },
+  {
+    "model": "menu.itemoption",
+    "pk": "b94b60ef-1b2c-449f-acb7-6d12fbfd6788",
+    "fields": {
+      "created_at": "2023-07-15T22:01:04.977Z",
+      "updated_at": "2023-07-15T22:35:59.023Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "group": "69100f93-feb6-44fa-ba88-9424fa03c389",
+      "name": "MAYO",
+      "description": "",
+      "price": "500.00",
+      "is_default": false,
+      "position": 1,
+      "dependent_options": []
+    }
+  },
+  {
+    "model": "menu.itemoption",
+    "pk": "d75d0dd4-5cfc-48d0-be3c-b3cfbd0c72bc",
+    "fields": {
+      "created_at": "2023-07-15T16:58:47.756Z",
+      "updated_at": "2023-07-15T16:58:47.756Z",
+      "created_by": 2,
+      "updated_by": null,
+      "is_active": true,
+      "group": "de9486dd-c5a4-44c2-9e91-9f69f76dbe6e",
+      "name": "SDF123",
+      "description": "",
+      "price": "324.00",
+      "is_default": false,
+      "position": 1,
+      "dependent_options": []
+    }
+  },
+  {
+    "model": "menu.itemoption",
+    "pk": "e6ae3f88-37f3-4e85-a568-584a77ae0a7f",
+    "fields": {
+      "created_at": "2023-06-14T12:25:44.821Z",
+      "updated_at": "2023-06-14T12:25:44.821Z",
+      "created_by": 2,
+      "updated_by": null,
+      "is_active": true,
+      "group": null,
+      "name": "cerdo",
+      "description": "",
+      "price": "1000.00",
+      "is_default": false,
+      "position": 1,
+      "dependent_options": []
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": "21af29f1-7177-4c17-b6b1-60651038bc46",
+    "fields": {
+      "created_at": "2023-07-07T02:07:33.484Z",
+      "updated_at": "2023-07-14T21:35:35.676Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "name": "Atipico",
+      "slug": "atipico",
+      "owner": "557fa04c-22ce-407e-8c5c-9c371123c687",
+      "logo": "media/branch_logos/nota_disney-tiene-luz-verde-para-utilizar-la-marca-star-en-brasil.jpg",
+      "slogan": "Atipicamente delicioso",
+      "is_main": true,
+      "email": "juan@atipico.com",
+      "phone_number": "3225366952",
+      "website": "https://www.atipico.com"
+    }
+  },
+  {
+    "model": "restaurant.branch",
+    "pk": "0ccb1368-3f0d-4e2a-a1bd-529f50f9a201",
+    "fields": {
+      "created_at": "2023-07-07T02:07:33.505Z",
+      "updated_at": "2023-07-14T21:35:35.674Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "restaurant": "21af29f1-7177-4c17-b6b1-60651038bc46",
+      "name": "Sucursal 1 de Atipico",
+      "slug": "sucursal-1-de-atipico",
+      "admin": null,
+      "address": "Direccion de la sucursal principal123456",
+      "address_detail": "Detalle de la direccion",
+      "postal_code": "66005",
+      "is_main": true,
+      "email": null,
+      "website": null
+    }
+  },
+  {
+    "model": "restaurant.table",
+    "pk": "d47a3940-8010-4a85-bb43-96c14f2b37cb",
+    "fields": {
+      "created_at": "2023-07-14T22:07:08.680Z",
+      "updated_at": "2023-07-14T22:27:43.220Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "is_active": true,
+      "branch": "0ccb1368-3f0d-4e2a-a1bd-529f50f9a201",
+      "identifier": "56",
+      "capacity": null,
+      "location_description": "yh56y1234",
+      "status": null,
+      "position": 1
+    }
+  }
+]

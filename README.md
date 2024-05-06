@@ -1,7 +1,9 @@
-# Dine Up Backend
+# DineUp Backend
 
-This project is a Django backend for the Dine Up project. It provides a GraphQL API for the frontend to interact with.
+This project is a Django backend for the DineUp project. It provides a GraphQL API for the frontend to interact with.
 The stack used in this project is Django, Graphene-Django-CRUDDALS, and Django-GraphQL-JWT.
+
+DineUp is a project that aims to provide a platform for view the details of a restaurant, such as its location, menu, and schedule. It also allows users to make reservations and rate the restaurant.
 
 ## Table of Contents
 
@@ -14,7 +16,7 @@ The stack used in this project is Django, Graphene-Django-CRUDDALS, and Django-G
 2. Clone this repository to your local machine:
 
   ```bash
-    git clone https://github.com/username/project.git
+    git clone https://github.com/juanjcardona13/dineupback.git
   ```  
 3. Navigate to the project directory:
   ```bash
@@ -28,11 +30,19 @@ The stack used in this project is Django, Graphene-Django-CRUDDALS, and Django-G
   ```bash
     python manage.py migrate
   ```  
-6. Start the development server:
+6. Create a superuser:
+  ```bash
+    python manage.py createsuperuser
+  ```
+7. Load the initial data:
+  ```bash
+    python manage.py loaddata db.json
+  ```
+8. Start the development server:
   ```bash
     python manage.py runserver
   ```  
-7. Visit http://127.0.0.1:8000/admin in your web browser to view the project or http://127.0.0.1:8000/api-dine-up/ for you to play with the API using the GraphiQL interface.
+9. Visit http://127.0.0.1:8000/admin in your web browser to view the project or http://127.0.0.1:8000/api-dine-up/ for you to play with the API using the GraphiQL interface.
 
 ## License
 
