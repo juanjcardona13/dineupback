@@ -243,5 +243,5 @@ CRUDDALS = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://192.168.1.17:3000",
+    "https://app.dineup.com.co",
 ]
