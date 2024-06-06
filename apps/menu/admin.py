@@ -52,7 +52,7 @@ else:
         # sortable_field_name = "position"
         inlines = [ItemImageInline]
         readonly_fields = DEFAULT_READ_ONLY_FIELDS
-        autocomplete_fields = ('category', 'customizable_options', 'tags')
+        autocomplete_fields = ('category',  'tags') #'customizable_options',
         fieldsets = (
             (None, {
                 'fields': (
@@ -79,7 +79,7 @@ else:
             (None, {'fields': ('name', 'restaurant_branch', 'is_active',)}),
             DEFAULT_AUDIT_FIELDS
         )
-        inlines = [CategoryInline, MenuItemInline]
+        inlines = [MenuItemInline] # CategoryInline,
         readonly_fields = DEFAULT_READ_ONLY_FIELDS
 
 

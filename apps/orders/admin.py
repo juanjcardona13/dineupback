@@ -50,7 +50,7 @@ else:
             (None, {'fields': ('table', 'number', 'is_active',)}),
             DEFAULT_AUDIT_FIELDS
         )
-        inlines = [OrderInline]
+        # inlines = [OrderInline]
         search_fields = ("number", "id")
         readonly_fields = DEFAULT_READ_ONLY_FIELDS
 
@@ -63,14 +63,14 @@ else:
         readonly_fields = DEFAULT_READ_ONLY_FIELDS
 
 
-    @admin.register(Order)
-    class OrderAdmin(nested_admin.NestedModelAdmin):
-        fieldsets = (
-            (None, {'fields': ('order', 'diner', 'number', 'status', 'is_active',)}),
-            DEFAULT_AUDIT_FIELDS
-        )
-        inlines = [OrderItemInline]
-        readonly_fields = DEFAULT_READ_ONLY_FIELDS
+    # @admin.register(Order)
+    # class OrderAdmin(nested_admin.NestedModelAdmin):
+    #     fieldsets = (
+    #         (None, {'fields': ('order', 'diner', 'number', 'status', 'is_active',)}),
+    #         DEFAULT_AUDIT_FIELDS
+    #     )
+    #     inlines = [OrderItemInline]
+    #     readonly_fields = DEFAULT_READ_ONLY_FIELDS
 
 
     @admin.register(OrderItem)

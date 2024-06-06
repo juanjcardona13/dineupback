@@ -1,0 +1,3722 @@
+type Query {
+  readSocialMedia(where: SocialMediaFilterInput!): SocialMediaType
+  searchSocialMedia(where: SocialMediaFilterInput, orderBy: SocialMediaOrderByInput, paginated: PaginatedInput): SocialMediaPaginatedType
+  readSocialMediaPlatform(where: SocialMediaPlatformFilterInput!): SocialMediaPlatformType
+  searchSocialMediaPlatforms(where: SocialMediaPlatformFilterInput, orderBy: SocialMediaPlatformOrderByInput, paginated: PaginatedInput): SocialMediaPlatformPaginatedType
+  readTable(where: TableFilterInput!): TableType
+  searchTables(where: TableFilterInput, orderBy: TableOrderByInput, paginated: PaginatedInput): TablePaginatedType
+  readBranchPhoneNumber(where: BranchPhoneNumberFilterInput!): BranchPhoneNumberType
+  searchBranchPhoneNumbers(where: BranchPhoneNumberFilterInput, orderBy: BranchPhoneNumberOrderByInput, paginated: PaginatedInput): BranchPhoneNumberPaginatedType
+  readBranch(where: BranchFilterInput!): BranchType
+  searchBranches(where: BranchFilterInput, orderBy: BranchOrderByInput, paginated: PaginatedInput): BranchPaginatedType
+  readRestaurant(where: RestaurantFilterInput!): RestaurantType
+  searchRestaurants(where: RestaurantFilterInput, orderBy: RestaurantOrderByInput, paginated: PaginatedInput): RestaurantPaginatedType
+  readOrderItemOption(where: OrderItemOptionFilterInput!): OrderItemOptionType
+  searchOrderItemOptions(where: OrderItemOptionFilterInput, orderBy: OrderItemOptionOrderByInput, paginated: PaginatedInput): OrderItemOptionPaginatedType
+  readOrderItem(where: OrderItemFilterInput!): OrderItemType
+  searchOrderItems(where: OrderItemFilterInput, orderBy: OrderItemOrderByInput, paginated: PaginatedInput): OrderItemPaginatedType
+  readOrder(where: OrderFilterInput!): OrderType
+  searchOrders(where: OrderFilterInput, orderBy: OrderOrderByInput, paginated: PaginatedInput): OrderPaginatedType
+  readOrderStatus(where: OrderStatusFilterInput!): OrderStatusType
+  searchOrderStatus(where: OrderStatusFilterInput, orderBy: OrderStatusOrderByInput, paginated: PaginatedInput): OrderStatusPaginatedType
+  readItemTag(where: ItemTagFilterInput!): ItemTagType
+  searchItemTags(where: ItemTagFilterInput, orderBy: ItemTagOrderByInput, paginated: PaginatedInput): ItemTagPaginatedType
+  readItemOption(where: ItemOptionFilterInput!): ItemOptionType
+  searchItemOptions(where: ItemOptionFilterInput, orderBy: ItemOptionOrderByInput, paginated: PaginatedInput): ItemOptionPaginatedType
+  readOptionGroup(where: OptionGroupFilterInput!): OptionGroupType
+  searchOptionGroups(where: OptionGroupFilterInput, orderBy: OptionGroupOrderByInput, paginated: PaginatedInput): OptionGroupPaginatedType
+  readItemImage(where: ItemImageFilterInput!): ItemImageType
+  searchItemImages(where: ItemImageFilterInput, orderBy: ItemImageOrderByInput, paginated: PaginatedInput): ItemImagePaginatedType
+  readVariantOption(where: VariantOptionFilterInput!): VariantOptionType
+  searchVariantOptions(where: VariantOptionFilterInput, orderBy: VariantOptionOrderByInput, paginated: PaginatedInput): VariantOptionPaginatedType
+  readMenuItemVariant(where: MenuItemVariantFilterInput!): MenuItemVariantType
+  searchMenuItemVariants(where: MenuItemVariantFilterInput, orderBy: MenuItemVariantOrderByInput, paginated: PaginatedInput): MenuItemVariantPaginatedType
+  readMenuItem(where: MenuItemFilterInput!): MenuItemType
+  searchMenuItems(where: MenuItemFilterInput, orderBy: MenuItemOrderByInput, paginated: PaginatedInput): MenuItemPaginatedType
+  readCategory(where: CategoryFilterInput!): CategoryType
+  searchCategories(where: CategoryFilterInput, orderBy: CategoryOrderByInput, paginated: PaginatedInput): CategoryPaginatedType
+  readMenu(where: MenuFilterInput!): MenuType
+  searchMenus(where: MenuFilterInput, orderBy: MenuOrderByInput, paginated: PaginatedInput): MenuPaginatedType
+  readJobFunction(where: JobFunctionFilterInput!): JobFunctionType
+  searchJobFunctions(where: JobFunctionFilterInput, orderBy: JobFunctionOrderByInput, paginated: PaginatedInput): JobFunctionPaginatedType
+  readEmployee(where: EmployeeFilterInput!): EmployeeType
+  searchEmployees(where: EmployeeFilterInput, orderBy: EmployeeOrderByInput, paginated: PaginatedInput): EmployeePaginatedType
+  readRole(where: RoleFilterInput!): RoleType
+  searchRoles(where: RoleFilterInput, orderBy: RoleOrderByInput, paginated: PaginatedInput): RolePaginatedType
+  readDineUpUser(where: DineUpUserFilterInput, me: Boolean): DineUpUserType
+  searchDineUpUsers(where: DineUpUserFilterInput, orderBy: DineUpUserOrderByInput, paginated: PaginatedInput): DineUpUserPaginatedType
+  readScheduleItem(where: ScheduleItemFilterInput!): ScheduleItemType
+  searchSchedulesItem(where: ScheduleItemFilterInput, orderBy: ScheduleItemOrderByInput, paginated: PaginatedInput): ScheduleItemPaginatedType
+  listSchedulesItem(orderBy: ScheduleItemOrderByInput, paginated: PaginatedInput): ScheduleItemPaginatedType
+  readSchedule(where: ScheduleFilterInput!): ScheduleType
+  searchSchedules(where: ScheduleFilterInput, orderBy: ScheduleOrderByInput, paginated: PaginatedInput): SchedulePaginatedType
+  listSchedules(orderBy: ScheduleOrderByInput, paginated: PaginatedInput): SchedulePaginatedType
+  readTimeSlot(where: TimeSlotFilterInput!): TimeSlotType
+  searchTimeSlots(where: TimeSlotFilterInput, orderBy: TimeSlotOrderByInput, paginated: PaginatedInput): TimeSlotPaginatedType
+  listTimeSlots(orderBy: TimeSlotOrderByInput, paginated: PaginatedInput): TimeSlotPaginatedType
+  readUser(where: UserFilterInput!): UserType
+  searchUsers(where: UserFilterInput, orderBy: UserOrderByInput, paginated: PaginatedInput): UserPaginatedType
+  listUsers(orderBy: UserOrderByInput, paginated: PaginatedInput): UserPaginatedType
+  readGroup(where: GroupFilterInput!): GroupType
+  searchGroups(where: GroupFilterInput, orderBy: GroupOrderByInput, paginated: PaginatedInput): GroupPaginatedType
+  listGroups(orderBy: GroupOrderByInput, paginated: PaginatedInput): GroupPaginatedType
+  readPermission(where: PermissionFilterInput!): PermissionType
+  searchPermissions(where: PermissionFilterInput, orderBy: PermissionOrderByInput, paginated: PaginatedInput): PermissionPaginatedType
+  listPermissions(orderBy: PermissionOrderByInput, paginated: PaginatedInput): PermissionPaginatedType
+}
+
+type SocialMediaType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  restaurant: RestaurantType!
+  socialMediaPlatform: SocialMediaPlatformType
+  name: String
+  url: URL!
+}
+
+"""
+Leverages the internal Python implementation of UUID (uuid.UUID) to provide native UUID objects
+in fields, resolvers and input.
+"""
+scalar UUID
+
+"""
+The `DateTime` scalar type represents a DateTime
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar DateTime
+
+type UserType {
+  id: ID
+  password: String!
+  lastLogin: DateTime
+
+  """
+  Designates that this user has all permissions without explicitly assigning them.
+  """
+  isSuperuser: Boolean!
+
+  """Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."""
+  username: String!
+  firstName: String
+  lastName: String
+  email: Email
+
+  """Designates whether the user can log into this admin site."""
+  isStaff: Boolean!
+
+  """
+  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
+  """
+  isActive: Boolean!
+  dateJoined: DateTime!
+  paginatedGroups(where: GroupFilterInput, orderBy: GroupOrderByInput, paginated: PaginatedInput): GroupPaginatedType
+  paginatedUserPermissions(where: PermissionFilterInput, orderBy: PermissionOrderByInput, paginated: PaginatedInput): PermissionPaginatedType
+  paginatedDineupuserCreatedBy(where: DineUpUserFilterInput, orderBy: DineUpUserOrderByInput, paginated: PaginatedInput): DineUpUserPaginatedType
+  paginatedDineupuserUpdatedBy(where: DineUpUserFilterInput, orderBy: DineUpUserOrderByInput, paginated: PaginatedInput): DineUpUserPaginatedType
+  dineupuser: DineUpUserType
+  paginatedRoleCreatedBy(where: RoleFilterInput, orderBy: RoleOrderByInput, paginated: PaginatedInput): RolePaginatedType
+  paginatedRoleUpdatedBy(where: RoleFilterInput, orderBy: RoleOrderByInput, paginated: PaginatedInput): RolePaginatedType
+  paginatedEmployeeCreatedBy(where: EmployeeFilterInput, orderBy: EmployeeOrderByInput, paginated: PaginatedInput): EmployeePaginatedType
+  paginatedEmployeeUpdatedBy(where: EmployeeFilterInput, orderBy: EmployeeOrderByInput, paginated: PaginatedInput): EmployeePaginatedType
+  paginatedJobfunctionCreatedBy(where: JobFunctionFilterInput, orderBy: JobFunctionOrderByInput, paginated: PaginatedInput): JobFunctionPaginatedType
+  paginatedJobfunctionUpdatedBy(where: JobFunctionFilterInput, orderBy: JobFunctionOrderByInput, paginated: PaginatedInput): JobFunctionPaginatedType
+  paginatedTimeslotCreatedBy(where: TimeSlotFilterInput, orderBy: TimeSlotOrderByInput, paginated: PaginatedInput): TimeSlotPaginatedType
+  paginatedTimeslotUpdatedBy(where: TimeSlotFilterInput, orderBy: TimeSlotOrderByInput, paginated: PaginatedInput): TimeSlotPaginatedType
+  paginatedScheduleCreatedBy(where: ScheduleFilterInput, orderBy: ScheduleOrderByInput, paginated: PaginatedInput): SchedulePaginatedType
+  paginatedScheduleUpdatedBy(where: ScheduleFilterInput, orderBy: ScheduleOrderByInput, paginated: PaginatedInput): SchedulePaginatedType
+  paginatedScheduleitemCreatedBy(where: ScheduleItemFilterInput, orderBy: ScheduleItemOrderByInput, paginated: PaginatedInput): ScheduleItemPaginatedType
+  paginatedScheduleitemUpdatedBy(where: ScheduleItemFilterInput, orderBy: ScheduleItemOrderByInput, paginated: PaginatedInput): ScheduleItemPaginatedType
+  paginatedMenuCreatedBy(where: MenuFilterInput, orderBy: MenuOrderByInput, paginated: PaginatedInput): MenuPaginatedType
+  paginatedMenuUpdatedBy(where: MenuFilterInput, orderBy: MenuOrderByInput, paginated: PaginatedInput): MenuPaginatedType
+  paginatedCategoryCreatedBy(where: CategoryFilterInput, orderBy: CategoryOrderByInput, paginated: PaginatedInput): CategoryPaginatedType
+  paginatedCategoryUpdatedBy(where: CategoryFilterInput, orderBy: CategoryOrderByInput, paginated: PaginatedInput): CategoryPaginatedType
+  paginatedMenuitemCreatedBy(where: MenuItemFilterInput, orderBy: MenuItemOrderByInput, paginated: PaginatedInput): MenuItemPaginatedType
+  paginatedMenuitemUpdatedBy(where: MenuItemFilterInput, orderBy: MenuItemOrderByInput, paginated: PaginatedInput): MenuItemPaginatedType
+  paginatedMenuitemvariantCreatedBy(where: MenuItemVariantFilterInput, orderBy: MenuItemVariantOrderByInput, paginated: PaginatedInput): MenuItemVariantPaginatedType
+  paginatedMenuitemvariantUpdatedBy(where: MenuItemVariantFilterInput, orderBy: MenuItemVariantOrderByInput, paginated: PaginatedInput): MenuItemVariantPaginatedType
+  paginatedVariantoptionCreatedBy(where: VariantOptionFilterInput, orderBy: VariantOptionOrderByInput, paginated: PaginatedInput): VariantOptionPaginatedType
+  paginatedVariantoptionUpdatedBy(where: VariantOptionFilterInput, orderBy: VariantOptionOrderByInput, paginated: PaginatedInput): VariantOptionPaginatedType
+  paginatedItemimageCreatedBy(where: ItemImageFilterInput, orderBy: ItemImageOrderByInput, paginated: PaginatedInput): ItemImagePaginatedType
+  paginatedItemimageUpdatedBy(where: ItemImageFilterInput, orderBy: ItemImageOrderByInput, paginated: PaginatedInput): ItemImagePaginatedType
+  paginatedOptiongroupCreatedBy(where: OptionGroupFilterInput, orderBy: OptionGroupOrderByInput, paginated: PaginatedInput): OptionGroupPaginatedType
+  paginatedOptiongroupUpdatedBy(where: OptionGroupFilterInput, orderBy: OptionGroupOrderByInput, paginated: PaginatedInput): OptionGroupPaginatedType
+  paginatedItemoptionCreatedBy(where: ItemOptionFilterInput, orderBy: ItemOptionOrderByInput, paginated: PaginatedInput): ItemOptionPaginatedType
+  paginatedItemoptionUpdatedBy(where: ItemOptionFilterInput, orderBy: ItemOptionOrderByInput, paginated: PaginatedInput): ItemOptionPaginatedType
+  paginatedItemtagCreatedBy(where: ItemTagFilterInput, orderBy: ItemTagOrderByInput, paginated: PaginatedInput): ItemTagPaginatedType
+  paginatedItemtagUpdatedBy(where: ItemTagFilterInput, orderBy: ItemTagOrderByInput, paginated: PaginatedInput): ItemTagPaginatedType
+  paginatedOrderstatusCreatedBy(where: OrderStatusFilterInput, orderBy: OrderStatusOrderByInput, paginated: PaginatedInput): OrderStatusPaginatedType
+  paginatedOrderstatusUpdatedBy(where: OrderStatusFilterInput, orderBy: OrderStatusOrderByInput, paginated: PaginatedInput): OrderStatusPaginatedType
+  paginatedOrderCreatedBy(where: OrderFilterInput, orderBy: OrderOrderByInput, paginated: PaginatedInput): OrderPaginatedType
+  paginatedOrderUpdatedBy(where: OrderFilterInput, orderBy: OrderOrderByInput, paginated: PaginatedInput): OrderPaginatedType
+  paginatedOrderitemCreatedBy(where: OrderItemFilterInput, orderBy: OrderItemOrderByInput, paginated: PaginatedInput): OrderItemPaginatedType
+  paginatedOrderitemUpdatedBy(where: OrderItemFilterInput, orderBy: OrderItemOrderByInput, paginated: PaginatedInput): OrderItemPaginatedType
+  paginatedOrderitemoptionCreatedBy(where: OrderItemOptionFilterInput, orderBy: OrderItemOptionOrderByInput, paginated: PaginatedInput): OrderItemOptionPaginatedType
+  paginatedOrderitemoptionUpdatedBy(where: OrderItemOptionFilterInput, orderBy: OrderItemOptionOrderByInput, paginated: PaginatedInput): OrderItemOptionPaginatedType
+  paginatedRestaurantCreatedBy(where: RestaurantFilterInput, orderBy: RestaurantOrderByInput, paginated: PaginatedInput): RestaurantPaginatedType
+  paginatedRestaurantUpdatedBy(where: RestaurantFilterInput, orderBy: RestaurantOrderByInput, paginated: PaginatedInput): RestaurantPaginatedType
+  paginatedBranchCreatedBy(where: BranchFilterInput, orderBy: BranchOrderByInput, paginated: PaginatedInput): BranchPaginatedType
+  paginatedBranchUpdatedBy(where: BranchFilterInput, orderBy: BranchOrderByInput, paginated: PaginatedInput): BranchPaginatedType
+  paginatedBranchphonenumberCreatedBy(where: BranchPhoneNumberFilterInput, orderBy: BranchPhoneNumberOrderByInput, paginated: PaginatedInput): BranchPhoneNumberPaginatedType
+  paginatedBranchphonenumberUpdatedBy(where: BranchPhoneNumberFilterInput, orderBy: BranchPhoneNumberOrderByInput, paginated: PaginatedInput): BranchPhoneNumberPaginatedType
+  paginatedTableCreatedBy(where: TableFilterInput, orderBy: TableOrderByInput, paginated: PaginatedInput): TablePaginatedType
+  paginatedTableUpdatedBy(where: TableFilterInput, orderBy: TableOrderByInput, paginated: PaginatedInput): TablePaginatedType
+  paginatedSocialmediaplatformCreatedBy(where: SocialMediaPlatformFilterInput, orderBy: SocialMediaPlatformOrderByInput, paginated: PaginatedInput): SocialMediaPlatformPaginatedType
+  paginatedSocialmediaplatformUpdatedBy(where: SocialMediaPlatformFilterInput, orderBy: SocialMediaPlatformOrderByInput, paginated: PaginatedInput): SocialMediaPlatformPaginatedType
+  paginatedSocialmediaCreatedBy(where: SocialMediaFilterInput, orderBy: SocialMediaOrderByInput, paginated: PaginatedInput): SocialMediaPaginatedType
+  paginatedSocialmediaUpdatedBy(where: SocialMediaFilterInput, orderBy: SocialMediaOrderByInput, paginated: PaginatedInput): SocialMediaPaginatedType
+}
+
+"""
+A field whose value conforms to the standard 
+internet email address format as specified in 
+HTML Spec: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address.
+"""
+scalar Email
+
+type GroupPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [GroupType!]
+}
+
+interface PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+}
+
+type GroupType {
+  id: ID
+  name: String!
+  paginatedPermissions(where: PermissionFilterInput, orderBy: PermissionOrderByInput, paginated: PaginatedInput): PermissionPaginatedType
+  paginatedUserSet(where: UserFilterInput, orderBy: UserOrderByInput, paginated: PaginatedInput): UserPaginatedType
+}
+
+type PermissionPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [PermissionType!]
+}
+
+type PermissionType {
+  id: ID
+  name: String!
+  codename: String!
+  paginatedRoleSet(where: RoleFilterInput, orderBy: RoleOrderByInput, paginated: PaginatedInput): RolePaginatedType
+  paginatedGroupSet(where: GroupFilterInput, orderBy: GroupOrderByInput, paginated: PaginatedInput): GroupPaginatedType
+  paginatedUserSet(where: UserFilterInput, orderBy: UserOrderByInput, paginated: PaginatedInput): UserPaginatedType
+}
+
+type RolePaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [RoleType!]
+}
+
+type RoleType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  name: String!
+  isDefault: Boolean!
+  paginatedRestaurants(where: RestaurantFilterInput, orderBy: RestaurantOrderByInput, paginated: PaginatedInput): RestaurantPaginatedType
+  paginatedPermissions(where: PermissionFilterInput, orderBy: PermissionOrderByInput, paginated: PaginatedInput): PermissionPaginatedType
+  paginatedJobfunctionSet(where: JobFunctionFilterInput, orderBy: JobFunctionOrderByInput, paginated: PaginatedInput): JobFunctionPaginatedType
+}
+
+type RestaurantPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [RestaurantType!]
+}
+
+type RestaurantType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  name: String!
+  slug: Slug
+  owner: DineUpUserType!
+  logo: String
+  slogan: String
+  isMain: Boolean!
+  email: Email
+  phoneNumber: String
+  website: URL
+  paginatedRoles(where: RoleFilterInput, orderBy: RoleOrderByInput, paginated: PaginatedInput): RolePaginatedType
+  paginatedEmployees(where: EmployeeFilterInput, orderBy: EmployeeOrderByInput, paginated: PaginatedInput): EmployeePaginatedType
+  paginatedMenus(where: MenuFilterInput, orderBy: MenuOrderByInput, paginated: PaginatedInput): MenuPaginatedType
+  paginatedCategories(where: CategoryFilterInput, orderBy: CategoryOrderByInput, paginated: PaginatedInput): CategoryPaginatedType
+  paginatedOrders(where: OrderFilterInput, orderBy: OrderOrderByInput, paginated: PaginatedInput): OrderPaginatedType
+  paginatedBranches(where: BranchFilterInput, orderBy: BranchOrderByInput, paginated: PaginatedInput): BranchPaginatedType
+  paginatedSocailMedia(where: SocialMediaFilterInput, orderBy: SocialMediaOrderByInput, paginated: PaginatedInput): SocialMediaPaginatedType
+}
+
+"""
+Slug is a newspaper term. A slug is a short label for something, containing only letters, numbers, underscores or hyphens. They’re generally used in URLs.
+"""
+scalar Slug
+
+type DineUpUserType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  user: UserType
+  phoneNumber: String
+  employment: EmployeeType
+  paginatedOrders(where: OrderFilterInput, orderBy: OrderOrderByInput, paginated: PaginatedInput): OrderPaginatedType
+  paginatedRestaurants(where: RestaurantFilterInput, orderBy: RestaurantOrderByInput, paginated: PaginatedInput): RestaurantPaginatedType
+  paginatedManagedBranches(where: BranchFilterInput, orderBy: BranchOrderByInput, paginated: PaginatedInput): BranchPaginatedType
+}
+
+type EmployeeType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  dineUpUser: DineUpUserType!
+  leader: EmployeeType
+  paginatedRestaurants(where: RestaurantFilterInput, orderBy: RestaurantOrderByInput, paginated: PaginatedInput): RestaurantPaginatedType
+  paginatedTeamMembers(where: EmployeeFilterInput, orderBy: EmployeeOrderByInput, paginated: PaginatedInput): EmployeePaginatedType
+  paginatedJobFunctions(where: JobFunctionFilterInput, orderBy: JobFunctionOrderByInput, paginated: PaginatedInput): JobFunctionPaginatedType
+  paginatedOrders(where: OrderFilterInput, orderBy: OrderOrderByInput, paginated: PaginatedInput): OrderPaginatedType
+}
+
+input RestaurantFilterInput {
+  AND: [RestaurantFilterInput]
+  OR: [RestaurantFilterInput]
+  NOT: RestaurantFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  name: StringFilter
+  slug: SlugFilter
+  owner: DineUpUserFilterInput
+  logo: StringFilter
+  slogan: StringFilter
+  isMain: BooleanFilter
+  email: EmailFilter
+  phoneNumber: StringFilter
+  website: URLFilter
+  roles: RoleFilterInput
+  employees: EmployeeFilterInput
+  menus: MenuFilterInput
+  categories: CategoryFilterInput
+  orders: OrderFilterInput
+  branches: BranchFilterInput
+  socailMedia: SocialMediaFilterInput
+}
+
+input UUIDFilter {
+  exact: UUID
+  iexact: UUID
+  gt: UUID
+  gte: UUID
+  lt: UUID
+  lte: UUID
+  in: [UUID]
+  contains: UUID
+  icontains: UUID
+  startswith: UUID
+  istartswith: UUID
+  endswith: UUID
+  iendswith: UUID
+  range: UUID
+  isnull: Boolean
+  regex: String
+  iregex: String
+}
+
+input DateTimeFilter {
+  exact: DateTime
+  iexact: DateTime
+  gt: DateTime
+  gte: DateTime
+  lt: DateTime
+  lte: DateTime
+  in: [DateTime]
+  contains: DateTime
+  icontains: DateTime
+  startswith: DateTime
+  istartswith: DateTime
+  endswith: DateTime
+  iendswith: DateTime
+  range: DateTime
+  isnull: Boolean
+  regex: String
+  iregex: String
+  year: DateTime
+  month: DateTime
+  day: DateTime
+  weekDay: DateTime
+  isoWeekDay: DateTime
+  week: DateTime
+  isoYear: DateTime
+  quarter: DateTime
+  containedBy: DateTime
+  hour: DateTime
+  minute: DateTime
+  second: DateTime
+  date: DateTime
+  time: DateTime
+}
+
+input UserFilterInput {
+  AND: [UserFilterInput]
+  OR: [UserFilterInput]
+  NOT: UserFilterInput
+  id: IDFilter
+  password: StringFilter
+  lastLogin: DateTimeFilter
+
+  """
+  Designates that this user has all permissions without explicitly assigning them.
+  """
+  isSuperuser: BooleanFilter
+
+  """Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."""
+  username: StringFilter
+  firstName: StringFilter
+  lastName: StringFilter
+  email: EmailFilter
+
+  """Designates whether the user can log into this admin site."""
+  isStaff: BooleanFilter
+
+  """
+  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.
+  """
+  isActive: BooleanFilter
+  dateJoined: DateTimeFilter
+  groups: GroupFilterInput
+  userPermissions: PermissionFilterInput
+  dineupuserCreatedBy: DineUpUserFilterInput
+  dineupuserUpdatedBy: DineUpUserFilterInput
+  dineupuser: DineUpUserFilterInput
+  roleCreatedBy: RoleFilterInput
+  roleUpdatedBy: RoleFilterInput
+  employeeCreatedBy: EmployeeFilterInput
+  employeeUpdatedBy: EmployeeFilterInput
+  jobfunctionCreatedBy: JobFunctionFilterInput
+  jobfunctionUpdatedBy: JobFunctionFilterInput
+  timeslotCreatedBy: TimeSlotFilterInput
+  timeslotUpdatedBy: TimeSlotFilterInput
+  scheduleCreatedBy: ScheduleFilterInput
+  scheduleUpdatedBy: ScheduleFilterInput
+  scheduleitemCreatedBy: ScheduleItemFilterInput
+  scheduleitemUpdatedBy: ScheduleItemFilterInput
+  menuCreatedBy: MenuFilterInput
+  menuUpdatedBy: MenuFilterInput
+  categoryCreatedBy: CategoryFilterInput
+  categoryUpdatedBy: CategoryFilterInput
+  menuitemCreatedBy: MenuItemFilterInput
+  menuitemUpdatedBy: MenuItemFilterInput
+  menuitemvariantCreatedBy: MenuItemVariantFilterInput
+  menuitemvariantUpdatedBy: MenuItemVariantFilterInput
+  variantoptionCreatedBy: VariantOptionFilterInput
+  variantoptionUpdatedBy: VariantOptionFilterInput
+  itemimageCreatedBy: ItemImageFilterInput
+  itemimageUpdatedBy: ItemImageFilterInput
+  optiongroupCreatedBy: OptionGroupFilterInput
+  optiongroupUpdatedBy: OptionGroupFilterInput
+  itemoptionCreatedBy: ItemOptionFilterInput
+  itemoptionUpdatedBy: ItemOptionFilterInput
+  itemtagCreatedBy: ItemTagFilterInput
+  itemtagUpdatedBy: ItemTagFilterInput
+  orderstatusCreatedBy: OrderStatusFilterInput
+  orderstatusUpdatedBy: OrderStatusFilterInput
+  orderCreatedBy: OrderFilterInput
+  orderUpdatedBy: OrderFilterInput
+  orderitemCreatedBy: OrderItemFilterInput
+  orderitemUpdatedBy: OrderItemFilterInput
+  orderitemoptionCreatedBy: OrderItemOptionFilterInput
+  orderitemoptionUpdatedBy: OrderItemOptionFilterInput
+  restaurantCreatedBy: RestaurantFilterInput
+  restaurantUpdatedBy: RestaurantFilterInput
+  branchCreatedBy: BranchFilterInput
+  branchUpdatedBy: BranchFilterInput
+  branchphonenumberCreatedBy: BranchPhoneNumberFilterInput
+  branchphonenumberUpdatedBy: BranchPhoneNumberFilterInput
+  tableCreatedBy: TableFilterInput
+  tableUpdatedBy: TableFilterInput
+  socialmediaplatformCreatedBy: SocialMediaPlatformFilterInput
+  socialmediaplatformUpdatedBy: SocialMediaPlatformFilterInput
+  socialmediaCreatedBy: SocialMediaFilterInput
+  socialmediaUpdatedBy: SocialMediaFilterInput
+}
+
+input IDFilter {
+  exact: ID
+  iexact: ID
+  gt: ID
+  gte: ID
+  lt: ID
+  lte: ID
+  in: [ID]
+  contains: ID
+  icontains: ID
+  startswith: ID
+  istartswith: ID
+  endswith: ID
+  iendswith: ID
+  range: ID
+  isnull: Boolean
+  regex: String
+  iregex: String
+  containedBy: ID
+}
+
+input StringFilter {
+  exact: String
+  iexact: String
+  gt: String
+  gte: String
+  lt: String
+  lte: String
+  in: [String]
+  contains: String
+  icontains: String
+  startswith: String
+  istartswith: String
+  endswith: String
+  iendswith: String
+  range: String
+  isnull: Boolean
+  regex: String
+  iregex: String
+}
+
+input BooleanFilter {
+  exact: Boolean
+  iexact: Boolean
+  gt: Boolean
+  gte: Boolean
+  lt: Boolean
+  lte: Boolean
+  in: [Boolean]
+  contains: Boolean
+  icontains: Boolean
+  startswith: Boolean
+  istartswith: Boolean
+  endswith: Boolean
+  iendswith: Boolean
+  range: Boolean
+  isnull: Boolean
+  regex: String
+  iregex: String
+}
+
+input EmailFilter {
+  exact: Email
+  iexact: Email
+  gt: Email
+  gte: Email
+  lt: Email
+  lte: Email
+  in: [Email]
+  contains: Email
+  icontains: Email
+  startswith: Email
+  istartswith: Email
+  endswith: Email
+  iendswith: Email
+  range: Email
+  isnull: Boolean
+  regex: String
+  iregex: String
+}
+
+input GroupFilterInput {
+  AND: [GroupFilterInput]
+  OR: [GroupFilterInput]
+  NOT: GroupFilterInput
+  id: IDFilter
+  name: StringFilter
+  permissions: PermissionFilterInput
+  user: UserFilterInput
+}
+
+input PermissionFilterInput {
+  AND: [PermissionFilterInput]
+  OR: [PermissionFilterInput]
+  NOT: PermissionFilterInput
+  id: IDFilter
+  name: StringFilter
+  codename: StringFilter
+  role: RoleFilterInput
+  group: GroupFilterInput
+  user: UserFilterInput
+}
+
+input RoleFilterInput {
+  AND: [RoleFilterInput]
+  OR: [RoleFilterInput]
+  NOT: RoleFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  name: StringFilter
+  isDefault: BooleanFilter
+  restaurants: RestaurantFilterInput
+  permissions: PermissionFilterInput
+  jobfunction: JobFunctionFilterInput
+}
+
+input JobFunctionFilterInput {
+  AND: [JobFunctionFilterInput]
+  OR: [JobFunctionFilterInput]
+  NOT: JobFunctionFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  employee: EmployeeFilterInput
+  branch: BranchFilterInput
+  roles: RoleFilterInput
+}
+
+input EmployeeFilterInput {
+  AND: [EmployeeFilterInput]
+  OR: [EmployeeFilterInput]
+  NOT: EmployeeFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  dineUpUser: DineUpUserFilterInput
+  leader: EmployeeFilterInput
+  restaurants: RestaurantFilterInput
+  teamMembers: EmployeeFilterInput
+  jobFunctions: JobFunctionFilterInput
+  orders: OrderFilterInput
+}
+
+input DineUpUserFilterInput {
+  AND: [DineUpUserFilterInput]
+  OR: [DineUpUserFilterInput]
+  NOT: DineUpUserFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  user: UserFilterInput
+  phoneNumber: StringFilter
+  employment: EmployeeFilterInput
+  orders: OrderFilterInput
+  restaurants: RestaurantFilterInput
+  managedBranches: BranchFilterInput
+}
+
+input OrderFilterInput {
+  AND: [OrderFilterInput]
+  OR: [OrderFilterInput]
+  NOT: OrderFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  table: TableFilterInput
+  diner: DineUpUserFilterInput
+  status: OrderStatusFilterInput
+  number: IntFilter
+  waiter: EmployeeFilterInput
+  total: DecimalFilter
+  restaurant: RestaurantFilterInput
+  orderItems: OrderItemFilterInput
+}
+
+input TableFilterInput {
+  AND: [TableFilterInput]
+  OR: [TableFilterInput]
+  NOT: TableFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  branch: BranchFilterInput
+  identifier: StringFilter
+  capacity: IntFilter
+  locationDescription: StringFilter
+  status: RestaurantTableStatusChoices = null
+  position: IntFilter
+  orders: OrderFilterInput
+}
+
+input BranchFilterInput {
+  AND: [BranchFilterInput]
+  OR: [BranchFilterInput]
+  NOT: BranchFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  restaurant: RestaurantFilterInput
+  name: StringFilter
+  slug: SlugFilter
+  admin: DineUpUserFilterInput
+  address: StringFilter
+  addressDetail: StringFilter
+  postalCode: StringFilter
+  isMain: BooleanFilter
+  email: EmailFilter
+  website: URLFilter
+  jobFunctions: JobFunctionFilterInput
+  menus: MenuFilterInput
+  phoneNumbers: BranchPhoneNumberFilterInput
+  tables: TableFilterInput
+}
+
+input SlugFilter {
+  exact: Slug
+  iexact: Slug
+  gt: Slug
+  gte: Slug
+  lt: Slug
+  lte: Slug
+  in: [Slug]
+  contains: Slug
+  icontains: Slug
+  startswith: Slug
+  istartswith: Slug
+  endswith: Slug
+  iendswith: Slug
+  range: Slug
+  isnull: Boolean
+  regex: String
+  iregex: String
+}
+
+input URLFilter {
+  exact: URL
+  iexact: URL
+  gt: URL
+  gte: URL
+  lt: URL
+  lte: URL
+  in: [URL]
+  contains: URL
+  icontains: URL
+  startswith: URL
+  istartswith: URL
+  endswith: URL
+  iendswith: URL
+  range: URL
+  isnull: Boolean
+  regex: String
+  iregex: String
+}
+
+"""
+A field whose value conforms to the standard URL format as specified in RFC3986: https://www.ietf.org/rfc/rfc3986.txt.
+"""
+scalar URL
+
+input MenuFilterInput {
+  AND: [MenuFilterInput]
+  OR: [MenuFilterInput]
+  NOT: MenuFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  name: StringFilter
+  restaurant: RestaurantFilterInput
+  isMain: BooleanFilter
+  restaurantBranches: BranchFilterInput
+  categories: CategoryFilterInput
+  menuItems: MenuItemFilterInput
+}
+
+input CategoryFilterInput {
+  AND: [CategoryFilterInput]
+  OR: [CategoryFilterInput]
+  NOT: CategoryFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  name: StringFilter
+  icon: StringFilter
+  restaurant: RestaurantFilterInput
+  description: StringFilter
+  position: IntFilter
+  menus: MenuFilterInput
+  menuItems: MenuItemFilterInput
+}
+
+input IntFilter {
+  exact: Int
+  iexact: Int
+  gt: Int
+  gte: Int
+  lt: Int
+  lte: Int
+  in: [Int]
+  contains: Int
+  icontains: Int
+  startswith: Int
+  istartswith: Int
+  endswith: Int
+  iendswith: Int
+  range: Int
+  isnull: Boolean
+  regex: String
+  iregex: String
+  containedBy: Int
+}
+
+input MenuItemFilterInput {
+  AND: [MenuItemFilterInput]
+  OR: [MenuItemFilterInput]
+  NOT: MenuItemFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  menu: MenuFilterInput
+  name: StringFilter
+  description: StringFilter
+  price: DecimalFilter
+  hasMultiplePrice: BooleanFilter
+  category: CategoryFilterInput
+  position: IntFilter
+  tags: ItemTagFilterInput
+  variant: MenuItemVariantFilterInput
+  images: ItemImageFilterInput
+  optionGroups: OptionGroupFilterInput
+  optionGroupsShared: OptionGroupFilterInput
+}
+
+input DecimalFilter {
+  exact: Decimal
+  iexact: Decimal
+  gt: Decimal
+  gte: Decimal
+  lt: Decimal
+  lte: Decimal
+  in: [Decimal]
+  contains: Decimal
+  icontains: Decimal
+  startswith: Decimal
+  istartswith: Decimal
+  endswith: Decimal
+  iendswith: Decimal
+  range: Decimal
+  isnull: Boolean
+  regex: String
+  iregex: String
+  containedBy: Decimal
+}
+
+"""The `Decimal` scalar type represents a python Decimal."""
+scalar Decimal
+
+input ItemTagFilterInput {
+  AND: [ItemTagFilterInput]
+  OR: [ItemTagFilterInput]
+  NOT: ItemTagFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  name: StringFilter
+  menuItems: MenuItemFilterInput
+}
+
+input MenuItemVariantFilterInput {
+  AND: [MenuItemVariantFilterInput]
+  OR: [MenuItemVariantFilterInput]
+  NOT: MenuItemVariantFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  menuItem: MenuItemFilterInput
+  name: StringFilter
+  variantOptions: VariantOptionFilterInput
+}
+
+input VariantOptionFilterInput {
+  AND: [VariantOptionFilterInput]
+  OR: [VariantOptionFilterInput]
+  NOT: VariantOptionFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  variant: MenuItemVariantFilterInput
+  name: StringFilter
+  price: DecimalFilter
+  description: StringFilter
+  isDefault: BooleanFilter
+  position: IntFilter
+}
+
+input ItemImageFilterInput {
+  AND: [ItemImageFilterInput]
+  OR: [ItemImageFilterInput]
+  NOT: ItemImageFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  menuItem: MenuItemFilterInput
+  image: StringFilter
+  position: IntFilter
+}
+
+input OptionGroupFilterInput {
+  AND: [OptionGroupFilterInput]
+  OR: [OptionGroupFilterInput]
+  NOT: OptionGroupFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  menuItem: MenuItemFilterInput
+  name: StringFilter
+  nameType: MenuOptionGroupNameTypeChoices!
+  isRequired: BooleanFilter
+  isMultiple: BooleanFilter
+  minimum: IntFilter
+  maximum: IntFilter
+  position: IntFilter
+  menuItems: MenuItemFilterInput
+  itemOptions: ItemOptionFilterInput
+}
+
+"""An enumeration."""
+enum MenuOptionGroupNameTypeChoices {
+  """ADDITIONAL"""
+  ADDITIONAL
+
+  """OPTION"""
+  OPTION
+}
+
+input ItemOptionFilterInput {
+  AND: [ItemOptionFilterInput]
+  OR: [ItemOptionFilterInput]
+  NOT: ItemOptionFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  group: OptionGroupFilterInput
+  name: StringFilter
+  description: StringFilter
+  price: DecimalFilter
+  isDefault: BooleanFilter
+  position: IntFilter
+  dependentOptions: ItemOptionFilterInput
+  itemoption: ItemOptionFilterInput
+}
+
+input BranchPhoneNumberFilterInput {
+  AND: [BranchPhoneNumberFilterInput]
+  OR: [BranchPhoneNumberFilterInput]
+  NOT: BranchPhoneNumberFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  branch: BranchFilterInput
+  phoneNumber: StringFilter
+  identifier: StringFilter
+}
+
+"""An enumeration."""
+enum RestaurantTableStatusChoices {
+  """OCCUPIED"""
+  OCCUPIED
+
+  """AVAILABLE"""
+  AVAILABLE
+
+  """RESERVED"""
+  RESERVED
+}
+
+input OrderStatusFilterInput {
+  AND: [OrderStatusFilterInput]
+  OR: [OrderStatusFilterInput]
+  NOT: OrderStatusFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  name: StringFilter
+}
+
+input OrderItemFilterInput {
+  AND: [OrderItemFilterInput]
+  OR: [OrderItemFilterInput]
+  NOT: OrderItemFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  order: OrderFilterInput
+  menuItem: MenuItemFilterInput
+  variantOption: VariantOptionFilterInput
+  amount: IntFilter
+  dinerName: StringFilter
+  observations: StringFilter
+  price: DecimalFilter
+  orderItemOptions: OrderItemOptionFilterInput
+}
+
+input OrderItemOptionFilterInput {
+  AND: [OrderItemOptionFilterInput]
+  OR: [OrderItemOptionFilterInput]
+  NOT: OrderItemOptionFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  orderItem: OrderItemFilterInput
+  itemOption: ItemOptionFilterInput
+  amount: IntFilter
+}
+
+input TimeSlotFilterInput {
+  AND: [TimeSlotFilterInput]
+  OR: [TimeSlotFilterInput]
+  NOT: TimeSlotFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  startTime: TimeFilter
+  endTime: TimeFilter
+  schedule: ScheduleFilterInput
+}
+
+input TimeFilter {
+  exact: Time
+  iexact: Time
+  gt: Time
+  gte: Time
+  lt: Time
+  lte: Time
+  in: [Time]
+  contains: Time
+  icontains: Time
+  startswith: Time
+  istartswith: Time
+  endswith: Time
+  iendswith: Time
+  range: Time
+  isnull: Boolean
+  regex: String
+  iregex: String
+  hour: Time
+  minute: Time
+  second: Time
+}
+
+"""
+The `Time` scalar type represents a Time value as
+specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar Time
+
+input ScheduleFilterInput {
+  AND: [ScheduleFilterInput]
+  OR: [ScheduleFilterInput]
+  NOT: ScheduleFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  dayOfWeek: CoreScheduleDayOfWeekChoices!
+  timeSlot: TimeSlotFilterInput
+}
+
+"""An enumeration."""
+enum CoreScheduleDayOfWeekChoices {
+  """Monday"""
+  A_1
+
+  """Tuesday"""
+  A_2
+
+  """Wednesday"""
+  A_3
+
+  """Thursday"""
+  A_4
+
+  """Friday"""
+  A_5
+
+  """Saturday"""
+  A_6
+
+  """Sunday"""
+  A_7
+}
+
+input ScheduleItemFilterInput {
+  AND: [ScheduleItemFilterInput]
+  OR: [ScheduleItemFilterInput]
+  NOT: ScheduleItemFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  schedule: ScheduleFilterInput
+  objectId: PositiveIntFilter
+}
+
+input PositiveIntFilter {
+  exact: PositiveInt
+  iexact: PositiveInt
+  gt: PositiveInt
+  gte: PositiveInt
+  lt: PositiveInt
+  lte: PositiveInt
+  in: [PositiveInt]
+  contains: PositiveInt
+  icontains: PositiveInt
+  startswith: PositiveInt
+  istartswith: PositiveInt
+  endswith: PositiveInt
+  iendswith: PositiveInt
+  range: PositiveInt
+  isnull: Boolean
+  regex: String
+  iregex: String
+  containedBy: PositiveInt
+}
+
+"""Integers that will have a value of 0 or more."""
+scalar PositiveInt
+
+input SocialMediaPlatformFilterInput {
+  AND: [SocialMediaPlatformFilterInput]
+  OR: [SocialMediaPlatformFilterInput]
+  NOT: SocialMediaPlatformFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  name: StringFilter
+  logo: URLFilter
+}
+
+input SocialMediaFilterInput {
+  AND: [SocialMediaFilterInput]
+  OR: [SocialMediaFilterInput]
+  NOT: SocialMediaFilterInput
+  id: UUIDFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  createdBy: UserFilterInput
+  updatedBy: UserFilterInput
+  isActive: BooleanFilter
+  restaurant: RestaurantFilterInput
+  socialMediaPlatform: SocialMediaPlatformFilterInput
+  name: StringFilter
+  url: URLFilter
+}
+
+input RestaurantOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  name: OrderEnum
+  slug: OrderEnum
+  owner: DineUpUserOrderByInput
+  logo: OrderEnum
+  slogan: OrderEnum
+  isMain: OrderEnum
+  email: OrderEnum
+  phoneNumber: OrderEnum
+  website: OrderEnum
+}
+
+enum OrderEnum {
+  ASC
+  DESC
+}
+
+input UserOrderByInput {
+  id: OrderEnum
+  password: OrderEnum
+  lastLogin: OrderEnum
+  isSuperuser: OrderEnum
+  username: OrderEnum
+  firstName: OrderEnum
+  lastName: OrderEnum
+  email: OrderEnum
+  isStaff: OrderEnum
+  isActive: OrderEnum
+  dateJoined: OrderEnum
+  dineupuser: DineUpUserOrderByInput
+}
+
+input DineUpUserOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  user: UserOrderByInput
+  phoneNumber: OrderEnum
+  employment: EmployeeOrderByInput
+}
+
+input EmployeeOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  dineUpUser: DineUpUserOrderByInput
+  leader: EmployeeOrderByInput
+}
+
+input PaginatedInput {
+  page: Int = 1
+  pageSize: IntOrAll = "All"
+}
+
+"""The page size can be int or 'All'"""
+scalar IntOrAll
+
+type EmployeePaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [EmployeeType!]
+}
+
+type JobFunctionPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [JobFunctionType!]
+}
+
+type JobFunctionType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  employee: EmployeeType!
+  branch: BranchType!
+  paginatedRoles(where: RoleFilterInput, orderBy: RoleOrderByInput, paginated: PaginatedInput): RolePaginatedType
+}
+
+type BranchType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  restaurant: RestaurantType!
+  name: String
+  slug: Slug
+  admin: DineUpUserType
+  address: String
+  addressDetail: String
+  postalCode: String
+  isMain: Boolean!
+  email: Email
+  website: URL
+  paginatedJobFunctions(where: JobFunctionFilterInput, orderBy: JobFunctionOrderByInput, paginated: PaginatedInput): JobFunctionPaginatedType
+  paginatedMenus(where: MenuFilterInput, orderBy: MenuOrderByInput, paginated: PaginatedInput): MenuPaginatedType
+  paginatedPhoneNumbers(where: BranchPhoneNumberFilterInput, orderBy: BranchPhoneNumberOrderByInput, paginated: PaginatedInput): BranchPhoneNumberPaginatedType
+  paginatedTables(where: TableFilterInput, orderBy: TableOrderByInput, paginated: PaginatedInput): TablePaginatedType
+}
+
+input JobFunctionOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  employee: EmployeeOrderByInput
+  branch: BranchOrderByInput
+}
+
+input BranchOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  restaurant: RestaurantOrderByInput
+  name: OrderEnum
+  slug: OrderEnum
+  admin: DineUpUserOrderByInput
+  address: OrderEnum
+  addressDetail: OrderEnum
+  postalCode: OrderEnum
+  isMain: OrderEnum
+  email: OrderEnum
+  website: OrderEnum
+}
+
+type MenuPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [MenuType!]
+}
+
+type MenuType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  name: String
+  restaurant: RestaurantType
+  isMain: Boolean!
+  paginatedRestaurantBranches(where: BranchFilterInput, orderBy: BranchOrderByInput, paginated: PaginatedInput): BranchPaginatedType
+  paginatedCategories(where: CategoryFilterInput, orderBy: CategoryOrderByInput, paginated: PaginatedInput): CategoryPaginatedType
+  paginatedMenuItems(where: MenuItemFilterInput, orderBy: MenuItemOrderByInput, paginated: PaginatedInput): MenuItemPaginatedType
+}
+
+type BranchPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [BranchType!]
+}
+
+type CategoryPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [CategoryType!]
+}
+
+type CategoryType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  name: String!
+  icon: String
+  restaurant: RestaurantType
+  description: String
+  position: Int
+  paginatedMenus(where: MenuFilterInput, orderBy: MenuOrderByInput, paginated: PaginatedInput): MenuPaginatedType
+  paginatedMenuItems(where: MenuItemFilterInput, orderBy: MenuItemOrderByInput, paginated: PaginatedInput): MenuItemPaginatedType
+}
+
+input MenuOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  name: OrderEnum
+  restaurant: RestaurantOrderByInput
+  isMain: OrderEnum
+}
+
+type MenuItemPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [MenuItemType!]
+}
+
+type MenuItemType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  menu: MenuType!
+  name: String!
+  description: String
+  price: Decimal
+  hasMultiplePrice: Boolean!
+  category: CategoryType
+  position: Int
+  paginatedTags(where: ItemTagFilterInput, orderBy: ItemTagOrderByInput, paginated: PaginatedInput): ItemTagPaginatedType
+  variant: MenuItemVariantType
+  paginatedImages(where: ItemImageFilterInput, orderBy: ItemImageOrderByInput, paginated: PaginatedInput): ItemImagePaginatedType
+  paginatedOptionGroups(where: OptionGroupFilterInput, orderBy: OptionGroupOrderByInput, paginated: PaginatedInput): OptionGroupPaginatedType
+  paginatedOptionGroupsShared(where: OptionGroupFilterInput, orderBy: OptionGroupOrderByInput, paginated: PaginatedInput): OptionGroupPaginatedType
+}
+
+type ItemTagPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [ItemTagType!]
+}
+
+type ItemTagType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  name: String!
+  paginatedMenuItems(where: MenuItemFilterInput, orderBy: MenuItemOrderByInput, paginated: PaginatedInput): MenuItemPaginatedType
+}
+
+input MenuItemOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  menu: MenuOrderByInput
+  name: OrderEnum
+  description: OrderEnum
+  price: OrderEnum
+  hasMultiplePrice: OrderEnum
+  category: CategoryOrderByInput
+  position: OrderEnum
+  variant: MenuItemVariantOrderByInput
+}
+
+input CategoryOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  name: OrderEnum
+  icon: OrderEnum
+  restaurant: RestaurantOrderByInput
+  description: OrderEnum
+  position: OrderEnum
+}
+
+input MenuItemVariantOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  menuItem: MenuItemOrderByInput
+  name: OrderEnum
+}
+
+input ItemTagOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  name: OrderEnum
+}
+
+type MenuItemVariantType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  menuItem: MenuItemType!
+  name: String!
+  paginatedVariantOptions(where: VariantOptionFilterInput, orderBy: VariantOptionOrderByInput, paginated: PaginatedInput): VariantOptionPaginatedType
+}
+
+type VariantOptionPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [VariantOptionType!]
+}
+
+type VariantOptionType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  variant: MenuItemVariantType!
+  name: String!
+  price: Decimal!
+  description: String
+  isDefault: Boolean!
+  position: Int
+}
+
+input VariantOptionOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  variant: MenuItemVariantOrderByInput
+  name: OrderEnum
+  price: OrderEnum
+  description: OrderEnum
+  isDefault: OrderEnum
+  position: OrderEnum
+}
+
+type ItemImagePaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [ItemImageType!]
+}
+
+type ItemImageType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  menuItem: MenuItemType
+  image: String!
+  position: Int
+}
+
+input ItemImageOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  menuItem: MenuItemOrderByInput
+  image: OrderEnum
+  position: OrderEnum
+}
+
+type OptionGroupPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [OptionGroupType!]
+}
+
+type OptionGroupType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  menuItem: MenuItemType
+  name: String!
+  nameType: MenuOptionGroupNameTypeChoices!
+  isRequired: Boolean!
+  isMultiple: Boolean!
+  minimum: Int
+  maximum: Int
+  position: Int
+  paginatedMenuItems(where: MenuItemFilterInput, orderBy: MenuItemOrderByInput, paginated: PaginatedInput): MenuItemPaginatedType
+  paginatedItemOptions(where: ItemOptionFilterInput, orderBy: ItemOptionOrderByInput, paginated: PaginatedInput): ItemOptionPaginatedType
+}
+
+type ItemOptionPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [ItemOptionType!]
+}
+
+type ItemOptionType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  group: OptionGroupType
+  name: String!
+  description: String
+  price: Decimal!
+  isDefault: Boolean!
+  position: Int
+  paginatedDependentOptions(where: ItemOptionFilterInput, orderBy: ItemOptionOrderByInput, paginated: PaginatedInput): ItemOptionPaginatedType
+  paginatedItemoptionSet(where: ItemOptionFilterInput, orderBy: ItemOptionOrderByInput, paginated: PaginatedInput): ItemOptionPaginatedType
+}
+
+input ItemOptionOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  group: OptionGroupOrderByInput
+  name: OrderEnum
+  description: OrderEnum
+  price: OrderEnum
+  isDefault: OrderEnum
+  position: OrderEnum
+}
+
+input OptionGroupOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  menuItem: MenuItemOrderByInput
+  name: OrderEnum
+  nameType: MenuOptionGroupNameTypeChoices!
+  isRequired: OrderEnum
+  isMultiple: OrderEnum
+  minimum: OrderEnum
+  maximum: OrderEnum
+  position: OrderEnum
+}
+
+type BranchPhoneNumberPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [BranchPhoneNumberType!]
+}
+
+type BranchPhoneNumberType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  branch: BranchType!
+  phoneNumber: String!
+  identifier: String
+}
+
+input BranchPhoneNumberOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  branch: BranchOrderByInput
+  phoneNumber: OrderEnum
+  identifier: OrderEnum
+}
+
+type TablePaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [TableType!]
+}
+
+type TableType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  branch: BranchType!
+  identifier: String!
+  capacity: Int
+  locationDescription: String
+  status: RestaurantTableStatusChoices
+  position: Int
+  paginatedOrders(where: OrderFilterInput, orderBy: OrderOrderByInput, paginated: PaginatedInput): OrderPaginatedType
+  qrCode: String
+}
+
+type OrderPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [OrderType!]
+}
+
+type OrderType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  table: TableType!
+  diner: DineUpUserType
+  status: OrderStatusType
+  number: Int
+  waiter: EmployeeType
+  total: Decimal
+  restaurant: RestaurantType
+  paginatedOrderItems(where: OrderItemFilterInput, orderBy: OrderItemOrderByInput, paginated: PaginatedInput): OrderItemPaginatedType
+}
+
+type OrderStatusType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  name: String!
+}
+
+type OrderItemPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [OrderItemType!]
+}
+
+type OrderItemType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  order: OrderType!
+  menuItem: MenuItemType
+  variantOption: VariantOptionType
+  amount: Int!
+  dinerName: String
+  observations: String
+  price: Decimal
+  paginatedOrderItemOptions(where: OrderItemOptionFilterInput, orderBy: OrderItemOptionOrderByInput, paginated: PaginatedInput): OrderItemOptionPaginatedType
+}
+
+type OrderItemOptionPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [OrderItemOptionType!]
+}
+
+type OrderItemOptionType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  orderItem: OrderItemType!
+  itemOption: ItemOptionType!
+  amount: Int!
+}
+
+input OrderItemOptionOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  orderItem: OrderItemOrderByInput
+  itemOption: ItemOptionOrderByInput
+  amount: OrderEnum
+}
+
+input OrderItemOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  order: OrderOrderByInput
+  menuItem: MenuItemOrderByInput
+  variantOption: VariantOptionOrderByInput
+  amount: OrderEnum
+  dinerName: OrderEnum
+  observations: OrderEnum
+  price: OrderEnum
+}
+
+input OrderOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  table: TableOrderByInput
+  diner: DineUpUserOrderByInput
+  status: OrderStatusOrderByInput
+  number: OrderEnum
+  waiter: EmployeeOrderByInput
+  total: OrderEnum
+  restaurant: RestaurantOrderByInput
+}
+
+input TableOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  branch: BranchOrderByInput
+  identifier: OrderEnum
+  capacity: OrderEnum
+  locationDescription: OrderEnum
+  status: RestaurantTableStatusChoices = null
+  position: OrderEnum
+}
+
+input OrderStatusOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  name: OrderEnum
+}
+
+input RoleOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  name: OrderEnum
+  isDefault: OrderEnum
+}
+
+type SocialMediaPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [SocialMediaType!]
+}
+
+input SocialMediaOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  restaurant: RestaurantOrderByInput
+  socialMediaPlatform: SocialMediaPlatformOrderByInput
+  name: OrderEnum
+  url: OrderEnum
+}
+
+input SocialMediaPlatformOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  name: OrderEnum
+  logo: OrderEnum
+}
+
+input PermissionOrderByInput {
+  id: OrderEnum
+  name: OrderEnum
+  codename: OrderEnum
+}
+
+input GroupOrderByInput {
+  id: OrderEnum
+  name: OrderEnum
+}
+
+type UserPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [UserType!]
+}
+
+type DineUpUserPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [DineUpUserType!]
+}
+
+type TimeSlotPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [TimeSlotType!]
+}
+
+type TimeSlotType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  startTime: Time!
+  endTime: Time!
+  paginatedScheduleSet(where: ScheduleFilterInput, orderBy: ScheduleOrderByInput, paginated: PaginatedInput): SchedulePaginatedType
+}
+
+type SchedulePaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [ScheduleType!]
+}
+
+type ScheduleType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  dayOfWeek: CoreScheduleDayOfWeekChoices!
+  timeSlot: TimeSlotType!
+}
+
+input ScheduleOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  dayOfWeek: CoreScheduleDayOfWeekChoices!
+  timeSlot: TimeSlotOrderByInput
+}
+
+input TimeSlotOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  startTime: OrderEnum
+  endTime: OrderEnum
+}
+
+type ScheduleItemPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [ScheduleItemType!]
+}
+
+type ScheduleItemType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  schedule: ScheduleType!
+  objectId: PositiveInt!
+}
+
+input ScheduleItemOrderByInput {
+  id: OrderEnum
+  createdAt: OrderEnum
+  updatedAt: OrderEnum
+  createdBy: UserOrderByInput
+  updatedBy: UserOrderByInput
+  isActive: OrderEnum
+  schedule: ScheduleOrderByInput
+  objectId: OrderEnum
+}
+
+type MenuItemVariantPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [MenuItemVariantType!]
+}
+
+type OrderStatusPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [OrderStatusType!]
+}
+
+type SocialMediaPlatformPaginatedType implements PaginationInterface {
+  total: Int
+  page: Int
+  pages: Int
+  hasNext: Boolean
+  hasPrev: Boolean
+  indexStartObj: Int
+  indexEndObj: Int
+  objects: [SocialMediaPlatformType!]
+}
+
+type SocialMediaPlatformType {
+  id: UUID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  createdBy: UserType
+  updatedBy: UserType
+  isActive: Boolean!
+  name: String!
+  logo: URL!
+}
+
+type Mutation {
+  verifyToken(token: String): Verify
+
+  """Obtain JSON Web Token mutation"""
+  tokenAuth(username: String!, password: String!): ObtainJSONWebToken
+  refreshToken(token: String): Refresh
+  createSocialMedia(input: [CreateSocialMediaInput!]): CreateSocialMediaPayload
+  updateSocialMedia(input: [UpdateSocialMediaInput!]): UpdateSocialMediaPayload
+  activateSocialMedia(where: SocialMediaFilterInput!): ActivateSocialMediaPayload
+  deactivateSocialMedia(where: SocialMediaFilterInput!): DeactivateSocialMediaPayload
+  deleteSocialMedia(where: SocialMediaFilterInput!): DeleteSocialMediaPayload
+  createSocialMediaPlatforms(input: [CreateSocialMediaPlatformInput!]): CreateSocialMediaPlatformsPayload
+  updateSocialMediaPlatforms(input: [UpdateSocialMediaPlatformInput!]): UpdateSocialMediaPlatformsPayload
+  activateSocialMediaPlatforms(where: SocialMediaPlatformFilterInput!): ActivateSocialMediaPlatformsPayload
+  deactivateSocialMediaPlatforms(where: SocialMediaPlatformFilterInput!): DeactivateSocialMediaPlatformsPayload
+  deleteSocialMediaPlatforms(where: SocialMediaPlatformFilterInput!): DeleteSocialMediaPlatformsPayload
+  createTables(input: [CreateTableInput!]): CreateTablesPayload
+  updateTables(input: [UpdateTableInput!]): UpdateTablesPayload
+  activateTables(where: TableFilterInput!): ActivateTablesPayload
+  deactivateTables(where: TableFilterInput!): DeactivateTablesPayload
+  deleteTables(where: TableFilterInput!): DeleteTablesPayload
+  createBranchPhoneNumbers(input: [CreateBranchPhoneNumberInput!]): CreateBranchPhoneNumbersPayload
+  updateBranchPhoneNumbers(input: [UpdateBranchPhoneNumberInput!]): UpdateBranchPhoneNumbersPayload
+  activateBranchPhoneNumbers(where: BranchPhoneNumberFilterInput!): ActivateBranchPhoneNumbersPayload
+  deactivateBranchPhoneNumbers(where: BranchPhoneNumberFilterInput!): DeactivateBranchPhoneNumbersPayload
+  deleteBranchPhoneNumbers(where: BranchPhoneNumberFilterInput!): DeleteBranchPhoneNumbersPayload
+  createBranches(input: [CreateBranchInput!]): CreateBranchesPayload
+  updateBranches(input: [UpdateBranchInput!]): UpdateBranchesPayload
+  activateBranches(where: BranchFilterInput!): ActivateBranchesPayload
+  deactivateBranches(where: BranchFilterInput!): DeactivateBranchesPayload
+  deleteBranches(where: BranchFilterInput!): DeleteBranchesPayload
+  createRestaurants(input: [CreateRestaurantInput!]): CreateRestaurantsPayload
+  updateRestaurants(input: [UpdateRestaurantInput!]): UpdateRestaurantsPayload
+  activateRestaurants(where: RestaurantFilterInput!): ActivateRestaurantsPayload
+  deactivateRestaurants(where: RestaurantFilterInput!): DeactivateRestaurantsPayload
+  deleteRestaurants(where: RestaurantFilterInput!): DeleteRestaurantsPayload
+  createOrderItemOptions(input: [CreateOrderItemOptionInput!]): CreateOrderItemOptionsPayload
+  updateOrderItemOptions(input: [UpdateOrderItemOptionInput!]): UpdateOrderItemOptionsPayload
+  activateOrderItemOptions(where: OrderItemOptionFilterInput!): ActivateOrderItemOptionsPayload
+  deactivateOrderItemOptions(where: OrderItemOptionFilterInput!): DeactivateOrderItemOptionsPayload
+  deleteOrderItemOptions(where: OrderItemOptionFilterInput!): DeleteOrderItemOptionsPayload
+  createOrderItems(input: [CreateOrderItemInput!]): CreateOrderItemsPayload
+  updateOrderItems(input: [UpdateOrderItemInput!]): UpdateOrderItemsPayload
+  activateOrderItems(where: OrderItemFilterInput!): ActivateOrderItemsPayload
+  deactivateOrderItems(where: OrderItemFilterInput!): DeactivateOrderItemsPayload
+  deleteOrderItems(where: OrderItemFilterInput!): DeleteOrderItemsPayload
+  createOrders(input: [CreateOrderInput!]): CreateOrdersPayload
+  updateOrders(input: [UpdateOrderInput!]): UpdateOrdersPayload
+  activateOrders(where: OrderFilterInput!): ActivateOrdersPayload
+  deactivateOrders(where: OrderFilterInput!): DeactivateOrdersPayload
+  deleteOrders(where: OrderFilterInput!): DeleteOrdersPayload
+  createOrderStatus(input: [CreateOrderStatusInput!]): CreateOrderStatusPayload
+  updateOrderStatus(input: [UpdateOrderStatusInput!]): UpdateOrderStatusPayload
+  activateOrderStatus(where: OrderStatusFilterInput!): ActivateOrderStatusPayload
+  deactivateOrderStatus(where: OrderStatusFilterInput!): DeactivateOrderStatusPayload
+  deleteOrderStatus(where: OrderStatusFilterInput!): DeleteOrderStatusPayload
+  createItemTags(input: [CreateItemTagInput!]): CreateItemTagsPayload
+  updateItemTags(input: [UpdateItemTagInput!]): UpdateItemTagsPayload
+  activateItemTags(where: ItemTagFilterInput!): ActivateItemTagsPayload
+  deactivateItemTags(where: ItemTagFilterInput!): DeactivateItemTagsPayload
+  deleteItemTags(where: ItemTagFilterInput!): DeleteItemTagsPayload
+  createItemOptions(input: [CreateItemOptionInput!]): CreateItemOptionsPayload
+  updateItemOptions(input: [UpdateItemOptionInput!]): UpdateItemOptionsPayload
+  activateItemOptions(where: ItemOptionFilterInput!): ActivateItemOptionsPayload
+  deactivateItemOptions(where: ItemOptionFilterInput!): DeactivateItemOptionsPayload
+  deleteItemOptions(where: ItemOptionFilterInput!): DeleteItemOptionsPayload
+  createOptionGroups(input: [CreateOptionGroupInput!]): CreateOptionGroupsPayload
+  updateOptionGroups(input: [UpdateOptionGroupInput!]): UpdateOptionGroupsPayload
+  activateOptionGroups(where: OptionGroupFilterInput!): ActivateOptionGroupsPayload
+  deactivateOptionGroups(where: OptionGroupFilterInput!): DeactivateOptionGroupsPayload
+  deleteOptionGroups(where: OptionGroupFilterInput!): DeleteOptionGroupsPayload
+  createItemImages(input: [CreateItemImageInput!]): CreateItemImagesPayload
+  updateItemImages(input: [UpdateItemImageInput!]): UpdateItemImagesPayload
+  activateItemImages(where: ItemImageFilterInput!): ActivateItemImagesPayload
+  deactivateItemImages(where: ItemImageFilterInput!): DeactivateItemImagesPayload
+  deleteItemImages(where: ItemImageFilterInput!): DeleteItemImagesPayload
+  createVariantOptions(input: [CreateVariantOptionInput!]): CreateVariantOptionsPayload
+  updateVariantOptions(input: [UpdateVariantOptionInput!]): UpdateVariantOptionsPayload
+  activateVariantOptions(where: VariantOptionFilterInput!): ActivateVariantOptionsPayload
+  deactivateVariantOptions(where: VariantOptionFilterInput!): DeactivateVariantOptionsPayload
+  deleteVariantOptions(where: VariantOptionFilterInput!): DeleteVariantOptionsPayload
+  createMenuItemVariants(input: [CreateMenuItemVariantInput!]): CreateMenuItemVariantsPayload
+  updateMenuItemVariants(input: [UpdateMenuItemVariantInput!]): UpdateMenuItemVariantsPayload
+  activateMenuItemVariants(where: MenuItemVariantFilterInput!): ActivateMenuItemVariantsPayload
+  deactivateMenuItemVariants(where: MenuItemVariantFilterInput!): DeactivateMenuItemVariantsPayload
+  deleteMenuItemVariants(where: MenuItemVariantFilterInput!): DeleteMenuItemVariantsPayload
+  createMenuItems(input: [CreateMenuItemInput!]): CreateMenuItemsPayload
+  updateMenuItems(input: [UpdateMenuItemInput!]): UpdateMenuItemsPayload
+  activateMenuItems(where: MenuItemFilterInput!): ActivateMenuItemsPayload
+  deactivateMenuItems(where: MenuItemFilterInput!): DeactivateMenuItemsPayload
+  deleteMenuItems(where: MenuItemFilterInput!): DeleteMenuItemsPayload
+  createCategories(input: [CreateCategoryInput!]): CreateCategoriesPayload
+  updateCategories(input: [UpdateCategoryInput!]): UpdateCategoriesPayload
+  activateCategories(where: CategoryFilterInput!): ActivateCategoriesPayload
+  deactivateCategories(where: CategoryFilterInput!): DeactivateCategoriesPayload
+  deleteCategories(where: CategoryFilterInput!): DeleteCategoriesPayload
+  createMenus(input: [CreateMenuInput!]): CreateMenusPayload
+  updateMenus(input: [UpdateMenuInput!]): UpdateMenusPayload
+  activateMenus(where: MenuFilterInput!): ActivateMenusPayload
+  deactivateMenus(where: MenuFilterInput!): DeactivateMenusPayload
+  deleteMenus(where: MenuFilterInput!): DeleteMenusPayload
+  createJobFunctions(input: [CreateJobFunctionInput!]): CreateJobFunctionsPayload
+  updateJobFunctions(input: [UpdateJobFunctionInput!]): UpdateJobFunctionsPayload
+  activateJobFunctions(where: JobFunctionFilterInput!): ActivateJobFunctionsPayload
+  deactivateJobFunctions(where: JobFunctionFilterInput!): DeactivateJobFunctionsPayload
+  deleteJobFunctions(where: JobFunctionFilterInput!): DeleteJobFunctionsPayload
+  createEmployees(input: [CreateEmployeeInput!]): CreateEmployeesPayload
+  updateEmployees(input: [UpdateEmployeeInput!]): UpdateEmployeesPayload
+  activateEmployees(where: EmployeeFilterInput!): ActivateEmployeesPayload
+  deactivateEmployees(where: EmployeeFilterInput!): DeactivateEmployeesPayload
+  deleteEmployees(where: EmployeeFilterInput!): DeleteEmployeesPayload
+  createRoles(input: [CreateRoleInput!]): CreateRolesPayload
+  updateRoles(input: [UpdateRoleInput!]): UpdateRolesPayload
+  activateRoles(where: RoleFilterInput!): ActivateRolesPayload
+  deactivateRoles(where: RoleFilterInput!): DeactivateRolesPayload
+  deleteRoles(where: RoleFilterInput!): DeleteRolesPayload
+  createDineUpUsers(input: [CreateDineUpUserInput!]): CreateDineUpUsersPayload
+  updateDineUpUsers(input: [UpdateDineUpUserInput!]): UpdateDineUpUsersPayload
+  activateDineUpUsers(where: DineUpUserFilterInput!): ActivateDineUpUsersPayload
+  deactivateDineUpUsers(where: DineUpUserFilterInput!): DeactivateDineUpUsersPayload
+  deleteDineUpUsers(where: DineUpUserFilterInput!): DeleteDineUpUsersPayload
+  createSchedulesItem(input: [CreateScheduleItemInput!]): CreateSchedulesItemPayload
+  updateSchedulesItem(input: [UpdateScheduleItemInput!]): UpdateSchedulesItemPayload
+  activateSchedulesItem(where: ScheduleItemFilterInput!): ActivateSchedulesItemPayload
+  deactivateSchedulesItem(where: ScheduleItemFilterInput!): DeactivateSchedulesItemPayload
+  deleteSchedulesItem(where: ScheduleItemFilterInput!): DeleteSchedulesItemPayload
+  createSchedules(input: [CreateScheduleInput!]): CreateSchedulesPayload
+  updateSchedules(input: [UpdateScheduleInput!]): UpdateSchedulesPayload
+  activateSchedules(where: ScheduleFilterInput!): ActivateSchedulesPayload
+  deactivateSchedules(where: ScheduleFilterInput!): DeactivateSchedulesPayload
+  deleteSchedules(where: ScheduleFilterInput!): DeleteSchedulesPayload
+  createTimeSlots(input: [CreateTimeSlotInput!]): CreateTimeSlotsPayload
+  updateTimeSlots(input: [UpdateTimeSlotInput!]): UpdateTimeSlotsPayload
+  activateTimeSlots(where: TimeSlotFilterInput!): ActivateTimeSlotsPayload
+  deactivateTimeSlots(where: TimeSlotFilterInput!): DeactivateTimeSlotsPayload
+  deleteTimeSlots(where: TimeSlotFilterInput!): DeleteTimeSlotsPayload
+  createUsers(input: [CreateUserInput!]): CreateUsersPayload
+  updateUsers(input: [UpdateUserInput!]): UpdateUsersPayload
+  activateUsers(where: UserFilterInput!): ActivateUsersPayload
+  deactivateUsers(where: UserFilterInput!): DeactivateUsersPayload
+  deleteUsers(where: UserFilterInput!): DeleteUsersPayload
+  createGroups(input: [CreateGroupInput!]): CreateGroupsPayload
+  updateGroups(input: [UpdateGroupInput!]): UpdateGroupsPayload
+  activateGroups(where: GroupFilterInput!): ActivateGroupsPayload
+  deactivateGroups(where: GroupFilterInput!): DeactivateGroupsPayload
+  deleteGroups(where: GroupFilterInput!): DeleteGroupsPayload
+  createPermissions(input: [CreatePermissionInput!]): CreatePermissionsPayload
+  updatePermissions(input: [UpdatePermissionInput!]): UpdatePermissionsPayload
+  activatePermissions(where: PermissionFilterInput!): ActivatePermissionsPayload
+  deactivatePermissions(where: PermissionFilterInput!): DeactivatePermissionsPayload
+  deletePermissions(where: PermissionFilterInput!): DeletePermissionsPayload
+}
+
+type Verify {
+  payload: GenericScalar!
+}
+
+"""
+The `GenericScalar` scalar type represents a generic
+GraphQL scalar value that could be:
+String, Boolean, Int, Float, List or Object.
+"""
+scalar GenericScalar
+
+"""Obtain JSON Web Token mutation"""
+type ObtainJSONWebToken {
+  payload: GenericScalar!
+  refreshExpiresIn: Int!
+  token: String!
+}
+
+type Refresh {
+  payload: GenericScalar!
+  refreshExpiresIn: Int!
+  token: String!
+}
+
+type CreateSocialMediaPayload {
+  objects: [SocialMediaType]
+  errors: [ErrorsType]
+}
+
+type ErrorsType {
+  objectPosition: String
+  errors: [ErrorType]
+}
+
+type ErrorType {
+  field: String!
+  messages: [String!]!
+}
+
+input CreateSocialMediaInput {
+  restaurant: UUID!
+  socialMediaPlatform: UUID
+  name: String
+  url: URL!
+}
+
+type UpdateSocialMediaPayload {
+  objects: [SocialMediaType]
+  errors: [ErrorsType]
+}
+
+input UpdateSocialMediaInput {
+  id: UUID!
+  restaurant: UUID
+  socialMediaPlatform: UUID
+  name: String
+  url: URL
+}
+
+type ActivateSocialMediaPayload {
+  objects: [SocialMediaType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateSocialMediaPayload {
+  objects: [SocialMediaType!]
+  errors: [ErrorsType]
+}
+
+type DeleteSocialMediaPayload {
+  success: Boolean
+  objects: [SocialMediaType!]
+  errors: [ErrorsType]
+}
+
+type CreateSocialMediaPlatformsPayload {
+  objects: [SocialMediaPlatformType]
+  errors: [ErrorsType]
+}
+
+input CreateSocialMediaPlatformInput {
+  name: String!
+  logo: URL!
+}
+
+type UpdateSocialMediaPlatformsPayload {
+  objects: [SocialMediaPlatformType]
+  errors: [ErrorsType]
+}
+
+input UpdateSocialMediaPlatformInput {
+  id: UUID!
+  name: String
+  logo: URL
+}
+
+type ActivateSocialMediaPlatformsPayload {
+  objects: [SocialMediaPlatformType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateSocialMediaPlatformsPayload {
+  objects: [SocialMediaPlatformType!]
+  errors: [ErrorsType]
+}
+
+type DeleteSocialMediaPlatformsPayload {
+  success: Boolean
+  objects: [SocialMediaPlatformType!]
+  errors: [ErrorsType]
+}
+
+type CreateTablesPayload {
+  objects: [TableType]
+  errors: [ErrorsType]
+}
+
+input CreateTableInput {
+  branch: UUID!
+  identifier: String!
+  capacity: Int
+  locationDescription: String
+  status: RestaurantTableStatusChoices = null
+  position: Int
+}
+
+type UpdateTablesPayload {
+  objects: [TableType]
+  errors: [ErrorsType]
+}
+
+input UpdateTableInput {
+  id: UUID!
+  branch: UUID
+  identifier: String
+  capacity: Int
+  locationDescription: String
+  status: RestaurantTableStatusChoices = null
+  position: Int
+}
+
+type ActivateTablesPayload {
+  objects: [TableType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateTablesPayload {
+  objects: [TableType!]
+  errors: [ErrorsType]
+}
+
+type DeleteTablesPayload {
+  success: Boolean
+  objects: [TableType!]
+  errors: [ErrorsType]
+}
+
+type CreateBranchPhoneNumbersPayload {
+  objects: [BranchPhoneNumberType]
+  errors: [ErrorsType]
+}
+
+input CreateBranchPhoneNumberInput {
+  branch: UUID!
+  phoneNumber: String!
+  identifier: String
+}
+
+type UpdateBranchPhoneNumbersPayload {
+  objects: [BranchPhoneNumberType]
+  errors: [ErrorsType]
+}
+
+input UpdateBranchPhoneNumberInput {
+  id: UUID!
+  branch: UUID
+  phoneNumber: String
+  identifier: String
+}
+
+type ActivateBranchPhoneNumbersPayload {
+  objects: [BranchPhoneNumberType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateBranchPhoneNumbersPayload {
+  objects: [BranchPhoneNumberType!]
+  errors: [ErrorsType]
+}
+
+type DeleteBranchPhoneNumbersPayload {
+  success: Boolean
+  objects: [BranchPhoneNumberType!]
+  errors: [ErrorsType]
+}
+
+type CreateBranchesPayload {
+  objects: [BranchType]
+  errors: [ErrorsType]
+}
+
+input CreateBranchInput {
+  restaurant: UUID!
+  name: String
+  slug: Slug
+  admin: UUID
+  address: String
+  addressDetail: String
+  postalCode: String
+  isMain: Boolean!
+  email: Email
+  website: URL
+}
+
+type UpdateBranchesPayload {
+  objects: [BranchType]
+  errors: [ErrorsType]
+}
+
+input UpdateBranchInput {
+  id: UUID!
+  restaurant: UUID
+  name: String
+  slug: Slug
+  admin: UUID
+  address: String
+  addressDetail: String
+  postalCode: String
+  isMain: Boolean
+  email: Email
+  website: URL
+}
+
+type ActivateBranchesPayload {
+  objects: [BranchType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateBranchesPayload {
+  objects: [BranchType!]
+  errors: [ErrorsType]
+}
+
+type DeleteBranchesPayload {
+  success: Boolean
+  objects: [BranchType!]
+  errors: [ErrorsType]
+}
+
+type CreateRestaurantsPayload {
+  objects: [RestaurantType]
+  errors: [ErrorsType]
+}
+
+input CreateRestaurantInput {
+  name: String!
+  slug: Slug
+  owner: UUID!
+  logo: Upload
+  slogan: String
+  isMain: Boolean!
+  email: Email
+  phoneNumber: String
+  website: URL
+  branches: [BranchInput]
+}
+
+"""
+Create scalar that ignores normal serialization/deserialization, since
+that will be handled by the multipart request spec
+"""
+scalar Upload
+
+input BranchInput {
+  id: UUID
+  createdBy: ID
+  updatedBy: ID
+  isActive: Boolean
+  restaurant: UUID
+  name: String
+  slug: Slug
+  admin: UUID
+  address: String
+  addressDetail: String
+  postalCode: String
+  isMain: Boolean
+  email: Email
+  website: URL
+}
+
+type UpdateRestaurantsPayload {
+  objects: [RestaurantType]
+  errors: [ErrorsType]
+}
+
+input UpdateRestaurantInput {
+  id: UUID!
+  name: String
+  slug: Slug
+  owner: UUID
+  logo: Upload
+  slogan: String
+  isMain: Boolean
+  email: Email
+  phoneNumber: String
+  website: URL
+  branches: BranchConnectDisconnectInput
+}
+
+input BranchConnectDisconnectInput {
+  connect: [BranchInput!]
+  disconnect: [BranchFilterInput!]
+}
+
+type ActivateRestaurantsPayload {
+  objects: [RestaurantType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateRestaurantsPayload {
+  objects: [RestaurantType!]
+  errors: [ErrorsType]
+}
+
+type DeleteRestaurantsPayload {
+  success: Boolean
+  objects: [RestaurantType!]
+  errors: [ErrorsType]
+}
+
+type CreateOrderItemOptionsPayload {
+  objects: [OrderItemOptionType]
+  errors: [ErrorsType]
+}
+
+input CreateOrderItemOptionInput {
+  orderItem: UUID!
+  itemOption: UUID!
+  amount: Int!
+}
+
+type UpdateOrderItemOptionsPayload {
+  objects: [OrderItemOptionType]
+  errors: [ErrorsType]
+}
+
+input UpdateOrderItemOptionInput {
+  id: UUID!
+  orderItem: UUID
+  itemOption: UUID
+  amount: Int
+}
+
+type ActivateOrderItemOptionsPayload {
+  objects: [OrderItemOptionType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateOrderItemOptionsPayload {
+  objects: [OrderItemOptionType!]
+  errors: [ErrorsType]
+}
+
+type DeleteOrderItemOptionsPayload {
+  success: Boolean
+  objects: [OrderItemOptionType!]
+  errors: [ErrorsType]
+}
+
+type CreateOrderItemsPayload {
+  objects: [OrderItemType]
+  errors: [ErrorsType]
+}
+
+input CreateOrderItemInput {
+  order: UUID!
+  menuItem: UUID
+  variantOption: UUID
+  amount: Int!
+  dinerName: String
+  observations: String
+  price: Decimal
+}
+
+type UpdateOrderItemsPayload {
+  objects: [OrderItemType]
+  errors: [ErrorsType]
+}
+
+input UpdateOrderItemInput {
+  id: UUID!
+  order: UUID
+  menuItem: UUID
+  variantOption: UUID
+  amount: Int
+  dinerName: String
+  observations: String
+  price: Decimal
+}
+
+type ActivateOrderItemsPayload {
+  objects: [OrderItemType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateOrderItemsPayload {
+  objects: [OrderItemType!]
+  errors: [ErrorsType]
+}
+
+type DeleteOrderItemsPayload {
+  success: Boolean
+  objects: [OrderItemType!]
+  errors: [ErrorsType]
+}
+
+type CreateOrdersPayload {
+  objects: [OrderType]
+  errors: [ErrorsType]
+}
+
+input CreateOrderInput {
+  table: UUID!
+  diner: UUID
+  status: UUID
+  number: Int
+  waiter: UUID
+  total: Decimal
+  restaurant: UUID
+}
+
+type UpdateOrdersPayload {
+  objects: [OrderType]
+  errors: [ErrorsType]
+}
+
+input UpdateOrderInput {
+  id: UUID!
+  table: UUID
+  diner: UUID
+  status: UUID
+  number: Int
+  waiter: UUID
+  total: Decimal
+  restaurant: UUID
+}
+
+type ActivateOrdersPayload {
+  objects: [OrderType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateOrdersPayload {
+  objects: [OrderType!]
+  errors: [ErrorsType]
+}
+
+type DeleteOrdersPayload {
+  success: Boolean
+  objects: [OrderType!]
+  errors: [ErrorsType]
+}
+
+type CreateOrderStatusPayload {
+  objects: [OrderStatusType]
+  errors: [ErrorsType]
+}
+
+input CreateOrderStatusInput {
+  name: String!
+}
+
+type UpdateOrderStatusPayload {
+  objects: [OrderStatusType]
+  errors: [ErrorsType]
+}
+
+input UpdateOrderStatusInput {
+  id: UUID!
+  name: String
+}
+
+type ActivateOrderStatusPayload {
+  objects: [OrderStatusType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateOrderStatusPayload {
+  objects: [OrderStatusType!]
+  errors: [ErrorsType]
+}
+
+type DeleteOrderStatusPayload {
+  success: Boolean
+  objects: [OrderStatusType!]
+  errors: [ErrorsType]
+}
+
+type CreateItemTagsPayload {
+  objects: [ItemTagType]
+  errors: [ErrorsType]
+}
+
+input CreateItemTagInput {
+  name: String!
+}
+
+type UpdateItemTagsPayload {
+  objects: [ItemTagType]
+  errors: [ErrorsType]
+}
+
+input UpdateItemTagInput {
+  id: UUID!
+  name: String
+}
+
+type ActivateItemTagsPayload {
+  objects: [ItemTagType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateItemTagsPayload {
+  objects: [ItemTagType!]
+  errors: [ErrorsType]
+}
+
+type DeleteItemTagsPayload {
+  success: Boolean
+  objects: [ItemTagType!]
+  errors: [ErrorsType]
+}
+
+type CreateItemOptionsPayload {
+  objects: [ItemOptionType]
+  errors: [ErrorsType]
+}
+
+input CreateItemOptionInput {
+  group: UUID
+  name: String!
+  description: String
+  price: Decimal!
+  isDefault: Boolean!
+  position: Int
+  dependentOptions: [UUID]
+}
+
+type UpdateItemOptionsPayload {
+  objects: [ItemOptionType]
+  errors: [ErrorsType]
+}
+
+input UpdateItemOptionInput {
+  id: UUID!
+  group: UUID
+  name: String
+  description: String
+  price: Decimal
+  isDefault: Boolean
+  position: Int
+  dependentOptions: [UUID]
+}
+
+type ActivateItemOptionsPayload {
+  objects: [ItemOptionType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateItemOptionsPayload {
+  objects: [ItemOptionType!]
+  errors: [ErrorsType]
+}
+
+type DeleteItemOptionsPayload {
+  success: Boolean
+  objects: [ItemOptionType!]
+  errors: [ErrorsType]
+}
+
+type CreateOptionGroupsPayload {
+  objects: [OptionGroupType]
+  errors: [ErrorsType]
+}
+
+input CreateOptionGroupInput {
+  menuItem: UUID
+  name: String!
+  nameType: MenuOptionGroupNameTypeChoices!
+  isRequired: Boolean!
+  isMultiple: Boolean!
+  minimum: Int
+  maximum: Int
+  position: Int
+  menuItems: [UUID]
+}
+
+type UpdateOptionGroupsPayload {
+  objects: [OptionGroupType]
+  errors: [ErrorsType]
+}
+
+input UpdateOptionGroupInput {
+  id: UUID!
+  menuItem: UUID
+  name: String
+  nameType: MenuOptionGroupNameTypeChoices!
+  isRequired: Boolean
+  isMultiple: Boolean
+  minimum: Int
+  maximum: Int
+  position: Int
+  menuItems: [UUID]
+}
+
+type ActivateOptionGroupsPayload {
+  objects: [OptionGroupType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateOptionGroupsPayload {
+  objects: [OptionGroupType!]
+  errors: [ErrorsType]
+}
+
+type DeleteOptionGroupsPayload {
+  success: Boolean
+  objects: [OptionGroupType!]
+  errors: [ErrorsType]
+}
+
+type CreateItemImagesPayload {
+  objects: [ItemImageType]
+  errors: [ErrorsType]
+}
+
+input CreateItemImageInput {
+  menuItem: UUID
+  image: Upload!
+  position: Int
+}
+
+type UpdateItemImagesPayload {
+  objects: [ItemImageType]
+  errors: [ErrorsType]
+}
+
+input UpdateItemImageInput {
+  id: UUID!
+  menuItem: UUID
+  image: Upload
+  position: Int
+}
+
+type ActivateItemImagesPayload {
+  objects: [ItemImageType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateItemImagesPayload {
+  objects: [ItemImageType!]
+  errors: [ErrorsType]
+}
+
+type DeleteItemImagesPayload {
+  success: Boolean
+  objects: [ItemImageType!]
+  errors: [ErrorsType]
+}
+
+type CreateVariantOptionsPayload {
+  objects: [VariantOptionType]
+  errors: [ErrorsType]
+}
+
+input CreateVariantOptionInput {
+  variant: UUID!
+  name: String!
+  price: Decimal!
+  description: String
+  isDefault: Boolean!
+  position: Int
+}
+
+type UpdateVariantOptionsPayload {
+  objects: [VariantOptionType]
+  errors: [ErrorsType]
+}
+
+input UpdateVariantOptionInput {
+  id: UUID!
+  variant: UUID
+  name: String
+  price: Decimal
+  description: String
+  isDefault: Boolean
+  position: Int
+}
+
+type ActivateVariantOptionsPayload {
+  objects: [VariantOptionType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateVariantOptionsPayload {
+  objects: [VariantOptionType!]
+  errors: [ErrorsType]
+}
+
+type DeleteVariantOptionsPayload {
+  success: Boolean
+  objects: [VariantOptionType!]
+  errors: [ErrorsType]
+}
+
+type CreateMenuItemVariantsPayload {
+  objects: [MenuItemVariantType]
+  errors: [ErrorsType]
+}
+
+input CreateMenuItemVariantInput {
+  menuItem: UUID!
+  name: String!
+}
+
+type UpdateMenuItemVariantsPayload {
+  objects: [MenuItemVariantType]
+  errors: [ErrorsType]
+}
+
+input UpdateMenuItemVariantInput {
+  id: UUID!
+  menuItem: UUID
+  name: String
+}
+
+type ActivateMenuItemVariantsPayload {
+  objects: [MenuItemVariantType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateMenuItemVariantsPayload {
+  objects: [MenuItemVariantType!]
+  errors: [ErrorsType]
+}
+
+type DeleteMenuItemVariantsPayload {
+  success: Boolean
+  objects: [MenuItemVariantType!]
+  errors: [ErrorsType]
+}
+
+type CreateMenuItemsPayload {
+  objects: [MenuItemType]
+  errors: [ErrorsType]
+}
+
+input CreateMenuItemInput {
+  menu: UUID!
+  name: String!
+  description: String
+  price: Decimal
+  hasMultiplePrice: Boolean!
+  category: UUID
+  position: Int
+  tags: [UUID]
+  images: [ItemImageInput]
+  variant: MenuItemVariantInput
+  optionGroups: [OptionGroupInput]
+}
+
+input ItemImageInput {
+  id: UUID
+  createdBy: ID
+  updatedBy: ID
+  isActive: Boolean
+  menuItem: UUID
+  image: Upload
+  position: Int
+}
+
+input MenuItemVariantInput {
+  id: UUID
+  createdBy: ID
+  updatedBy: ID
+  isActive: Boolean
+  menuItem: UUID
+  name: String
+  variantOptions: VariantOptionConnectDisconnectInput
+}
+
+input VariantOptionConnectDisconnectInput {
+  connect: [VariantOptionInput!]
+  disconnect: [VariantOptionFilterInput!]
+}
+
+input VariantOptionInput {
+  id: UUID
+  createdBy: ID
+  updatedBy: ID
+  isActive: Boolean
+  variant: UUID
+  name: String
+  price: Decimal
+  description: String
+  isDefault: Boolean
+  position: Int
+}
+
+input OptionGroupInput {
+  id: UUID
+  createdBy: ID
+  updatedBy: ID
+  isActive: Boolean
+  menuItem: UUID
+  name: String
+  nameType: MenuOptionGroupNameTypeChoices!
+  isRequired: Boolean
+  isMultiple: Boolean
+  minimum: Int
+  maximum: Int
+  position: Int
+  menuItems: [UUID]
+  itemOptions: ItemOptionConnectDisconnectInput
+}
+
+input ItemOptionConnectDisconnectInput {
+  connect: [ItemOptionInput!]
+  disconnect: [ItemOptionFilterInput!]
+}
+
+input ItemOptionInput {
+  id: UUID
+  createdBy: ID
+  updatedBy: ID
+  isActive: Boolean
+  group: UUID
+  name: String
+  description: String
+  price: Decimal
+  isDefault: Boolean
+  position: Int
+  dependentOptions: [UUID]
+}
+
+type UpdateMenuItemsPayload {
+  objects: [MenuItemType]
+  errors: [ErrorsType]
+}
+
+input UpdateMenuItemInput {
+  id: UUID!
+  menu: UUID
+  name: String
+  description: String
+  price: Decimal
+  hasMultiplePrice: Boolean
+  category: UUID
+  position: Int
+  tags: [UUID]
+  images: ItemImageConnectDisconnectInput
+  variant: MenuItemVariantInput
+  optionGroups: OptionGroupConnectDisconnectInput
+}
+
+input ItemImageConnectDisconnectInput {
+  connect: [ItemImageInput!]
+  disconnect: [ItemImageFilterInput!]
+}
+
+input OptionGroupConnectDisconnectInput {
+  connect: [OptionGroupInput!]
+  disconnect: [OptionGroupFilterInput!]
+}
+
+type ActivateMenuItemsPayload {
+  objects: [MenuItemType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateMenuItemsPayload {
+  objects: [MenuItemType!]
+  errors: [ErrorsType]
+}
+
+type DeleteMenuItemsPayload {
+  success: Boolean
+  objects: [MenuItemType!]
+  errors: [ErrorsType]
+}
+
+type CreateCategoriesPayload {
+  objects: [CategoryType]
+  errors: [ErrorsType]
+}
+
+input CreateCategoryInput {
+  name: String!
+  icon: String
+  restaurant: UUID
+  description: String
+  position: Int
+  menus: [UUID]
+}
+
+type UpdateCategoriesPayload {
+  objects: [CategoryType]
+  errors: [ErrorsType]
+}
+
+input UpdateCategoryInput {
+  id: UUID!
+  name: String
+  icon: String
+  restaurant: UUID
+  description: String
+  position: Int
+  menus: [UUID]
+}
+
+type ActivateCategoriesPayload {
+  objects: [CategoryType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateCategoriesPayload {
+  objects: [CategoryType!]
+  errors: [ErrorsType]
+}
+
+type DeleteCategoriesPayload {
+  success: Boolean
+  objects: [CategoryType!]
+  errors: [ErrorsType]
+}
+
+type CreateMenusPayload {
+  objects: [MenuType]
+  errors: [ErrorsType]
+}
+
+input CreateMenuInput {
+  name: String
+  restaurant: UUID
+  isMain: Boolean!
+  restaurantBranches: [UUID]
+}
+
+type UpdateMenusPayload {
+  objects: [MenuType]
+  errors: [ErrorsType]
+}
+
+input UpdateMenuInput {
+  id: UUID!
+  name: String
+  restaurant: UUID
+  isMain: Boolean
+  restaurantBranches: [UUID]
+}
+
+type ActivateMenusPayload {
+  objects: [MenuType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateMenusPayload {
+  objects: [MenuType!]
+  errors: [ErrorsType]
+}
+
+type DeleteMenusPayload {
+  success: Boolean
+  objects: [MenuType!]
+  errors: [ErrorsType]
+}
+
+type CreateJobFunctionsPayload {
+  objects: [JobFunctionType]
+  errors: [ErrorsType]
+}
+
+input CreateJobFunctionInput {
+  employee: UUID!
+  branch: UUID!
+  roles: [UUID]
+}
+
+type UpdateJobFunctionsPayload {
+  objects: [JobFunctionType]
+  errors: [ErrorsType]
+}
+
+input UpdateJobFunctionInput {
+  id: UUID!
+  employee: UUID
+  branch: UUID
+  roles: [UUID]
+}
+
+type ActivateJobFunctionsPayload {
+  objects: [JobFunctionType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateJobFunctionsPayload {
+  objects: [JobFunctionType!]
+  errors: [ErrorsType]
+}
+
+type DeleteJobFunctionsPayload {
+  success: Boolean
+  objects: [JobFunctionType!]
+  errors: [ErrorsType]
+}
+
+type CreateEmployeesPayload {
+  objects: [EmployeeType]
+  errors: [ErrorsType]
+}
+
+input CreateEmployeeInput {
+  dineUpUser: UUID!
+  leader: UUID
+  restaurants: [UUID]!
+}
+
+type UpdateEmployeesPayload {
+  objects: [EmployeeType]
+  errors: [ErrorsType]
+}
+
+input UpdateEmployeeInput {
+  id: UUID!
+  dineUpUser: UUID
+  leader: UUID
+  restaurants: [UUID]
+}
+
+type ActivateEmployeesPayload {
+  objects: [EmployeeType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateEmployeesPayload {
+  objects: [EmployeeType!]
+  errors: [ErrorsType]
+}
+
+type DeleteEmployeesPayload {
+  success: Boolean
+  objects: [EmployeeType!]
+  errors: [ErrorsType]
+}
+
+type CreateRolesPayload {
+  objects: [RoleType]
+  errors: [ErrorsType]
+}
+
+input CreateRoleInput {
+  name: String!
+  isDefault: Boolean!
+  restaurants: [UUID]!
+  permissions: [ID]
+}
+
+type UpdateRolesPayload {
+  objects: [RoleType]
+  errors: [ErrorsType]
+}
+
+input UpdateRoleInput {
+  id: UUID!
+  name: String
+  isDefault: Boolean
+  restaurants: [UUID]
+  permissions: [ID]
+}
+
+type ActivateRolesPayload {
+  objects: [RoleType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateRolesPayload {
+  objects: [RoleType!]
+  errors: [ErrorsType]
+}
+
+type DeleteRolesPayload {
+  success: Boolean
+  objects: [RoleType!]
+  errors: [ErrorsType]
+}
+
+type CreateDineUpUsersPayload {
+  objects: [DineUpUserType]
+  errors: [ErrorsType]
+}
+
+input CreateDineUpUserInput {
+  user: ID
+  phoneNumber: String
+}
+
+type UpdateDineUpUsersPayload {
+  objects: [DineUpUserType]
+  errors: [ErrorsType]
+}
+
+input UpdateDineUpUserInput {
+  id: UUID!
+  user: ID
+  phoneNumber: String
+}
+
+type ActivateDineUpUsersPayload {
+  objects: [DineUpUserType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateDineUpUsersPayload {
+  objects: [DineUpUserType!]
+  errors: [ErrorsType]
+}
+
+type DeleteDineUpUsersPayload {
+  success: Boolean
+  objects: [DineUpUserType!]
+  errors: [ErrorsType]
+}
+
+type CreateSchedulesItemPayload {
+  objects: [ScheduleItemType]
+  errors: [ErrorsType]
+}
+
+input CreateScheduleItemInput {
+  schedule: UUID!
+  contentType: ID!
+  objectId: PositiveInt!
+}
+
+type UpdateSchedulesItemPayload {
+  objects: [ScheduleItemType]
+  errors: [ErrorsType]
+}
+
+input UpdateScheduleItemInput {
+  id: UUID!
+  schedule: UUID
+  contentType: ID
+  objectId: PositiveInt
+}
+
+type ActivateSchedulesItemPayload {
+  objects: [ScheduleItemType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateSchedulesItemPayload {
+  objects: [ScheduleItemType!]
+  errors: [ErrorsType]
+}
+
+type DeleteSchedulesItemPayload {
+  success: Boolean
+  objects: [ScheduleItemType!]
+  errors: [ErrorsType]
+}
+
+type CreateSchedulesPayload {
+  objects: [ScheduleType]
+  errors: [ErrorsType]
+}
+
+input CreateScheduleInput {
+  dayOfWeek: CoreScheduleDayOfWeekChoices!
+  timeSlot: UUID!
+}
+
+type UpdateSchedulesPayload {
+  objects: [ScheduleType]
+  errors: [ErrorsType]
+}
+
+input UpdateScheduleInput {
+  id: UUID!
+  dayOfWeek: CoreScheduleDayOfWeekChoices!
+  timeSlot: UUID
+}
+
+type ActivateSchedulesPayload {
+  objects: [ScheduleType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateSchedulesPayload {
+  objects: [ScheduleType!]
+  errors: [ErrorsType]
+}
+
+type DeleteSchedulesPayload {
+  success: Boolean
+  objects: [ScheduleType!]
+  errors: [ErrorsType]
+}
+
+type CreateTimeSlotsPayload {
+  objects: [TimeSlotType]
+  errors: [ErrorsType]
+}
+
+input CreateTimeSlotInput {
+  startTime: Time!
+  endTime: Time!
+}
+
+type UpdateTimeSlotsPayload {
+  objects: [TimeSlotType]
+  errors: [ErrorsType]
+}
+
+input UpdateTimeSlotInput {
+  id: UUID!
+  startTime: Time
+  endTime: Time
+}
+
+type ActivateTimeSlotsPayload {
+  objects: [TimeSlotType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateTimeSlotsPayload {
+  objects: [TimeSlotType!]
+  errors: [ErrorsType]
+}
+
+type DeleteTimeSlotsPayload {
+  success: Boolean
+  objects: [TimeSlotType!]
+  errors: [ErrorsType]
+}
+
+type CreateUsersPayload {
+  objects: [UserType]
+  errors: [ErrorsType]
+}
+
+input CreateUserInput {
+  password: String!
+  lastLogin: DateTime
+
+  """
+  Designates that this user has all permissions without explicitly assigning them.
+  """
+  isSuperuser: Boolean!
+
+  """Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."""
+  username: String!
+  firstName: String
+  lastName: String
+  email: Email
+
+  """Designates whether the user can log into this admin site."""
+  isStaff: Boolean!
+  dateJoined: DateTime!
+  groups: [ID]
+  userPermissions: [ID]
+}
+
+type UpdateUsersPayload {
+  objects: [UserType]
+  errors: [ErrorsType]
+}
+
+input UpdateUserInput {
+  id: ID!
+  password: String
+  lastLogin: DateTime
+
+  """
+  Designates that this user has all permissions without explicitly assigning them.
+  """
+  isSuperuser: Boolean
+
+  """Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."""
+  username: String
+  firstName: String
+  lastName: String
+  email: Email
+
+  """Designates whether the user can log into this admin site."""
+  isStaff: Boolean
+  dateJoined: DateTime
+  groups: [ID]
+  userPermissions: [ID]
+}
+
+type ActivateUsersPayload {
+  objects: [UserType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateUsersPayload {
+  objects: [UserType!]
+  errors: [ErrorsType]
+}
+
+type DeleteUsersPayload {
+  success: Boolean
+  objects: [UserType!]
+  errors: [ErrorsType]
+}
+
+type CreateGroupsPayload {
+  objects: [GroupType]
+  errors: [ErrorsType]
+}
+
+input CreateGroupInput {
+  name: String!
+  permissions: [ID]
+}
+
+type UpdateGroupsPayload {
+  objects: [GroupType]
+  errors: [ErrorsType]
+}
+
+input UpdateGroupInput {
+  id: ID!
+  name: String
+  permissions: [ID]
+}
+
+type ActivateGroupsPayload {
+  objects: [GroupType!]
+  errors: [ErrorsType]
+}
+
+type DeactivateGroupsPayload {
+  objects: [GroupType!]
+  errors: [ErrorsType]
+}
+
+type DeleteGroupsPayload {
+  success: Boolean
+  objects: [GroupType!]
+  errors: [ErrorsType]
+}
+
+type CreatePermissionsPayload {
+  objects: [PermissionType]
+  errors: [ErrorsType]
+}
+
+input CreatePermissionInput {
+  name: String!
+  contentType: ID!
+  codename: String!
+}
+
+type UpdatePermissionsPayload {
+  objects: [PermissionType]
+  errors: [ErrorsType]
+}
+
+input UpdatePermissionInput {
+  id: ID!
+  name: String
+  contentType: ID
+  codename: String
+}
+
+type ActivatePermissionsPayload {
+  objects: [PermissionType!]
+  errors: [ErrorsType]
+}
+
+type DeactivatePermissionsPayload {
+  objects: [PermissionType!]
+  errors: [ErrorsType]
+}
+
+type DeletePermissionsPayload {
+  success: Boolean
+  objects: [PermissionType!]
+  errors: [ErrorsType]
+}

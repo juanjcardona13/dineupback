@@ -55,14 +55,14 @@ else:
 
     @admin.register(Branch)
     class BranchAdmin(nested_admin.NestedModelAdmin):
-        from menu.admin import MenuInline
+        # from apps.menu.admin import MenuInline
 
         fieldsets = (
             (None, {'fields': ('restaurant', 'name', 'admin', 'address', 'is_main', 'email', 'website', 'logo', 'slogan', 'postal_code',)}),
             DEFAULT_AUDIT_FIELDS
         )
         readonly_fields = DEFAULT_READ_ONLY_FIELDS
-        inlines = [BranchPhoneNumberInline, TableInline, MenuInline]
+        inlines = [BranchPhoneNumberInline, TableInline, ] # MenuInline
 
 
     @admin.register(BranchPhoneNumber)

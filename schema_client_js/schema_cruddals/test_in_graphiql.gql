@@ -1,0 +1,3072 @@
+#region ============= AUTH
+
+#region ============= PERMISSION
+
+query readPermission($where: PermissionFilterInput! ) {
+    readPermission(where: $where ) {
+        id
+    }
+}
+
+query listPermissions($orderBy: PermissionOrderByInput $paginated: PaginatedInput ) {
+    listPermissions(orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+query searchPermissions($where: PermissionFilterInput $orderBy: PermissionOrderByInput $paginated: PaginatedInput ) {
+    searchPermissions(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createPermissions($input: [CreatePermissionInput!] ) {
+    createPermissions(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updatePermissions($input: [UpdatePermissionInput!] ) {
+    updatePermissions(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deletePermissions($where: PermissionFilterInput! ) {
+    deletePermissions(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivatePermissions($where: PermissionFilterInput! ) {
+    deactivatePermissions(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activatePermissions($where: PermissionFilterInput! ) {
+    activatePermissions(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= GROUP
+
+query readGroup($where: GroupFilterInput! ) {
+    readGroup(where: $where ) {
+        id
+    }
+}
+
+query listGroups($orderBy: GroupOrderByInput $paginated: PaginatedInput ) {
+    listGroups(orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+query searchGroups($where: GroupFilterInput $orderBy: GroupOrderByInput $paginated: PaginatedInput ) {
+    searchGroups(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createGroups($input: [CreateGroupInput!] ) {
+    createGroups(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateGroups($input: [UpdateGroupInput!] ) {
+    updateGroups(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteGroups($where: GroupFilterInput! ) {
+    deleteGroups(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateGroups($where: GroupFilterInput! ) {
+    deactivateGroups(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateGroups($where: GroupFilterInput! ) {
+    activateGroups(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= USER
+
+query readUser($where: UserFilterInput! ) {
+    readUser(where: $where ) {
+        id
+    }
+}
+
+query listUsers($orderBy: UserOrderByInput $paginated: PaginatedInput ) {
+    listUsers(orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+query searchUsers($where: UserFilterInput $orderBy: UserOrderByInput $paginated: PaginatedInput ) {
+    searchUsers(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createUsers($input: [CreateUserInput!] ) {
+    createUsers(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateUsers($input: [UpdateUserInput!] ) {
+    updateUsers(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteUsers($where: UserFilterInput! ) {
+    deleteUsers(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateUsers($where: UserFilterInput! ) {
+    deactivateUsers(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateUsers($where: UserFilterInput! ) {
+    activateUsers(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#endregion
+
+#region ============= CORE
+
+#region ============= TIMESLOT
+
+query readTimeSlot($where: TimeSlotFilterInput! ) {
+    readTimeSlot(where: $where ) {
+        id
+    }
+}
+
+query listTimeSlots($orderBy: TimeSlotOrderByInput $paginated: PaginatedInput ) {
+    listTimeSlots(orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+query searchTimeSlots($where: TimeSlotFilterInput $orderBy: TimeSlotOrderByInput $paginated: PaginatedInput ) {
+    searchTimeSlots(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createTimeSlots($input: [CreateTimeSlotInput!] ) {
+    createTimeSlots(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateTimeSlots($input: [UpdateTimeSlotInput!] ) {
+    updateTimeSlots(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteTimeSlots($where: TimeSlotFilterInput! ) {
+    deleteTimeSlots(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateTimeSlots($where: TimeSlotFilterInput! ) {
+    deactivateTimeSlots(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateTimeSlots($where: TimeSlotFilterInput! ) {
+    activateTimeSlots(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= SCHEDULE
+
+query readSchedule($where: ScheduleFilterInput! ) {
+    readSchedule(where: $where ) {
+        id
+    }
+}
+
+query listSchedules($orderBy: ScheduleOrderByInput $paginated: PaginatedInput ) {
+    listSchedules(orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+query searchSchedules($where: ScheduleFilterInput $orderBy: ScheduleOrderByInput $paginated: PaginatedInput ) {
+    searchSchedules(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createSchedules($input: [CreateScheduleInput!] ) {
+    createSchedules(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateSchedules($input: [UpdateScheduleInput!] ) {
+    updateSchedules(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteSchedules($where: ScheduleFilterInput! ) {
+    deleteSchedules(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateSchedules($where: ScheduleFilterInput! ) {
+    deactivateSchedules(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateSchedules($where: ScheduleFilterInput! ) {
+    activateSchedules(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= SCHEDULEITEM
+
+query readScheduleItem($where: ScheduleItemFilterInput! ) {
+    readScheduleItem(where: $where ) {
+        id
+    }
+}
+
+query listSchedulesItem($orderBy: ScheduleItemOrderByInput $paginated: PaginatedInput ) {
+    listSchedulesItem(orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+query searchSchedulesItem($where: ScheduleItemFilterInput $orderBy: ScheduleItemOrderByInput $paginated: PaginatedInput ) {
+    searchSchedulesItem(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createSchedulesItem($input: [CreateScheduleItemInput!] ) {
+    createSchedulesItem(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateSchedulesItem($input: [UpdateScheduleItemInput!] ) {
+    updateSchedulesItem(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteSchedulesItem($where: ScheduleItemFilterInput! ) {
+    deleteSchedulesItem(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateSchedulesItem($where: ScheduleItemFilterInput! ) {
+    deactivateSchedulesItem(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateSchedulesItem($where: ScheduleItemFilterInput! ) {
+    activateSchedulesItem(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#endregion
+
+#region ============= ACCOUNTS
+
+#region ============= DINEUPUSER
+
+query readDineUpUser($where: DineUpUserFilterInput $me: Boolean ) {
+    readDineUpUser(where: $where me: $me ) {
+        id
+    }
+}
+
+query searchDineUpUsers($where: DineUpUserFilterInput $orderBy: DineUpUserOrderByInput $paginated: PaginatedInput ) {
+    searchDineUpUsers(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createDineUpUsers($input: [CreateDineUpUserInput!] ) {
+    createDineUpUsers(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateDineUpUsers($input: [UpdateDineUpUserInput!] ) {
+    updateDineUpUsers(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteDineUpUsers($where: DineUpUserFilterInput! ) {
+    deleteDineUpUsers(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateDineUpUsers($where: DineUpUserFilterInput! ) {
+    deactivateDineUpUsers(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateDineUpUsers($where: DineUpUserFilterInput! ) {
+    activateDineUpUsers(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= ROLE
+
+query readRole($where: RoleFilterInput! ) {
+    readRole(where: $where ) {
+        id
+    }
+}
+
+query searchRoles($where: RoleFilterInput $orderBy: RoleOrderByInput $paginated: PaginatedInput ) {
+    searchRoles(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createRoles($input: [CreateRoleInput!] ) {
+    createRoles(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateRoles($input: [UpdateRoleInput!] ) {
+    updateRoles(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteRoles($where: RoleFilterInput! ) {
+    deleteRoles(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateRoles($where: RoleFilterInput! ) {
+    deactivateRoles(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateRoles($where: RoleFilterInput! ) {
+    activateRoles(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= EMPLOYEE
+
+query readEmployee($where: EmployeeFilterInput! ) {
+    readEmployee(where: $where ) {
+        id
+    }
+}
+
+query searchEmployees($where: EmployeeFilterInput $orderBy: EmployeeOrderByInput $paginated: PaginatedInput ) {
+    searchEmployees(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createEmployees($input: [CreateEmployeeInput!] ) {
+    createEmployees(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateEmployees($input: [UpdateEmployeeInput!] ) {
+    updateEmployees(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteEmployees($where: EmployeeFilterInput! ) {
+    deleteEmployees(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateEmployees($where: EmployeeFilterInput! ) {
+    deactivateEmployees(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateEmployees($where: EmployeeFilterInput! ) {
+    activateEmployees(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= JOBFUNCTION
+
+query readJobFunction($where: JobFunctionFilterInput! ) {
+    readJobFunction(where: $where ) {
+        id
+    }
+}
+
+query searchJobFunctions($where: JobFunctionFilterInput $orderBy: JobFunctionOrderByInput $paginated: PaginatedInput ) {
+    searchJobFunctions(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createJobFunctions($input: [CreateJobFunctionInput!] ) {
+    createJobFunctions(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateJobFunctions($input: [UpdateJobFunctionInput!] ) {
+    updateJobFunctions(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteJobFunctions($where: JobFunctionFilterInput! ) {
+    deleteJobFunctions(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateJobFunctions($where: JobFunctionFilterInput! ) {
+    deactivateJobFunctions(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateJobFunctions($where: JobFunctionFilterInput! ) {
+    activateJobFunctions(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#endregion
+
+#region ============= MENU
+
+#region ============= MENU
+
+query readMenu($where: MenuFilterInput! ) {
+    readMenu(where: $where ) {
+        id
+    }
+}
+
+query searchMenus($where: MenuFilterInput $orderBy: MenuOrderByInput $paginated: PaginatedInput ) {
+    searchMenus(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createMenus($input: [CreateMenuInput!] ) {
+    createMenus(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateMenus($input: [UpdateMenuInput!] ) {
+    updateMenus(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteMenus($where: MenuFilterInput! ) {
+    deleteMenus(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateMenus($where: MenuFilterInput! ) {
+    deactivateMenus(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateMenus($where: MenuFilterInput! ) {
+    activateMenus(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= CATEGORY
+
+query readCategory($where: CategoryFilterInput! ) {
+    readCategory(where: $where ) {
+        id
+    }
+}
+
+query searchCategories($where: CategoryFilterInput $orderBy: CategoryOrderByInput $paginated: PaginatedInput ) {
+    searchCategories(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createCategories($input: [CreateCategoryInput!] ) {
+    createCategories(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateCategories($input: [UpdateCategoryInput!] ) {
+    updateCategories(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteCategories($where: CategoryFilterInput! ) {
+    deleteCategories(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateCategories($where: CategoryFilterInput! ) {
+    deactivateCategories(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateCategories($where: CategoryFilterInput! ) {
+    activateCategories(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= MENUITEM
+
+query readMenuItem($where: MenuItemFilterInput! ) {
+    readMenuItem(where: $where ) {
+        id
+    }
+}
+
+query searchMenuItems($where: MenuItemFilterInput $orderBy: MenuItemOrderByInput $paginated: PaginatedInput ) {
+    searchMenuItems(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createMenuItems($input: [CreateMenuItemInput!] ) {
+    createMenuItems(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateMenuItems($input: [UpdateMenuItemInput!] ) {
+    updateMenuItems(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteMenuItems($where: MenuItemFilterInput! ) {
+    deleteMenuItems(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateMenuItems($where: MenuItemFilterInput! ) {
+    deactivateMenuItems(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateMenuItems($where: MenuItemFilterInput! ) {
+    activateMenuItems(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= MENUITEMVARIANT
+
+query readMenuItemVariant($where: MenuItemVariantFilterInput! ) {
+    readMenuItemVariant(where: $where ) {
+        id
+    }
+}
+
+query searchMenuItemVariants($where: MenuItemVariantFilterInput $orderBy: MenuItemVariantOrderByInput $paginated: PaginatedInput ) {
+    searchMenuItemVariants(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createMenuItemVariants($input: [CreateMenuItemVariantInput!] ) {
+    createMenuItemVariants(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateMenuItemVariants($input: [UpdateMenuItemVariantInput!] ) {
+    updateMenuItemVariants(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteMenuItemVariants($where: MenuItemVariantFilterInput! ) {
+    deleteMenuItemVariants(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateMenuItemVariants($where: MenuItemVariantFilterInput! ) {
+    deactivateMenuItemVariants(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateMenuItemVariants($where: MenuItemVariantFilterInput! ) {
+    activateMenuItemVariants(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= VARIANTOPTION
+
+query readVariantOption($where: VariantOptionFilterInput! ) {
+    readVariantOption(where: $where ) {
+        id
+    }
+}
+
+query searchVariantOptions($where: VariantOptionFilterInput $orderBy: VariantOptionOrderByInput $paginated: PaginatedInput ) {
+    searchVariantOptions(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createVariantOptions($input: [CreateVariantOptionInput!] ) {
+    createVariantOptions(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateVariantOptions($input: [UpdateVariantOptionInput!] ) {
+    updateVariantOptions(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteVariantOptions($where: VariantOptionFilterInput! ) {
+    deleteVariantOptions(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateVariantOptions($where: VariantOptionFilterInput! ) {
+    deactivateVariantOptions(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateVariantOptions($where: VariantOptionFilterInput! ) {
+    activateVariantOptions(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= ITEMIMAGE
+
+query readItemImage($where: ItemImageFilterInput! ) {
+    readItemImage(where: $where ) {
+        id
+    }
+}
+
+query searchItemImages($where: ItemImageFilterInput $orderBy: ItemImageOrderByInput $paginated: PaginatedInput ) {
+    searchItemImages(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createItemImages($input: [CreateItemImageInput!] ) {
+    createItemImages(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateItemImages($input: [UpdateItemImageInput!] ) {
+    updateItemImages(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteItemImages($where: ItemImageFilterInput! ) {
+    deleteItemImages(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateItemImages($where: ItemImageFilterInput! ) {
+    deactivateItemImages(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateItemImages($where: ItemImageFilterInput! ) {
+    activateItemImages(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= OPTIONGROUP
+
+query readOptionGroup($where: OptionGroupFilterInput! ) {
+    readOptionGroup(where: $where ) {
+        id
+    }
+}
+
+query searchOptionGroups($where: OptionGroupFilterInput $orderBy: OptionGroupOrderByInput $paginated: PaginatedInput ) {
+    searchOptionGroups(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createOptionGroups($input: [CreateOptionGroupInput!] ) {
+    createOptionGroups(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateOptionGroups($input: [UpdateOptionGroupInput!] ) {
+    updateOptionGroups(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteOptionGroups($where: OptionGroupFilterInput! ) {
+    deleteOptionGroups(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateOptionGroups($where: OptionGroupFilterInput! ) {
+    deactivateOptionGroups(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateOptionGroups($where: OptionGroupFilterInput! ) {
+    activateOptionGroups(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= ITEMOPTION
+
+query readItemOption($where: ItemOptionFilterInput! ) {
+    readItemOption(where: $where ) {
+        id
+    }
+}
+
+query searchItemOptions($where: ItemOptionFilterInput $orderBy: ItemOptionOrderByInput $paginated: PaginatedInput ) {
+    searchItemOptions(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createItemOptions($input: [CreateItemOptionInput!] ) {
+    createItemOptions(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateItemOptions($input: [UpdateItemOptionInput!] ) {
+    updateItemOptions(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteItemOptions($where: ItemOptionFilterInput! ) {
+    deleteItemOptions(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateItemOptions($where: ItemOptionFilterInput! ) {
+    deactivateItemOptions(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateItemOptions($where: ItemOptionFilterInput! ) {
+    activateItemOptions(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= ITEMTAG
+
+query readItemTag($where: ItemTagFilterInput! ) {
+    readItemTag(where: $where ) {
+        id
+    }
+}
+
+query searchItemTags($where: ItemTagFilterInput $orderBy: ItemTagOrderByInput $paginated: PaginatedInput ) {
+    searchItemTags(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createItemTags($input: [CreateItemTagInput!] ) {
+    createItemTags(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateItemTags($input: [UpdateItemTagInput!] ) {
+    updateItemTags(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteItemTags($where: ItemTagFilterInput! ) {
+    deleteItemTags(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateItemTags($where: ItemTagFilterInput! ) {
+    deactivateItemTags(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateItemTags($where: ItemTagFilterInput! ) {
+    activateItemTags(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#endregion
+
+#region ============= ORDERS
+
+#region ============= ORDERSTATUS
+
+query readOrderStatus($where: OrderStatusFilterInput! ) {
+    readOrderStatus(where: $where ) {
+        id
+    }
+}
+
+query searchOrderStatus($where: OrderStatusFilterInput $orderBy: OrderStatusOrderByInput $paginated: PaginatedInput ) {
+    searchOrderStatus(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createOrderStatus($input: [CreateOrderStatusInput!] ) {
+    createOrderStatus(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateOrderStatus($input: [UpdateOrderStatusInput!] ) {
+    updateOrderStatus(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteOrderStatus($where: OrderStatusFilterInput! ) {
+    deleteOrderStatus(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateOrderStatus($where: OrderStatusFilterInput! ) {
+    deactivateOrderStatus(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateOrderStatus($where: OrderStatusFilterInput! ) {
+    activateOrderStatus(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= ORDER
+
+query readOrder($where: OrderFilterInput! ) {
+    readOrder(where: $where ) {
+        id
+    }
+}
+
+query searchOrders($where: OrderFilterInput $orderBy: OrderOrderByInput $paginated: PaginatedInput ) {
+    searchOrders(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createOrders($input: [CreateOrderInput!] ) {
+    createOrders(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateOrders($input: [UpdateOrderInput!] ) {
+    updateOrders(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteOrders($where: OrderFilterInput! ) {
+    deleteOrders(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateOrders($where: OrderFilterInput! ) {
+    deactivateOrders(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateOrders($where: OrderFilterInput! ) {
+    activateOrders(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= ORDERITEM
+
+query readOrderItem($where: OrderItemFilterInput! ) {
+    readOrderItem(where: $where ) {
+        id
+    }
+}
+
+query searchOrderItems($where: OrderItemFilterInput $orderBy: OrderItemOrderByInput $paginated: PaginatedInput ) {
+    searchOrderItems(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createOrderItems($input: [CreateOrderItemInput!] ) {
+    createOrderItems(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateOrderItems($input: [UpdateOrderItemInput!] ) {
+    updateOrderItems(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteOrderItems($where: OrderItemFilterInput! ) {
+    deleteOrderItems(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateOrderItems($where: OrderItemFilterInput! ) {
+    deactivateOrderItems(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateOrderItems($where: OrderItemFilterInput! ) {
+    activateOrderItems(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= ORDERITEMOPTION
+
+query readOrderItemOption($where: OrderItemOptionFilterInput! ) {
+    readOrderItemOption(where: $where ) {
+        id
+    }
+}
+
+query searchOrderItemOptions($where: OrderItemOptionFilterInput $orderBy: OrderItemOptionOrderByInput $paginated: PaginatedInput ) {
+    searchOrderItemOptions(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createOrderItemOptions($input: [CreateOrderItemOptionInput!] ) {
+    createOrderItemOptions(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateOrderItemOptions($input: [UpdateOrderItemOptionInput!] ) {
+    updateOrderItemOptions(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteOrderItemOptions($where: OrderItemOptionFilterInput! ) {
+    deleteOrderItemOptions(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateOrderItemOptions($where: OrderItemOptionFilterInput! ) {
+    deactivateOrderItemOptions(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateOrderItemOptions($where: OrderItemOptionFilterInput! ) {
+    activateOrderItemOptions(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#endregion
+
+#region ============= RESTAURANT
+
+#region ============= RESTAURANT
+
+query readRestaurant($where: RestaurantFilterInput! ) {
+    readRestaurant(where: $where ) {
+        id
+    }
+}
+
+query searchRestaurants($where: RestaurantFilterInput $orderBy: RestaurantOrderByInput $paginated: PaginatedInput ) {
+    searchRestaurants(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createRestaurants($input: [CreateRestaurantInput!] ) {
+    createRestaurants(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateRestaurants($input: [UpdateRestaurantInput!] ) {
+    updateRestaurants(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteRestaurants($where: RestaurantFilterInput! ) {
+    deleteRestaurants(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateRestaurants($where: RestaurantFilterInput! ) {
+    deactivateRestaurants(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateRestaurants($where: RestaurantFilterInput! ) {
+    activateRestaurants(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= BRANCH
+
+query readBranch($where: BranchFilterInput! ) {
+    readBranch(where: $where ) {
+        id
+    }
+}
+
+query searchBranches($where: BranchFilterInput $orderBy: BranchOrderByInput $paginated: PaginatedInput ) {
+    searchBranches(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createBranches($input: [CreateBranchInput!] ) {
+    createBranches(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateBranches($input: [UpdateBranchInput!] ) {
+    updateBranches(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteBranches($where: BranchFilterInput! ) {
+    deleteBranches(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateBranches($where: BranchFilterInput! ) {
+    deactivateBranches(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateBranches($where: BranchFilterInput! ) {
+    activateBranches(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= BRANCHPHONENUMBER
+
+query readBranchPhoneNumber($where: BranchPhoneNumberFilterInput! ) {
+    readBranchPhoneNumber(where: $where ) {
+        id
+    }
+}
+
+query searchBranchPhoneNumbers($where: BranchPhoneNumberFilterInput $orderBy: BranchPhoneNumberOrderByInput $paginated: PaginatedInput ) {
+    searchBranchPhoneNumbers(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createBranchPhoneNumbers($input: [CreateBranchPhoneNumberInput!] ) {
+    createBranchPhoneNumbers(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateBranchPhoneNumbers($input: [UpdateBranchPhoneNumberInput!] ) {
+    updateBranchPhoneNumbers(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteBranchPhoneNumbers($where: BranchPhoneNumberFilterInput! ) {
+    deleteBranchPhoneNumbers(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateBranchPhoneNumbers($where: BranchPhoneNumberFilterInput! ) {
+    deactivateBranchPhoneNumbers(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateBranchPhoneNumbers($where: BranchPhoneNumberFilterInput! ) {
+    activateBranchPhoneNumbers(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= TABLE
+
+query readTable($where: TableFilterInput! ) {
+    readTable(where: $where ) {
+        id
+    }
+}
+
+query searchTables($where: TableFilterInput $orderBy: TableOrderByInput $paginated: PaginatedInput ) {
+    searchTables(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createTables($input: [CreateTableInput!] ) {
+    createTables(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateTables($input: [UpdateTableInput!] ) {
+    updateTables(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteTables($where: TableFilterInput! ) {
+    deleteTables(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateTables($where: TableFilterInput! ) {
+    deactivateTables(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateTables($where: TableFilterInput! ) {
+    activateTables(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= SOCIALMEDIAPLATFORM
+
+query readSocialMediaPlatform($where: SocialMediaPlatformFilterInput! ) {
+    readSocialMediaPlatform(where: $where ) {
+        id
+    }
+}
+
+query searchSocialMediaPlatforms($where: SocialMediaPlatformFilterInput $orderBy: SocialMediaPlatformOrderByInput $paginated: PaginatedInput ) {
+    searchSocialMediaPlatforms(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createSocialMediaPlatforms($input: [CreateSocialMediaPlatformInput!] ) {
+    createSocialMediaPlatforms(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateSocialMediaPlatforms($input: [UpdateSocialMediaPlatformInput!] ) {
+    updateSocialMediaPlatforms(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteSocialMediaPlatforms($where: SocialMediaPlatformFilterInput! ) {
+    deleteSocialMediaPlatforms(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateSocialMediaPlatforms($where: SocialMediaPlatformFilterInput! ) {
+    deactivateSocialMediaPlatforms(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateSocialMediaPlatforms($where: SocialMediaPlatformFilterInput! ) {
+    activateSocialMediaPlatforms(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region ============= SOCIALMEDIA
+
+query readSocialMedia($where: SocialMediaFilterInput! ) {
+    readSocialMedia(where: $where ) {
+        id
+    }
+}
+
+query searchSocialMedia($where: SocialMediaFilterInput $orderBy: SocialMediaOrderByInput $paginated: PaginatedInput ) {
+    searchSocialMedia(where: $where orderBy: $orderBy paginated: $paginated ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStartObj
+        indexEndObj
+        objects {
+            id
+        }
+    }
+}
+
+mutation createSocialMedia($input: [CreateSocialMediaInput!] ) {
+    createSocialMedia(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateSocialMedia($input: [UpdateSocialMediaInput!] ) {
+    updateSocialMedia(input: $input ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteSocialMedia($where: SocialMediaFilterInput! ) {
+    deleteSocialMedia(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateSocialMedia($where: SocialMediaFilterInput! ) {
+    deactivateSocialMedia(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateSocialMedia($where: SocialMediaFilterInput! ) {
+    activateSocialMedia(where: $where ) {
+        objects {
+            id
+        }
+        errors {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#endregion
+

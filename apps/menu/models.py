@@ -46,7 +46,7 @@ class Category(AuditModel):
     menus = models.ManyToManyField("menu.Menu", related_name='categories', blank=True)
     description = models.TextField(blank=True, null=True)
     # schedules = GenericRelation(to="core.ScheduleItem")
-    position = models.IntegerField(default=1, blank=True, null=True)
+    position = models.IntegerField(default=1, blank=True, null=True, verbose_name="LA POSICIÓN")
 
     class Meta:
         verbose_name_plural = "Categories"
