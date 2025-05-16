@@ -38,10 +38,6 @@ else:
 
 
     class DineUpUserInline(BaseInlineUser):
-        can_delete = False
-        fk_name = 'user'
-        readonly_fields = DEFAULT_READ_ONLY_FIELDS
-
 
         model = DineUpUser
         verbose_name_plural = 'DineUpUser'
